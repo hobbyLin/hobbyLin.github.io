@@ -1,0 +1,48 @@
+*{margin:0px; padding:0px;font-family:"微软雅黑"; font-size:14px;}
+a{text-decoration:none;}
+ul{list-style:none;}
+body{background:url(../images/section_bg_03.gif);}
+.wrapper{background:url(../images/wrapper_bg_02.gif) no-repeat;width:1500px;height:auto;margin:0 auto;}
+
+
+
+
+/*头部*/
+header{width:1500px; height:73px; margin:0 auto; background:url(../images/header_bg_02.gif);}
+header a img{float:left;}
+header ul{width:1037px; height:73px;float:left;}
+header ul li{width:148px; height:73px; float:left;background:url(../images/header_bar_03.gif) no-repeat 99% 50%;position:relative;}
+header ul li a{width:144px; height:71px; float:left;text-align:center;line-height:73px;color:#535353;}
+header ul li div{display:none;position:absolute;top:73px;}
+header ul li div a{height:40px;line-height:40px;background:#e0e0e0 url("../images/header_littlebar_03.gif") no-repeat 50% 99%;}
+header ul li:hover div{display:block;z-index:99;}
+header ul li a:hover{background:#dedede;}
+header ul li div a:hover{background:#d0d1d2 url("../images/header_littlebar_03.gif") no-repeat 50% 99%;}
+/*导航*/
+
+nav{width:1500px; height:592px; margin:0 auto;box-shadow:-0px 48px 243px -72px #003359;position:relative;z-index:0;}
+nav .title{position:absolute; left:310px; top:187px;}
+nav .title h1{font-size:48px;color:white;}
+nav .title h5{color:white;font-weight:normal;font-style:italic;}
+nav .title p{font-size:22px; font-weight:bold;color:white;}
+nav .position{position:absolute; left:280px; top:17px;z-index:1;color:#fff;}
+nav .position span{display:inline-block;padding-right:10px;padding-left:10px;}
+nav .position b{font-size:18px;}
+nav ul{width:101px; height:15px;position:absolute; left:1113px; top:556px;}
+
+nav ul li{width:15px; height:15px; float:left; border-radius:50%;margin-left:10px;background:#fff; box-shadow:1px 1px 1px rgb(0,0,0) inset;}
+nav ul li a{display:block; width:10px; height:10px;}
+nav ul li.li1{background:#004f88;}
+
+
+
+
+
+
+
+/*页面底部*/
+footer{width:1500px; height:62px; margin:0 auto; background:#444444;box-shadow:1px 1px 1px 1px rgba(68,68,68,0.8);}
+footer span{display:block; height:25px; background:url(../images/china_03.gif) no-repeat -2% 39%;margin-left:276px; float:left;	margin-top:22px; text-indent:25px;}
+footer span a{font-size:11px;color:#d0d0d0;}
+footer p{font-size:8px;color:#d0d0d0;padding-top:25px; text-indent:278px;font-family:arial;}
+footer p a{color:#d0d0d0;  font-size:10px!important;font-family:Franklin Gothic Medium;}

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>category</title>
+	<meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/category.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/touch-0.2.14.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+		(function (doc, win) {
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth>=720) {
+		            	 docEl.style.fontSize ='100px';
+		            }else{
+		            	docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+		            }
+		            
+		        };
+		 
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+	
+	
+		<script src="js/jquery.event.drag.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.touchSlider.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+	$(".img_gallery").hover(function(){
+		$("#btn_prev,#btn_next").fadeIn()
+	},function(){
+		$("#btn_prev,#btn_next").fadeOut()
+	});
+	
+	$dragBln = false;
+	
+	$(".main_img").touchSlider({
+		flexible : true,
+		speed : 200,
+		btn_prev : $("#btn_prev"),
+		btn_next : $("#btn_next"),
+		paging : $(".point a"),
+		counter : function (e){
+			$(".point a").removeClass("on").eq(e.current-1).addClass("on");//图片顺序点切换
+			$(".img_font span").hide().eq(e.current-1).show();//图片文字切换
+		}
+	});
+	
+	$(".main_img").bind("mousedown", function() {
+		$dragBln = false;
+	});
+	
+	$(".main_img").bind("dragstart", function() {
+		$dragBln = true;
+	});
+	
+	$(".main_img a").click(function(){
+		if($dragBln) {
+			return false;
+		}
+	});
+	
+	timer = setInterval(function(){
+		$("#btn_next").click();
+	}, 5000);
+	
+	$(".img_gallery").hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		},5000);
+	});
+	
+	$(".main_img").bind("touchstart",function(){
+		clearInterval(timer);
+	}).bind("touchend", function(){
+		timer = setInterval(function(){
+			$("#btn_next").click();
+		}, 5000);
+	});
+	
+});
+</script>
+</head>
+<body>
+	
+	<!--头部开始-->
+	<header>
+		<a href="index.html" class="logo">Back</a>
+		
+		<form action="#" id="form">
+			<input type="text" name="" id="" value="分类" />
+		</form>
+		
+		<div class="right" id="where">
+			
+			<p id = "here">广州市</p>
+			<div id="location">
+				<p>深圳市</p>
+				<p>北京市</p>
+				<p>上海市</p>
+				<p>西安市</p>				
+			</div>
+			
+			
+			
+		</div>
+		<script type="text/javascript">
+			touch.on('#where', 'tap', function(ev){
+			console.log(ev.type);
+			$("#location>p").removeClass("hover");
+			$("#location").fadeIn();
+			});
+			
+			touch.on('#location>p', 'touchmove', function(ev){
+			console.log("yidong");
+			$(this).addClass("hover").siblings().removeClass("hover");
+			   
+			});
+			
+			touch.on('#location>p', 'tap', function(ev){
+			console.log("你点击了额");
+			ev.stopPropagation();
+			$(this).addClass("hover").siblings().removeClass("hover");
+			 $("#location").fadeOut()
+			 var adrr1 = $(this).html();
+			 var adrr2 =$("#here").html();
+			$("#here").html(adrr1);
+			    $(this).html(adrr2);
+			});
+
+
+		</script>
+	</header>
+	<div class="replace"></div>
+	<!--头部结束-->
+	
+	
+	<!--轮播图-->
+	<div class="cate_baner">
+	
+<div class="img_gallery">
+	<div class="point">
+		<a href="#"></a>
+		<a href="#"></a>
+		<a href="#"></a>
+		<a href="#"></a>
+		<a href="#"></a>
+	</div>
+	<div class="main_img">
+		<ul>
+			<li><span class="img_1">
+			<dl class="one">
+			<dt><img src="images/baner_cate_03.gif" alt="" /></dt>
+			<dd><a href="#">美食</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_06.gif" alt="" /></dt>
+			<dd><a href="#">电影</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_08.gif" alt="" /></dt>
+			<dd><a href="#">运动</a></dd>
+			
+		    </dl>
+		   <dl>
+			<dt><img src="images/category_nac_pic_03.gif" alt="" /></dt>
+			<dd><a href="#">唱歌</a></dd>
+			
+		   </dl>
+			</span>
+			</li>
+			
+			<li><span class="img_2">
+				<dl class="one">
+			<dt><img src="images/baner_cate_03.gif" alt="" /></dt>
+			<dd><a href="#">美食</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_06.gif" alt="" /></dt>
+			<dd><a href="#">电影</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_08.gif" alt="" /></dt>
+			<dd><a href="#">运动</a></dd>
+			
+		    </dl>
+		   <dl>
+			<dt><img src="images/category_nac_pic_03.gif" alt="" /></dt>
+			<dd><a href="#">唱歌</a></dd>
+			
+		   </dl>
+			</span>
+			</li>
+			
+			<li><span class="img_3">
+				<dl class="one">
+			<dt><img src="images/baner_cate_03.gif" alt="" /></dt>
+			<dd><a href="#">美食</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_06.gif" alt="" /></dt>
+			<dd><a href="#">电影</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_08.gif" alt="" /></dt>
+			<dd><a href="#">运动</a></dd>
+			
+		    </dl>
+		   <dl>
+			<dt><img src="images/category_nac_pic_03.gif" alt="" /></dt>
+			<dd><a href="#">唱歌</a></dd>
+			
+		   </dl>
+			</span>
+			</li>
+			
+			<li><span class="img_4">
+				<dl class="one">
+			<dt><img src="images/baner_cate_03.gif" alt="" /></dt>
+			<dd><a href="#">美食</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_06.gif" alt="" /></dt>
+			<dd><a href="#">电影</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_08.gif" alt="" /></dt>
+			<dd><a href="#">运动</a></dd>
+			
+		    </dl>
+		   <dl>
+			<dt><img src="images/category_nac_pic_03.gif" alt="" /></dt>
+			<dd><a href="#">唱歌</a></dd>
+			
+		   </dl>
+			</span>
+			</li>
+			
+			<li><span class="img_5">
+				<dl class="one">
+			<dt><img src="images/baner_cate_03.gif" alt="" /></dt>
+			<dd><a href="#">美食</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_06.gif" alt="" /></dt>
+			<dd><a href="#">电影</a></dd>
+			
+			</dl>
+		
+			<dl>
+			<dt><img src="images/category_nac_pic_08.gif" alt="" /></dt>
+			<dd><a href="#">运动</a></dd>
+			
+		    </dl>
+		   <dl>
+			<dt><img src="images/category_nac_pic_03.gif" alt="" /></dt>
+			<dd><a href="#">唱歌</a></dd>
+			
+		   </dl>
+			</span>
+			</li>
+		</ul>
+		<a href="javascript:;" id="btn_prev"></a>
+		<a href="javascript:;" id="btn_next"></a>
+	</div>
+	
+</div>
+
+
+
+		
+	</div>
+		
+	
+	
+	
+	<!--轮播图结束-->
+	
+	
+	<!--产品展示-->
+	
+		<div class="product">
+			
+			<div class="top food">
+			
+			<h3>美食类	<a href="#">更多</a></h3>
+		
+			</div>
+			
+			<img src="images/puc_list_03.gif" class="one" alt="" />
+			<img src="images/cat_food_05.gif" alt="" />
+			<img src="images/cat_food_07.gif" alt="" />
+			<img src="images/cat_food_09.gif" alt="" />
+			
+			
+		</div> 	
+	
+		<div class="product">
+			
+			<div class="top sport">
+			
+			<h3>运动类	<a href="#">更多</a></h3>
+		
+			</div>
+			
+			<img src="images/category_pic_07.gif" class="one" alt="" />
+			<img src="images/category_pic_09.gif" alt="" />
+			<img src="images/category_pic_11.gif" alt="" />
+			<img src="images/category_pic_13.gif" alt="" />
+			
+			
+		</div> 	
+		
+		<div class="product">
+			
+			<div class="top movie">
+			
+			<h3>电影类	<a href="#">更多</a></h3>
+		
+			</div>
+			
+			<img src="images/category_pic_22.gif" class="one" alt="" />
+			<img src="images/category_pic_23.gif" alt="" />
+			<img src="images/puc_list_03.gif" alt="" />
+			<img src="images/puc_list_03.gif" alt="" />
+			
+			
+		</div> 	
+	
+	<!--产品展示结束-->
+	
+	
+	
+	
+	
+	
+	
+	
+	<footer>
+		
+	<dl class="one">
+			<dt><a href="index.html" class="top index"></a></dt>
+			<dd><a href="index.html" class="bottom">首页</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="category.html" class="top category"></a></dt>
+			<dd><a href="category.html" class="bottom">分类</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="find.html" class="top find"></a></dt>
+			<dd><a href="find.html" class="bottom">发现</a></dd>
+		</dl>
+		
+		<dl>
+			<dt><a href="mine.html" class="top mine"></a></dt>
+			<dd><a href="mine.html" class="bottom">我的</a></dd>
+		</dl>
+		
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+<script src="js/category.js" type="text/javascript" charset="utf-8"></script>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+/*热门游戏*/
+.hotgames .container .row{padding-bottom:5em;}
+.hotgames .container .row article h2{color:#2a2a2a;}
+.hotgames .container .row article p{color:#898989;line-height:2.4;}
+.hotgames .container .row .pic{margin-top:20px;}
+.hotgames .container .row .pic img{margin:0px auto;}
+
+/*更多游戏*/
+
+.morecase{padding-bottom:4.1em;}
+.morecase .container .row h2{}
+.morecase .container .row figure{margin-top:1.5em;}
+.morecase .container .row figure>a{display:block; margin:0px auto;}
+.morecase .container .row figure figcaption{margin-top:0.5em;}
+.img-hover:hover{opacity: 0.7;}
+
+/* 小屏幕（手机，小于等于768px） */
+@media (max-width:768px) {
+
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+ .hotgames .container .row1{background:url(../images/game_case_07.gif) no-repeat 0% 50%;}
+ .hotgames .container .row2{background:url(../images/game_case_fix_03.png) no-repeat 100% 50%;}
+ 
+ .hotgames .container .row article p{line-height:2;}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:992px) {
+.hotgames .container .row1{background:url(../images/game_case_07.gif) no-repeat 5% 50%;}
+.hotgames .container .row2{background:url(../images/game_case_fix_03.png) no-repeat 95% 50%;}
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+.hotgames .container .row1{background:url(../images/game_case_07.gif) no-repeat 10% 50%;}
+.hotgames .container .row2{background:url(../images/game_case_fix_03.png) no-repeat 92% 50%;}
+
+.hotgames .container .row>figure>a,.morecase .container .row>figure>a{position:relative;width:303px;height:133px;display:block;overflow:hidden;}
+.hotgames .container .row>figure>a span.hiddpic,.morecase .container .row>figure>a span.hidimg{position:absolute;top:133px;left:0px;width:303px;height:133px; background:rgba(0,0,0,0.5);transition:all .7s ease-in-out .1s;}
+.hotgames .container .row>figure>a:hover span.hiddpic{top:0px;}
+
+.morecase .container .row>figure>a:hover span.hidimg{top:0px;}
+
+
+}

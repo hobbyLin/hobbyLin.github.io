@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch-0.2.14.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth>=720) {
+		            	 docEl.style.fontSize ='100px';
+		            }else{
+		            	docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+		            }
+		            
+		        };
+		 
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</head>
+<body>
+	
+	<header>
+		<a href="index.html" class="logo"><img src="images/logo_03.gif" alt="" /></a>
+		
+		<form action="#" id="form">
+			<input type="text" name="" id="search" placeholder="请输入商品名称" />
+			<input type="submit" value="" />
+			<script type="text/javascript">
+				touch.on('#search', 'tap', function(ev){
+    //console.log(ev.type); 
+
+		   //	$(this).focus(function(){ $(this).css("border",0);})
+});
+				
+			</script>
+		</form>
+		
+		<div class="right" id="where">
+			
+			<p id = "here">广州市</p>
+			<div id="location">
+				<p>深圳市</p>
+				<p>北京市</p>
+				<p>上海市</p>
+				<p>西安市</p>				
+			</div>
+			
+			
+			
+		</div>
+		<script type="text/javascript">
+			touch.on('#where', 'tap', function(ev){
+			console.log(ev.type);
+			$("#location>p").removeClass("hover");
+			$("#location").fadeIn();
+			});
+			
+			touch.on('#location>p', 'touchmove', function(ev){
+			console.log("yidong");
+			$(this).addClass("hover").siblings().removeClass("hover");
+			   
+			});
+			
+			touch.on('#location>p', 'tap', function(ev){
+			console.log("你点击了额");
+			ev.stopPropagation();
+			$(this).addClass("hover").siblings().removeClass("hover");
+			 $("#location").fadeOut()
+			 var adrr1 = $(this).html();
+			 var adrr2 =$("#here").html();
+			$("#here").html(adrr1);
+			    $(this).html(adrr2);
+			});
+
+
+		</script>
+	</header>
+	<div class="replace"></div>
+	
+	
+	
+	<!--广告位-->
+	<div class="baner">
+			<p><a href="javascript:void(0)"  class="a_white"></a><a href="javascript:void(0)"></a><a href="javascript:void(0)"></a><a href="javascript:void(0)"></a><a href="javascript:void(0)"></a></p>
+	
+		
+		
+		<img src="images/baner_06.gif"/  style="display:block;">
+		<img src="images/baner_06.gif"/>
+		<img src="images/baner_06.gif"/>
+		<img src="images/baner_06.gif"/>
+		<img src="images/baner_06.gif"/>
+	
+	</div>
+	<!--广告位结束-->
+	
+	<!--清除浮动-->
+	<div class="clear"></div>
+	
+	
+	<!--产品列表-->
+	<div class="goods_list">
+		
+		<div class="top">
+			
+			<h3>优惠团购	<a href="#">更多</a></h3>
+			
+
+		
+		</div>
+		
+		
+		<ul class="goods_ul">	
+				<li><a href="#"><img src="images/goods_li_03.gif"/></a></li>
+				<li><a href="#"><img src="images/index_pic_03.gif"/></a></li>
+				<li><a href="#"><img src="images/index_pic_07.gif"/></a></li>
+				<li><a href="#"><img src="images/index_pic_09.gif"/></a></li>
+		</ul>
+	
+	</div>
+	
+	
+	<!--产品描述-->
+	<div class="goods_dsc">
+		<div class="top">
+			
+			<h3>优惠团购	<a href="#">更多</a></h3>
+		
+		</div>
+		
+		<div class="center">
+			<img src="./images/goods_pro_03.gif" alt="" />
+			<ul>
+				
+				<li>万岁寿司（正佳店） <span class="one"><100m</span></li>
+				<li><span>[100店通用]&nbsp;双人套餐</span></li>
+				<li><a href="#">￥88.00</a><span class="two">已售1000</span></li>
+			</ul>
+			
+		</div>
+		
+		
+		<div class="center">
+			<img src="images/index_pic_14.gif" alt="" />
+			<ul>
+				
+				<li>万岁寿司（正佳店） <span class="one"><100m</span></li>
+				<li><span>[100店通用]&nbsp;双人套餐</span></li>
+				<li><a href="#">￥88.00</a><span class="two">已售1000</span></li>
+			</ul>
+			
+		</div>
+		
+	</div>
+
+	<!--产品描述结束-->
+	
+	
+	
+	
+	<!--产品列表结束-->
+	
+	
+	<footer>
+		
+		<dl class="one">
+			<dt><a href="index.html" class="top index"></a></dt>
+			<dd><a href="index.html" class="bottom">首页</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="category.html" class="top category"></a></dt>
+			<dd><a href="category.html" class="bottom">分类</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="find.html" class="top find"></a></dt>
+			<dd><a href="find.html" class="bottom">发现</a></dd>
+		</dl>
+		
+		<dl>
+			<dt><a href="mine.html" class="top mine"></a></dt>
+			<dd><a href="mine.html" class="bottom">我的</a></dd>
+		</dl>
+		
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+
+	
+</body>
+</html>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>

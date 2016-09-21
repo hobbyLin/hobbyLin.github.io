@@ -1,0 +1,104 @@
+.slideBox{ width:1069px; height:311px; overflow:hidden; position:relative; border:1px solid #ddd;margin: 0 auto;}
+.slideBox .hd{ height:15px; overflow:hidden; position:absolute; left:535px; bottom:5px; z-index:1; }
+.slideBox .hd ul{ overflow:hidden; zoom:1; float:left;}
+.slideBox .hd ul li{ float:left; margin-right:2px;border-radius: 10px; width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
+.slideBox .hd ul li.on{ background:#f00; color:#fff; }
+.slideBox .bd{ position:relative; height:100%; z-index:0;   }
+.slideBox .bd li{ zoom:1; vertical-align:middle; }
+.slideBox .bd img{ width:1069px; height:311px; display:block;  }
+
+
+.box{
+	width:1590px;
+	height:1890px;
+	border:1px solid #CCC;
+	background:#f4f4f4;
+	margin:0 auto;
+}
+.content{
+    width:1070px;
+	height:1830px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin:0 auto;
+	font-family:"微软雅黑";
+	margin-top:30px;
+}
+.content_left span a{
+	margin:23px 0px 20px 28px;
+	display:inline-block;
+	font-size:16px;
+	color:#555555;
+	text-decoration:none;
+} 
+.content_left{
+	width:686px;
+	height:auto;
+	float:left;
+}
+.content_left .line{
+	width:686px;
+	height:1px;
+	background-color:#ccc;
+	margin-left:8px;
+}
+.content_left .art{
+	font-size:40px;
+	color:#555555;
+	margin:25px 0px 0px 30px;
+}
+.content_left img{
+	margin:30px 30px 27px 35px;
+	float:left;
+}
+.content_left .desc{
+	font-size:13.4px;
+	color:#555;
+	margin-left:34px;
+	line-height:25px;
+}
+.content_right .tab{
+	width:330px;
+	height:30px;
+	float:right;
+	margin:175px 20px 0px 30px;
+}
+.content_right .tab span.time{
+	font-size:15px;
+	color:#555;
+	float:left;
+	margin:25px 10px 13px 5px;	
+}
+.content_right .tab span.date{
+	font-size:15px;
+	color:#555;
+	margin-left:5px;
+}
+.cur{
+	display:block;
+	background:#ccc;
+}
+.tab{
+	margin:0;padding:0;
+	list-style:none;
+	width:200px;
+	border:1px solid #ccc;
+}
+.tab li{
+	float:left;
+	width:165px;
+	height:30px;
+	color:gray;
+	text-align:center;
+	line-height:30px;
+	cursor:pointer; 
+}
+.one,.two{
+	width:330px;
+	height:50px;
+	float:right;
+	margin-top:30px;
+	line-height:35px;
+	margin-right:20px;
+}
+

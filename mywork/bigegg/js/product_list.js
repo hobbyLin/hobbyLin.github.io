@@ -1,0 +1,2 @@
+/*!test2016-06-04*/
+function move(a){$("nav ul li").eq(a).addClass("li1").siblings().removeClass("li1"),$("nav>img").eq(a).fadeIn("fast").siblings("nav>img").fadeOut("fast")}function operation(){x+=1,x>3&&(x=0),move(x)}var index=0,x=0;T=setInterval(operation,1e3),$("nav>img").eq(0).show(),$("nav ul li").mouseover(function(){index=$(this).index(),move(index)}),$("nav").mouseover(function(){clearInterval(T)}).mouseout(function(){T=setInterval(operation,1e3)});

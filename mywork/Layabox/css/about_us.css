@@ -1,0 +1,63 @@
+
+/*公司简介*/
+.introduce .container .row hgroup{color:#2a2a2a;padding-top:50px;}
+.introduce .container .row hgroup h1{font-size:1.9em;}
+.introduce .container .row hgroup h3{font-size: 1em;}
+.introduce .container .row figure{padding-bottom:20px;padding-top:1em;}
+.introduce .container .row figure img{margin:0px auto;}
+.introduce .container .row .pra p{font-size:0.8em;text-indent:20px;margin-top:10px;line-height:2;}
+
+/*公司招聘*/
+
+.recruit{background:#8cc11f;padding-top:3em;padding-bottom:1em;}
+.recruit .container .row article,.recruit .container .row .hr{color:#fff;}
+.recruit .container .row .hr button{color:#8cc11f;font-size:1.5em;margin:0.5em 0em;}
+.recruit .container .row h3{font-size:1.9em;padding-bottom:0.2em;color:#fff;}
+.recruit .container .row article p{font-size:0.8em;line-height:2;}
+.recruit .container .row .hr{font-size:0.8em;line-height:2;padding-bottom:2em;padding-top:1em;}
+
+/*招聘信息*/
+.recdetail .container .row{list-style:none;padding-left:0px;margin-bottom:0px;}  /*用ul加row类会有左内边距40px*/
+.recdetail .container .row>li{border-bottom:1px solid #d2d2d2;padding-top:3.5em; padding-bottom:3.5em;}
+
+.recdetail .container .row li>ul{list-style-type:decimal;}
+.recdetail .container .row li>ul>li{margin-top:1em;}
+.recdetail .container .row li>h3{font-size:1.9em; color:#8cc11f;padding-bottom:1em;}
+.recdetail .container .row li>h4{font-size:1.2em; color:#2a2a2a;margin-top:1em;}
+.recdetail .container .row>li:last-of-type{border-bottom:none ;}
+/*联系方式*/
+#contact{background:#f4f4f4;padding-bottom:4em;}
+#contact .container .row h3{font-size:1.9em;color:#2a2a2a;}
+#contact .container .row>div .container-fluid .row{background:#fff; border:2px solid #e3e3e3;border-radius:5px;padding:10px 0px;}
+#contact .container .row>div .container-fluid .row p{line-height:1;color:#2a2a2a;padding-top:4%;}
+#contact .container .row>div {margin-top:1.2em;}
+
+
+/* 小屏幕（手机，小于等于768px） */
+@media (max-width:767px) {
+ 
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+.introduce .container .row hgroup h1{font-size:2.5em;}
+.introduce .container .row figure{padding-bottom:4em;}
+.introduce .container .row hgroup h3{font-size: 1.9em;color:#666666;}
+.introduce .container .row .pra p{font-size:1em;text-indent:20px;margin-top:10px;line-height:2;}
+.recruit .container .row article{padding-top:1em;}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:992px) {
+.introduce .container .row hgroup{padding-bottom:2em;}
+.recruit .container .row article p{font-size:1.1em;line-height:2;}
+.recruit .container .row .hr{font-size:1.1em;line-height:2;padding-bottom:2em;padding-top:1em;}
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

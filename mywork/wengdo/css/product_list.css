@@ -1,0 +1,123 @@
+
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+               /*background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background:url(../images/case.gif) no-repeat;     
+                          }
+
+
+
+
+#main{    
+             width:1440px;
+              height:1311px;
+              margin:0px auto;
+              /* background:red;*/
+                                     }
+#main .content{   width:1209px;
+                  height:1311px;
+                  margin:0px auto;
+                  /*background:blue;*/}
+
+#main .content .nav{      
+                width:1150px;
+                height:42px;
+                margin:0px auto;    
+                            }
+#main .content .nav .navul{  width:1150px; height:42px;}
+
+#main .content .nav .navul .navli{ width:228px; height:42px; display:block; float:left;text-align:center; font:normal 18px/42px '微软雅黑';background:#cccccc;border-right:1px solid white; }
+#main .content .nav .navul .navli:first-of-type{margin-left:2px;}
+#main .content .nav .navul .navli:hover{background:#ffa72b;}
+.hover{background:#ffa72b!important;}
+#main .content .nav .navul .navli a{ text-decoration:none; color:white; } 
+
+#main .content .pic{
+                            width:1209px;
+                            height:971px;
+                            margin:0px auto;
+                           /* background:green;*/
+                            margin-top:5px;
+                            position:relative;
+                                                                  }
+#main .content .pic .picul{        width:1209px;
+                                 height:auto;
+                                 margin:0px auto;
+                                 display:none;
+
+                                                  }
+                                                  
+#main .content .pic .picul::after{display:block;clear:both; content:""; height:0px; visibility:hidden;}                                                  
+#main .content .pic .picul .picli{  
+                                      width:363px;
+                                      height:290px;
+                                      display:block;
+                                      float:left;
+                                      margin-left:30px;
+                                         margin-top:10px;
+
+                                                   }
+#main .content .pic .picul .picli a{   width:363px;
+                                      height:290px;
+                                      display:block;
+                                      /*background:url(../images/adver02.gif) no-repeat;*/
+                                     position:relative;
+                                    overflow: hidden;
+                                 
+
+
+                                                      }
+#main .content .pic .picul .picli a img{width:363px;height:290px;}
+ #main .content .pic .picul .picli a>span{display:block;position:absolute;left:0px; top:290px;background:rgba(0,0,0,0.6);width:363px;height:290px;text-align:center;line-height:290px;color:white;transition:all .3s ease-in .1s;-moz-transition:all .5s ease-in .1s;}
+ 
+ #main .content .pic .picul .picli a:hover span{top:0px;}
+                                                      
+#main .content .pic .picul1{
+                                      width:517px;
+                                      height:36px;
+                                      margin-left:365px;
+                                      margin-top:40px;
+
+                                   
+                                                        }
+#main .content .pic .picul1 .picli1 {
+                                        width:32px;
+                                        height:32px;
+                                        display:block;
+                                        border:1px solid #cccccc;
+                                        float:left;
+                                        line-height:32px;
+                                        text-align:center;
+                                        margin-left:4px;
+
+                                                  }
+#main .content .pic .picul1  #li01{ width:40px;
+                                    height:32px; }
+#main .content .pic .picul1  #li01 a{ 
+                                    width:40px;
+                                    height:32px;
+
+
+}
+#main .content .pic .picul1  #li02{ width:95px;
+                                    height:32px; }
+#main .content .pic .picul1  #li02 a{ width:95px;
+                                    height:32px; }
+
+
+#main .content .pic .picul1 .picli1 a{ width:32px;
+                                        height:32px;
+                                        display:block;
+                                        text-decoration:none;
+                                        color:#55555f; 
+                                                     }
+#main .content .pic .picul1 .picli1 a:hover{background:#ffac3b;}
+

@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+/*
+头部信息*/
+header{
+	
+	height: 2.15rem;
+	margin: 0 auto;
+    position:fixed;
+    top:0px;
+    width:7.5rem;
+    background:#fff;
+    z-index:99;
+}
+.replace{
+	height: 2.16rem;
+	margin: 0 auto;
+}
+
+header a{
+	
+	width: 1.23rem;
+	height: 0.55rem;
+	display: block;
+	border: 0.01rem solid #ff9344;
+	margin-left: 0.23rem;
+	margin-top: 0.48rem;
+	float: left;
+	border-radius: 0.2rem;
+	color: #000000;
+	line-height: 0.55rem;
+	text-align: center;
+	font-size: 0.26rem;
+}
+
+header form{
+	width: 2.7rem;
+	height: 0.55rem;
+	margin-left: 0.74rem;
+	margin-top: 0.4rem;
+	float: left;
+	position: relative;
+}
+header form input[type='text']{
+	width: 2.5rem;
+	height: 0.35rem;
+	border: none;
+	border-radius: 0.50rem;
+	font-size: 0.26rem;
+	line-height: 0.55rem;
+	font-family: "微软雅黑";
+	color: #777;
+	padding:0.2rem ;
+	text-align: center;
+	color:#000;
+	outline: none;
+}
+
+
+
+
+header .right{
+	
+	width:1.6rem;
+	height: 0.6rem;
+	border: 1px solid #ff9344;
+	float: right;
+	margin-right: 0.22rem;
+	margin-top: 0.45rem;
+	text-indent: 0.2rem;
+	line-height: 0.6rem;
+	font-size: 0.26rem;
+	font-family: "微软雅黑";
+	color: #000;
+	background: url(../images/sel_bg_06.gif) no-repeat 90% center;
+	background-size: 0.29rem 0.15rem; 
+	position:relative;
+	
+}
+header .right #location{
+	position:absolute;
+	top:0.6rem;
+	right:0 rem;
+	width:1.6rem;
+	height:auto;
+	border: 1px solid #ff9344;
+	text-indent: 0.2rem;
+	line-height: 0.6rem;
+	font-size: 0.26rem;
+	font-family: "微软雅黑";
+	color: #000;
+	display:none;
+	z-index:999;
+	background:#fff;
+}
+.hover{background:#eee;}
+
+header #form{
+	width: 2.7rem;
+	height: 0.55rem;
+	margin-left: 0.74rem;
+	margin-top: 0.4rem;
+	float: left;
+	position: relative;
+}
+header #form input[type='text']{
+	width: 2.5rem;
+	height: 0.35rem;
+	border: 0.015rem solid #ff9344;
+	border-radius: 0.50rem;
+	font-size: 0.24rem;
+	text-indent: -0.3rem;
+	line-height: 0.55rem;
+	font-family: "微软雅黑";
+	color: #777;
+	padding:0.2rem ;
+	outline: none;
+}
+
+
+header #form input[type='submit']{
+	width: 0.44rem;
+	height: 0.33rem;
+	position: absolute;
+	left: 2.3rem;	
+	top: 0.2rem;
+	border: none;
+	background: url(../images/sousuo_03.gif) no-repeat center center;
+	background-size: 0.44rem 0.33rem;
+	outline: none;
+}
+/*
+头部信息结束*/
+
+
+/*搜索关键词导航*/
+nav{width:7.5rem; height:2.15rem; margin:0 auto; }
+nav h2{font-size:0.26rem; width:1.4rem; height:0.57rem;margin:0rem auto;line-height:0.57rem; color:#000;}
+nav p{width:5.23rem;margin:0rem auto;}
+
+nav p a{display:block; width:1.23rem; height:0.62rem; text-align:center; line-height:0.62rem; color:#898989;background:#dcdcdc;font-size:0.2rem; float:left;margin-left:0.04rem; margin-top:0.03rem;}
+/*搜索关键词导航结束*/
+
+
+
+
+
+/*内容*/
+section{ width:7.5rem;margin:0rem auto;}
+
+/*引用顶部信息*/
+section .search .top{
+	
+	width: 7.5rem;
+	height: 0.6rem;
+	background: url(../images/find_pic&bg_03.gif) no-repeat 3% center;
+	background-size: 0.59rem 0.58rem;
+	margin-top: 0.0rem;
+
+
+
+}
+section .recommended .top{background: url(../images/find_pic&bg_20.gif) no-repeat 3% center;
+	background-size: 0.59rem 0.58rem;}
+
+
+section .search .top h3{
+	width: 7.5rem;
+	height: 0.6rem;
+	font-size: 0.3rem;
+	font-family: "微软雅黑";
+	color: #000;
+	text-indent: 0.86rem;
+	line-height: 0.6rem;
+	position: relative;
+	
+}
+
+section .search .top h3 a{
+	font-size: 0.24rem;
+	width: 1.5rem;
+	height: 0.32rem;
+	line-height: 0.32rem;
+	text-indent: 0.4rem;
+	display: block;
+	background: red;
+	position: absolute;
+	right: 0.15rem;
+	top: 0rem;
+	margin-top: 0.2rem;
+	background: url(../images/move_03.gif) no-repeat 80% center;
+	background-size: 0.25rem 0.29rem;
+
+}
+/*图片*/
+section .search figure{margin-left:0.22rem;margin-top:0.2rem;margin-bottom:0.26rem;}
+section .search figure a{ display:block;float:left; margin-left:0.11rem; margin-top:0.05rem;}
+section .recommended figure a{margin-left:0.24rem;}
+section .hot figure a:first-of-type{margin-left:0rem;}
+section .recommended figure a:first-of-type{margin-left:0rem;}
+
+/*内容结束*/
+
+
+
+
+
+
+
+/*页面底部*/
+
+footer{
+	width: 7.5rem;
+	height: 1.35rem;
+	position: fixed;
+	
+	bottom: 0rem;
+	background: #fff;
+
+	
+}
+
+
+
+
+footer dl{
+	
+	width: 0.74rem;
+	height: 1.35rem;
+	float: left;
+	margin: 0 0.46rem;
+	
+}
+
+footer dl.one{
+	
+	padding-left: 0.3rem;
+}
+
+footer dl dt a{
+	width: 0.74rem;
+	height: 0.76rem;
+	display: block;
+	background: url(../images/index_em_16.gif) no-repeat left center;
+	background-size: 0.74rem 0.76rem;
+	
+}
+footer dl dt .category{background: url(../images/index_pic_23.gif) no-repeat left center;background-size: 0.74rem 0.76rem;}
+footer dl dt .find{background: url(../images/find_pic&bg_35.gif) no-repeat 76% 50%;background-size: 0.74rem 0.76rem;}
+footer dl dt .mine{background: url(../images/index_pic_20.gif) no-repeat left center;background-size: 0.74rem 0.76rem;}
+
+footer dl dd a{
+	width: 0.74rem;
+	display: block;
+	color: #000000;
+	font-size: 0.26rem;
+	font-family: "微软雅黑";
+	margin-top: 0.07rem;
+	text-align: center;
+	
+	
+}

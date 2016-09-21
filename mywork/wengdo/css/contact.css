@@ -1,0 +1,156 @@
+/*contact页面开始*/
+
+
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+               /*background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background:url(../images/case.gif) no-repeat;     
+                          }
+
+/*内容部分*/
+
+
+
+#content{
+          width:1150px;
+          height:966px;
+          margin:0px auto;
+          background: #fbfbfb;
+          position:relative;
+
+}
+ 
+ #content .content_bar {             
+                            width:1150px;
+                            height:42px;
+                            margin:0px auto;
+                           /* background:blue;*/
+                            font:normal 14px/42px '微软雅黑';
+                            color:#999999;
+                              text-indent:10px;
+                                             }
+#content .content_bar a{text-decoration:none; color:#999999;}
+
+
+
+#content .content_left{ 
+                                      width:365px;
+                                      height:468px;
+                                    /*  background:red;*/
+                                      font:normal 14px/25px '微软雅黑' ;
+                                      color:#999999;
+                                      position:absolute;
+                                      left:100px;
+                                      top:59px;
+
+                                                     }
+ #content .content_left h2{     
+                                                width:131px;
+                                                height:30px;
+                                              color:#1b1d18;
+
+                                             
+
+                                                                 }
+#content .content_right {width:546px;
+                         height:535px;
+                         font:normal 12px/25px '微软雅黑';
+                         background:url(../images/contactus_03.gif) no-repeat 0% 0%;
+                        position:absolute;
+                       left:510px;
+                       top:45px;}
+                       
+ #content .content_right form p{
+   
+    position: relative;
+ 
+  }
+
+  .form_control {
+  	/*width:294px;
+  	height:32px;*/
+    /*border:1px solid #8d8d8d;*/
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    border: none;
+    width: 100%;
+  }
+
+  .form_control.active {
+    /*border: 1px #32BC61 solid;*/
+    /*background-color: #fff;*/
+  }
+
+  .form_control.error {
+ /*   border: 1px #f00 solid;*/
+   /* background-color: #FBF9BB;*/
+  }
+
+  .form_control.error input[type="text"],
+  .form_control.error input[type="password"] {
+    background-color: #FBF9BB;
+    color: #f00;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border: none;
+    outline: none;
+  }
+
+  .form_control .valid_message {
+    color: #32BC61;
+    position: absolute;
+    left: 325px;
+    top: 5px;
+    width: 200px;
+  }
+
+  .form_control.error .valid_message {
+    color: #f00;
+  }
+
+  .form_control.success .valid_message {
+    background: url(../images/sucess.png) no-repeat;
+    left: auto;
+    right: 5px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .none {
+    display: none;
+  }
+
+                   
+
+#content .content_right .input01{
+                                           width:294px;
+                                           height:32px;
+                                           border:1px solid #8d8d8d;
+}
+#content .content_right textarea{
+                                         width:524px;
+                                         height:117px;
+                                         border:1px solid #8d8d8d;
+                                         resize:none;
+                                                          }
+#content .content_right #send{
+                                    width:163px;
+                                     height:41px;
+                                      border:1px solid #8d8d8d;
+                                      background:#ff6d2f;
+                                      color:#fffdfd;
+									 margin-top:10px;
+                                                       }

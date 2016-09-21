@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>product_detail</title>
+	<meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/product_detail.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch-0.2.14.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth>=720) {
+		            	 docEl.style.fontSize ='100px';
+		            }else{
+		            	docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+		            }
+		            
+		        };
+		 
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</head>
+<body>
+	
+	<!--头部开始-->
+	<header>
+		<a href="index.html" class="logo">Back</a>
+		
+		<form action="#" id="form">
+			<input type="text" name="" id="" value="产品详细" />
+		</form>
+		
+		<a class="right favorite">
+			
+			
+				  
+		</a>
+			
+		
+	</header>
+	<div class="replace"></div>
+	<!--头部结束-->
+	<section>
+<!--	产品信息-->
+   <figure>
+   	<img src="images/product_detail_pic_07.png" alt="" />
+   	
+   	 <ul>
+   	 	<li class="price"><h3> ￥32      <a href="">购买</a></h3></li>
+   	 	<li class="respond"><h3>好评度<span>99%</span> <a href="">共605个评价></a></h3></li>
+   	 </ul>
+   	
+   </figure>
+
+
+
+<!--	产品信息-->
+	<div class="bar">适用商户  <a href="">></a></div>
+	<figure  class="clearfix">
+		<a href="">
+			<img src="images/product_detail_pic_11.png" alt="" />
+			<p>产钢店</p>
+		</a>
+		<dl  class="clearfix">
+			<dt><h4>万岁寿司</h4></dt>
+			 <dd class="star "><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><span>10分</span></dd>
+			 <dd class="location"><span>离你100m</span></dd>
+			 <a href="">查看详情</a>
+			 <a href="">进入</a>
+		</dl>
+		
+		
+	</figure>
+	<figure  class="clearfix">
+		<a href="">
+			<img src="images/product_detail_pic_14.png" alt="" />
+			<p>正佳店</p>
+		</a>
+		<dl  class="clearfix">
+			<dt><h4>万岁寿司</h4></dt>
+			 <dd class="star"><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" />   <span>10分</span></dd>
+			 <dd class="location"><span>离你100m</span></dd>
+			 <a href="">查看详情</a>
+			 <a href="">进入</a>
+		</dl>
+		
+		
+	</figure>
+	<figure class="clearfix">
+		<a href="">
+			<img src="images/product_detail_pic_16.png" alt="" />
+			<p>体育西店</p>
+		</a>
+		<dl  class="clearfix">
+			<dt><h4>万岁寿司</h4></dt>	
+			 <dd class="star"><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" /><img src="images/find_pic&bg_20.gif" alt="" />  <span>10分</span></dd>
+			 <dd class="location"><span>离你100m</span></dd>
+			 <a href="">查看详情</a>
+			 <a href="">进入</a>
+		</dl>
+		
+		
+	</figure>
+	
+	
+	
+	
+	
+	
+	<!--产品商家-->
+	
+	
+	<!--产品商家展示结束-->
+	
+	
+	</section>
+	
+	
+	
+	
+	
+	<footer>
+		
+	<dl class="one">
+			<dt><a href="index.html" class="top index"></a></dt>
+			<dd><a href="index.html" class="bottom">首页</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="category.html" class="top category"></a></dt>
+			<dd><a href="category.html" class="bottom">分类</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="find.html" class="top find"></a></dt>
+			<dd><a href="find.html" class="bottom">发现</a></dd>
+		</dl>
+		
+		<dl>
+			<dt><a href="mine.html" class="top mine"></a></dt>
+			<dd><a href="mine.html" class="bottom">我的</a></dd>
+		</dl>
+		
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+
+	
+</body>
+</html>

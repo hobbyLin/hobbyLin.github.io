@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>category</title>
+	<meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/mine.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch-0.2.14.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth>=720) {
+		            	 docEl.style.fontSize ='100px';
+		            }else{
+		            	docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+		            }
+		            
+		        };
+		 
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</head>
+<body>
+	
+	<!--头部开始-->
+	<header>
+		<a href="index.html" class="logo">Back</a>
+		
+		<form action="#" id="form">
+			<input type="text" name="" id="" value="我的" />
+		</form>
+		
+		<a class="right msg">
+			
+			<p class="amount">2</p>
+				  
+		</a>
+			
+		
+	</header>
+	<div class="replace"></div>
+	<!--头部结束-->
+	<section>
+	<!--个人信息-->
+	<div class="mine">
+		<div class="info">
+			<figure class="clearfix">
+				<a href="" class="img"><img src="images/mine_pic_03.gif" alt="" /></a>
+				 <h2><a href="">点击登录</a></h2>
+				 <a href="" class="arrow"><img src="images/mine_pic_06.gif" alt="" /></a>
+				 <p>常居住地未设置</p>
+				
+			</figure>
+		</div>
+		
+		<div class="mine_staff clearfix">
+			<ul>
+				<li class="myword"><a href="">我的点评</a></li>
+				<li class="mycollection"><a href="">我的收藏</a></li>
+				<li class="mydiscount"><a href="">我的优惠券</a></li>
+				
+			</ul>
+			
+		</div>
+		
+		
+	</div>
+	
+	
+	
+	<!--个人信息-->
+
+	<div class="bar wallet "><h3><a href="">我的钱包</a>	<a href="#">更多</a></h3></div>
+	<div class="bar comment "><h3><a href="">待点评</a>	<a href="#">更多</a></h3></div>
+	<div class="bar find_friend "><h3><a href="">找好友</a>	<a href="#">更多</a></h3></div>
+	<div class="bar path "><h3><a href="">我的足迹</a>	<a href="#">更多</a></h3></div>
+	<div class="bar set"><h3><a href="">设置</a>	<a href="#">更多</a></h3></div>
+	<div class="bar contact"><h3><a href="">联系</a>	<a href="#">更多</a></h3></div>
+	
+	<div class="exit">
+		<a href="" class="out">退出</a><a href="" class="reset">注销</a>
+	</div>
+	
+	
+	
+	</section>
+	
+	
+	
+	
+	<footer>
+		
+	<dl class="one">
+			<dt><a href="index.html" class="top index"></a></dt>
+			<dd><a href="index.html" class="bottom">首页</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="category.html" class="top category"></a></dt>
+			<dd><a href="category.html" class="bottom">分类</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="find.html" class="top find"></a></dt>
+			<dd><a href="find.html" class="bottom">发现</a></dd>
+		</dl>
+		
+		<dl>
+			<dt><a href="mine.html" class="top mine"></a></dt>
+			<dd><a href="mine.html" class="bottom">我的</a></dd>
+		</dl>
+		
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+
+	
+</body>
+</html>

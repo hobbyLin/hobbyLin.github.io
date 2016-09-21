@@ -1,0 +1,22 @@
+
+ul{list-style-type: none;}
+
+
+.subject button{width: 80px;height: 30px;text-align: center;line-height: 30px;font-size: 14px;}
+.subject{background: #f4f4f4;width: 1589px;padding:26px 0;padding-bottom:100px;margin:0 auto;}
+.subject .enroll{width: 1044px;height: 635px;padding: 0 13px;background: #fff;margin:auto;padding-bottom: 20px;box-shadow:0px 67px 50px -60px rgba(0,0,0,.7);}
+.subject .enroll .head li{display: inline-block;font-family: "微软雅黑";font-size: 16px;color: #999999;line-height: 60px;}
+.subject .enroll .head .li1{color: #555555;margin-left: 15px;}
+.subject .enroll .head .li3{float: right;}
+.subject .enroll .head li a{color: #999999;margin-right:17px;}
+.subject .enroll .head{padding: 0 13px;border-bottom: 1px solid #C0C0C0;}
+.subject .enroll .form{width: 420px;margin: 0 auto;padding-top: 25px;padding-bottom: 40px;}
+.subject .enroll .form td{width: 150px;height: 30px;margin:25px 5px;text-align: right;padding: 20px 0px;text-align: left;}
+.subject .enroll .form .td{text-align: right;font-family: "微软雅黑";color: #555555;font-size: 16px;}
+.subject .enroll .form .td span{color: red;padding-right: 5px;}
+.subject .enroll .form table{border-style: ;}
+.subject .enroll .form td span{margin-left: 5px;}
+.biaodan{border-bottom: 1px solid #C0C0C0;}
+.subject .enroll .shortcut{width: 220px;margin: auto;font-size: 16px;color: #555555;}
+.subject .enroll .shortcut .kjie{margin-top: 10px;line-height: 75px;position: relative;top:-5px;}
+

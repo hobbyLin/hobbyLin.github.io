@@ -1,0 +1,55 @@
+/*头部*/
+
+header ul li:nth-of-type(7)>a{background:#dedede;height:71px;}
+
+/*导航*/
+.wrapper{background:none;}
+
+nav{background:url(../images/friend_link_bg_02.gif) no-repeat;box-shadow:-0px 2px 10px -0px #003359;height:519px;}
+nav .title{position:absolute; left:310px; top:146px;}
+
+
+/*内容部分*/
+
+section{width:1500px; height:746px; margin:0 auto; }
+section .inner{width:1000px; height:auto; margin:0 auto;}
+section .inner::before{display:block; height:55px;content:""; visibility:hidden;}
+section .inner h2{font-size:20px; margin-left:50px;}
+section .inner .main{width:680px; height:auto; margin:0 auto; position:relative;}
+section .inner .main .bar{width:680px; height:27px; margin:0 auto; background:#efefef;line-height:27px; }
+section .inner .main .bar em{color:#a0a0a0; font-size:22px; font-family:Plantagenet Cherokee;}
+section .inner .main .site{width:680px; height:auto; margin:0 auto; margin-top:50px;}
+section .inner .main .site .website{float:left;margin-left:5px;margin-top:5px; position:relative;	}
+section .inner .main .site .website .hidden{position:absolute;left:0px; top:0px;text-align:center;display:none;}
+
+section .inner .main .site .website .hidden a{color:white; font-size:16px;width:88px; height:51px;display:inline-block;}
+
+section .inner .main .site .website article h3{font-size:14px;}
+section .inner .main .site .website article p{font-size:10px;}
+section .inner .main .site .site1 article,section .inner .main .site .site3 article{margin-left:29px; margin-top:57px;}
+section .inner .main .site .site2 article{margin-left:29px; margin-top:130px;}
+section .inner .main .site .site4 article,section .inner .main .site .site6 article{margin-left:27px; margin-top:100px;}
+section .inner .main .site .site5 article{margin-left:32px; margin-top:39px;}
+section .inner .main .site .site7 article{text-align:center;margin-left:66px; margin-top:36px;}
+section .inner .main .site .site8 article{text-align:center;margin-top:30px;}
+section .inner .main .site .site1{width:281px; height:221px;background:url(../images/friendlink_pic_03.gif) no-repeat;margin-left:0px;}
+section .inner .main .site .site2{height:221px;width:212px;background:url(../images/friendlink_pic_05.gif) no-repeat;}
+section .inner .main .site .site3{height:221px;width:174px;background:url(../images/friendlink_pic_07.gif) no-repeat;}
+section .inner .main .site .site4{width:221px;height:175px;background:url(../images/friendlink_pic_15.gif) no-repeat;margin-left:0px;}
+section .inner .main .site .site5{height:175px;width:174px;background:url(../images/friendlink_pic_17.gif) no-repeat;}
+section .inner .main .site .site6{height:175px;width:271px;background:url(../images/friendlink_pic_13.gif) no-repeat;}
+section .inner .main .site .site7{width:540px; height:91px;background:#e6e6e6; margin-left:0px;}
+section .inner .main .site .site8{width:130px; height:91px;background:#e6e6e6;}
+section .inner .main .site .site1 .hidden{width:281px; height:221px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site2 .hidden{height:221px;width:212px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site3 .hidden{height:221px;width:174px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site4 .hidden{width:221px;height:175px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site5 .hidden{height:175px;width:174px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site6 .hidden{height:175px;width:271px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site7 .hidden{width:540px; height:91px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .site8 .hidden{width:130px; height:91px;background:url(../images/friendlink_bg_03.gif);}
+section .inner .main .site .website .nobg{background:none;}
+section .inner .main .site .website:hover .hidden{display:block;opacity:0.7;}
+section .inner .main .site .website:hover .nobg{display:block;opacity:1;}
+
+

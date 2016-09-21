@@ -1,0 +1,114 @@
+
+/*广告页面*/
+
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+               /*background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background:url(../images/case.gif) no-repeat;     
+                          }
+/*广告页面*/
+
+
+#content{
+           width:1150px;
+           height:900px;
+           margin:0 auto;
+          /* background:yellow;*/
+}
+#content .bar{  width:1150px;
+                height:40px;
+                margin:0px auto;
+                /*background:red;*/
+                font:normal 14px/40px '微软雅黑';
+                color:#6e7070;
+                text-indent:15px;
+             }
+#content .bar a{text-decoration:none;color:#6e7070; }
+
+#content .main{ width:1148px;
+                height:521px;
+                margin:0px auto;
+                background:#ffffff;
+                border:1px solid #cccccc;
+                border-bottom:none;}
+
+#content .main .left{
+                       width:626px;
+                       height:315px;
+                      /* background:blue;*/
+                       float:left;
+                       margin-left:45px;
+                       margin-top:64px;                 }
+ #content .main .left .left_bar{   
+                                  width:626px;
+                                  height:38px;
+                                  /*background:yellow;*/
+                                  margin:0 auto;
+                                  border-bottom:1px solid #eaeaea;
+
+                                                    }
+#content .main .left .left_bar .bar01{
+                                          width:130px;
+                                          height:38px;
+                                          margin-left:0px;
+                                          /*background:green;*/
+                                          border-bottom:1px solid #00ae50;
+                                          color:#00ae50;
+                                          font:normal 18px/38px '微软雅黑';
+                                          text-align:center;
+                                                    }
+#content .main .left table{ }
+
+#content .main .left .td{    
+                              width:60px;
+                              height:36px;
+                              font:normal 13px/36px '微软雅黑';
+                               color:#666666;
+                                                 }
+ #content .main .left .td02{   font:normal 11px '微软雅黑'; color:#cccccc;}
+
+#content .main .left .td02 a{text-decoration:none; color:#cccccc;}
+#content .main .left td input{  width:239px;
+                                height:34px;
+                                border:1px solid #cccccc;
+                                color:#cccccc;}
+#content .main .left #codebig{ background:url(../images/user_reg_03.gif) no-repeat 39% 50%; width:288px;}
+
+#content .main .left td #code{ width:78px;}
+#content .main .left td #login{ width:192px; height:43px; background:#00ae50; color:white;}
+
+
+#content .main .right{  width:172px;
+                         height:375px;
+                        /* background:green;*/
+                         float:left;
+                         font:normal 13px '微软雅黑';
+                               color:#666666;  
+                               margin-top:64px;
+                               margin-left:30px;  
+                               border-left:1px dashed #eaeaea;                 }
+
+#content .main .right a{ width:95px;
+                             height:34px;
+                             display:block;
+                             text-decoration:none;
+                             text-align:center;
+                             border:1px solid #cccccc; 
+                             background:#eaeaea;
+                            font:normal 13px/34px '微软雅黑'; 
+                            color:#666666;  
+                             margin-left:20px;  }                   
+
+
+
+
+
+

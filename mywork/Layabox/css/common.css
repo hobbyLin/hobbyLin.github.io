@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+
+body {
+	  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	  color: #666;
+
+}
+
+
+
+
+
+
+
+/*头部*/
+nav.navbar{
+	border-radius:0px;	
+	margin-bottom:0px;
+}
+
+
+nav .navbar-brand{
+	padding: 0px;
+	
+	padding-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*尾部*/
+footer{background:#3b3b3b;}
+footer p{padding-top:10px; text-align: center;}
+footer p>a{padding:0px 5px 0px 5px;}
+footer span{font-size:8px;text-align:center;}
+footer p>a,footer span{  color: #a1a3ab;}
+footer div.contact{display:none;}
+footer .container{padding-bottom:30px;padding-top:20px;}
+
+/* 小屏幕（手机，小于等于768px） */
+@media (max-width:768px) {
+ 
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+ nav .navli a{
+	padding:15px 5px;
+}
+ 
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:993px) {
+		 nav .navli a{
+	padding:15px 15px;
+}
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+ .engine div.container{
+	background: url(../images/pic_03.png) no-repeat 86% 128%;
+	padding-bottom:90px;
+}
+div.engine div.container>h2{font-size:40px;text-align:left;
+		color: #0078d7;
+    font-weight: bold;
+    padding-top: 95px;}
+div.engine div.container>h3{
+	    font-size: 30px;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom:20px;
+    text-align:left;
+}
+.engine div.container .media .media-body h4{       font-size: 19px;
+    color: #333;margin-bottom:15px;}
+.engine div.container .media .media-body{     font-size: 14px;
+    color: #666;}
+.laybox .container{background:url(../images/advantige_03.png) no-repeat 22% 76%; padding-bottom:70px;}
+
+.partner .container .row a{margin-top:20px;}
+
+footer .container .row span{text-align:left;}
+footer .container .row p{text-align:left;}
+footer .container .row .contact{display:block;margin-top:20px;}
+footer .container .row .contact>a{float:right;margin-right:20px;display:block;}
+footer .container .row .contact>a:first-of-type{}
+footer .container .row .contact .wechat{position:relative;}
+
+footer .container .row .contact>a img.hidpic{display:none;position: absolute;left:-51px; top:-156px;}
+footer .container .row .contact .wechat:hover  img.hidpic{display:block;}
+
+}

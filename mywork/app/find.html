@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>find</title>
+	<meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/find.css" />
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch-0.2.14.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function (doc, win) {
+		    var docEl = doc.documentElement,
+		        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		        recalc = function () {
+		            var clientWidth = docEl.clientWidth;
+		            if (!clientWidth) return;
+		            if (clientWidth>=720) {
+		            	 docEl.style.fontSize ='100px';
+		            }else{
+		            	docEl.style.fontSize = 100 * (clientWidth / 720) + 'px';
+		            }
+		            
+		        };
+		 
+		    // Abort if browser does not support addEventListener
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvt, recalc, false);
+		    doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+	</script>
+</head>
+<body>
+	
+	<!--头部开始-->
+	<header>
+		<a href="index.html" class="logo">Back</a>
+		
+		<form action="#" id="">
+			<input type="text" name="" id="" value="发现" />
+		</form>
+		
+		<div class="right" id="where">
+			
+			<p id = "here">广州市</p>
+			<div id="location">
+				<p>深圳市</p>
+				<p>北京市</p>
+				<p>上海市</p>
+				<p>西安市</p>				
+			</div>
+			
+			
+			
+		</div>
+		<script type="text/javascript">
+			touch.on('#where', 'tap', function(ev){
+			console.log(ev.type);
+			$("#location>p").removeClass("hover");
+			$("#location").fadeIn();
+			});
+			
+			touch.on('#location>p', 'touchmove', function(ev){
+			console.log("yidong");
+			$(this).addClass("hover").siblings().removeClass("hover");
+			   
+			});
+			
+			touch.on('#location>p', 'tap', function(ev){
+			console.log("你点击了额");
+			ev.stopPropagation();
+			$(this).addClass("hover").siblings().removeClass("hover");
+			 $("#location").fadeOut()
+			 var adrr1 = $(this).html();
+			 var adrr2 =$("#here").html();
+			$("#here").html(adrr1);
+			    $(this).html(adrr2);
+			});
+
+
+		</script>
+		<form action="#" id="form">
+			<input type="text" name="" id="" placeholder="请输入商品名称" />
+			<input type="submit" value="" />
+		</form>
+	</header>
+	<div class="replace"></div>
+	<!--头部结束-->
+	
+	
+	<!--搜索关键词-->
+	
+		<nav>
+		<h2>大家都在搜</h2>
+		<p>
+			<a href="">寿司</a>
+			<a href="">羽毛球</a>
+			<a href="">火锅</a>
+			<a href="">游泳馆</a>
+			<a href="">电影</a>
+			<a href="">周黑鸭</a>
+			<a href="">KYV</a>
+			<a href="">肯德基</a>
+			
+		</p>
+		
+	</nav>
+	
+	
+	
+	<!--搜索关键词-->
+	
+	
+	<!--搜索展示-->
+	<section>
+		<div class="search hot">
+			<div class="top">
+				<h3>热门搜索	<a href="#">更多</a></h3>				
+			</div>
+			<figure class="clearfix">
+				<a href=""><img src="images/find_pic&bg_07.gif" alt="" /></a>
+				<a href=""><img src="images/find_pic&bg_09.gif" alt="" /></a>
+				<a href=""><img src="images/find_pic&bg_12.gif" alt="" /></a>
+				<a href=""><img src="images/find_pic&bg_14.gif" alt="" /></a>
+				
+			</figure>
+		</div>
+		<div class="search recommended">
+			<div class="top">
+			<h3>推荐搜索	<a href="#">更多</a></h3>				
+			</div>
+			<figure class="clearfix">
+			<a href=""><img src="images/find_pic&bg_24.gif" alt="" /></a>
+			<a href=""><img src="images/find_pic&bg_26.gif" alt="" /></a>
+			<a href=""><img src="images/find_pic&bg_29.gif" alt="" /></a>
+			
+			
+			</figure>
+		</div>
+		
+		
+		
+	</section>
+	
+		
+	
+	<!--搜索展示结束-->
+	
+	
+	
+	
+	
+	
+	
+	
+	<footer>
+		
+	<dl class="one">
+			<dt><a href="index.html" class="top index"></a></dt>
+			<dd><a href="index.html" class="bottom">首页</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="category.html" class="top category"></a></dt>
+			<dd><a href="category.html" class="bottom">分类</a></dd>
+		</dl>
+		<dl>
+			<dt><a href="find.html" class="top find"></a></dt>
+			<dd><a href="find.html" class="bottom">发现</a></dd>
+		</dl>
+		
+		<dl>
+			<dt><a href="mine.html" class="top mine"></a></dt>
+			<dd><a href="mine.html" class="bottom">我的</a></dd>
+		</dl>
+		
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+
+	
+</body>
+</html>

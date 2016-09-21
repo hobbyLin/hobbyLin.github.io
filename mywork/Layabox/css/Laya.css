@@ -1,0 +1,53 @@
+@charset "utf-8";
+div>img{margin:0px auto;}
+
+/*layaair*/
+.layaflash{background:#8bc01f;padding-top:3em;padding-bottom:3em;}
+.layaflash .container .row>div{color:#fff;}
+.layaflash .container .row>div .h1{}
+.layaflash .container .row>div .h1 .number01{font-size:48px;color:#8bc01f;padding:0px 14px;background:#fff;border-radius:3px;}
+.layaflash .container .row>div .h1 .header{font-size:1.3em;padding:0px 10px;}
+.layaflash .container .row>div .layaflash-intro .h2{font-size:2em;line-height:1.5;}
+.layaflash .container .row>div .layaflash-intro ul li{font-size:1.1em; line-height:2;margin-top:0.8em;}
+.layaflash .container .row>div .layaflash-intro .h3_btn a{color:#8bc01f;}
+/*layaplaer*/
+
+.layaplayer{background:#3393df; padding-top:3em; padding-bottom:3em;}
+.layaplayer .container .row>div{color:#fff;}
+.layaplayer .container .row>div .h1{}
+.layaplayer .container .row>div .h1 .number02{font-size:48px;color:#3393df;padding:0px 12px;background:#fff;border-radius:3px;}
+.layaplayer .container .row>div .h1 .header{font-size:1.3em;padding:0px 10px;}
+.layaplayer .container .row>div .layaplayer-intro p{line-height:2;}
+
+
+/*openandpublic*/
+.air-open,.store-pub{padding-bottom:3em; padding-top:3em;color:#3393df;}
+.air,.open,.store,.publish{padding-top:1em; padding-bottom:1em;}
+.store-pub{background:#f7f7f7;}
+.number03,.number04,.number05,.number06{font-size:30px;color:#fff;padding:0px 10px;background:#3393df;border-radius:3px;}
+.air-open .header,.store-pub .header{font-size:1.0em;padding:0px 10px;color:#3393df;}
+.air>p,.open>p,.store>p,.publish>p{color:#5d5d5d;line-height:2.1;}
+.air h4:first-of-type,.open h4:first-of-type,.store h4:first-of-type,.publish h4:first-of-type{color:#5d5d5d;}
+
+/* 小屏幕（手机，小于等于768px） */
+@media (max-width:767px) {
+ 
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+.air>p,.open>p,.store>p,.publish>p{height:78px;}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:992px) {
+
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

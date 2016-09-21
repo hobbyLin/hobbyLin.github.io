@@ -1,0 +1,195 @@
+
+/* CSS Document */
+
+.slideBox{ width:1069px; height:311px; overflow:hidden; position:relative; border:1px solid #ddd;margin: 0 auto;}
+.slideBox .hd{ height:15px; overflow:hidden; position:absolute; left:535px; bottom:5px; z-index:1; }
+.slideBox .hd ul{ overflow:hidden; zoom:1; float:left;}
+.slideBox .hd ul li{ float:left; margin-right:2px;border-radius: 10px; width:15px; height:15px; line-height:14px; text-align:center; background:#fff; cursor:pointer; }
+.slideBox .hd ul li.on{ background:#f00; color:#fff; }
+.slideBox .bd{ position:relative; height:100%; z-index:0;   }
+.slideBox .bd li{ zoom:1; vertical-align:middle; }
+.slideBox .bd img{ width:1069px; height:311px; display:block;  }
+
+
+.box{
+	width:1590px;
+	height:1890px;
+	border:1px solid #CCC;
+	background:#f4f4f4;
+	margin:0 auto;
+}
+.content{
+    width:1070px;
+	height:1830px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin:0 auto;
+	font-family:"微软雅黑";
+	margin-top:30px;
+}
+.content_left span a{
+	margin:23px 0px 20px 28px;
+	display:inline-block;
+	font-size:16px;
+	color:#555555;
+	text-decoration:none;
+} 
+.content_left{
+	width:686px;
+	height:auto;
+	float:left;
+}
+.content_left .line{
+	width:686px;
+	height:1px;
+	background-color:#ccc;
+	margin-left:28px;
+}
+.content_left .art{
+	font-size:40px;
+	color:#555555;
+	margin:25px 0px 25px 28px;
+}
+.content_left .sink{
+	width:660px;
+	height:1px;
+	background-color:#ccc;
+	margin-left:28px;
+	clear:left;
+}
+.content_left img{
+	margin:30px 23px 30px 41px;
+	float:left;
+}
+.content_left .text {
+	margin-top:25px;
+	font-size:22px;
+	color:#555555;
+}
+.content_left .file{
+	font-size:12px;
+	color:#999999;
+	line-height:50px;
+}
+.content_left .txt{
+	font-size:14px;
+	color:#828282;
+	margin-bottom:65px;
+}
+.content_left a.more{
+	border:1px solid #CCC;
+	display:inline-block;
+	width:60px;
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	font-size:12px;
+	border-radius:5px;
+	font-family:"微软雅黑";
+	float:right;
+	text-decoration:none;
+	color:#86878c;
+	margin-top:-5px;
+}
+.content_left a.GD{
+	display:inline-block;
+	width:50px;
+	margin:20px 530px;
+	text-decoration:none;
+	color:#666;
+}
+.content_right{
+	width:300px;
+	height:auto;
+	float:right;
+	margin-top:127px;
+	margin-right:30px;
+}
+.content_right span {
+	font-size:22px;
+	color:#555;
+	text-decoration:none;
+}
+.content_right .think{
+	width:300px;
+	height:1px;
+	background-color:#ccc;
+	margin-top:10px;
+
+}
+.content_right ul li{
+	list-style-type:none;
+	line-height:50px;
+	font-size:14px;
+	list-style-image:url(../images/catonese_culture_arrow_03.jpg);
+}
+.content_right ul li a{
+	text-decoration:none;
+	color:#828282;
+}
+.content_right ul{
+	padding:0px;
+	padding-left:15px;
+	margin-bottom: 10px;
+}
+.slideTxtBox ul li img{
+	margin:28px 3px -10px -15px;
+	float:left;
+}
+.slideTxtBox ul li span.time{
+	font-size:14px;
+	color:#555;
+	margin:25px 10px 13px 15px;	
+}
+.slideTxtBox ul li span.date{
+	font-size:12px;
+	color:#c2c2c2;
+	margin-left:15px;
+}
+.slideTxtBox ul li.two{
+	clear:left;
+}
+.slideTxtBox ul li.three{
+	clear: left;
+}
+
+.slideTxtBox{ 
+    width:322px;
+    height:350px; 
+    text-align:left;float:
+    left;margin-left:40px;
+}
+.slideTxtBox .hd{ 
+	height:30px; 
+	line-height:30px; 
+	background:#f4f4f4; 
+	padding:0 10px 0 20px; 
+	border-bottom:1px solid #ddd;  
+	position:relative; 
+}
+.slideTxtBox .hd ul{ float:left; 
+	position:absolute; 
+	left:20px; 
+	top:-1px; 
+	height:32px;
+}
+.slideTxtBox .hd ul li{ 
+	float:left; 
+	padding:0 15px; 
+	cursor:pointer;
+	width:110px;
+}
+.slideTxtBox .hd ul li.on{ 
+	height:30px; 
+	background:#fff; 
+	border:1px solid #ddd; 
+	border-bottom:2px solid #fff; 
+}
+.slideTxtBox .bd ul{ 
+	padding:15px;  
+	zoom:1;
+}
+.slideTxtBox .bd li{ 
+	height:24px;
+	line-height:24px;
+}

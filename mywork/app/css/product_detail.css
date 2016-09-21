@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+header{
+	
+	height: 1.15rem;
+	margin: 0 auto;
+    position:fixed;
+    top:0px;
+    width:7.5rem;
+    background:#fff;
+    z-index:9999;
+}
+.replace{
+	height: 1.16rem;
+	margin: 0 auto;
+}
+
+header a:first-of-type{
+	
+	width: 1.23rem;
+	height: 0.55rem;
+	display: block;
+	border: 0.01rem solid #ff9344;
+	margin-left: 0.23rem;
+	margin-top: 0.48rem;
+	float: left;
+	border-radius: 0.2rem;
+	color: #000000;
+	line-height: 0.55rem;
+	text-align: center;
+	font-size: 0.26rem;
+}
+
+header form{
+	width: 2.7rem;
+	height: 0.55rem;
+	margin-left: 0.78rem;
+	margin-top: 0.4rem;
+	float: left;
+	position: relative;
+}
+header form input[type='text']{
+	width: 2.5rem;
+	height: 0.35rem;
+	border: none;
+	border-radius: 0.50rem;
+	font-size: 0.26rem;
+	line-height: 0.55rem;
+	font-family: "微软雅黑";
+	
+	padding:0.2rem ;
+	text-align: center;
+	color:#000;
+}
+
+
+
+
+header .right{
+	
+	width:0.48rem;
+	height: 0.48rem;
+	display:block;
+	float: right;
+	margin-right: 0.22rem;
+	margin-top: 0.57rem;
+	
+	font-size: 0.26rem;
+	font-family: "微软雅黑";
+	color: #fff;
+	background: url(../images/product_detail_pic_03.png) no-repeat 50% 50%;
+	background-size: 0.48rem 0.48rem; 
+	position:relative;
+}
+header .right .amount{position:absolute; left:0.37rem; top:-0.14rem;width:0.27rem;height:0.27rem;border-radius:50%;background:#fa5050;
+                      text-align:center; line-height:0.27rem; font-size:0.2rem;}
+
+
+
+section{width:7.5rem; margin:0 auto;}
+section figure:first-child{width:7.04rem;}
+
+section figure:first-child ul{height:2.18rem;}
+section figure:first-child ul .price h3{height:1.37rem;line-height:1.37rem; color:#ff9344;font-size:0.72rem;text-indent:0.1rem; }
+section figure:first-child ul .price h3 a{display:block; color:#fff;  width:1.07rem; height:0.55rem;float:right;font-size:0.3rem;background:#ff9344;line-height:0.55rem;text-align:center;border-radius:0.1rem;
+                                           margin-top:0.3rem; margin-right:0.2rem;}
+                                           
+section figure:first-child ul .respond h3{height:0.62rem;line-height:0.62rem;font-size:0.3rem;color:#000;background:url(../images/find_pic&bg_20.gif) no-repeat 3% 50%; background-size:0.38rem 0.38rem; text-indent:0.6rem;}
+
+section figure:first-child ul .respond h3 span{color:#ff9344;}
+
+section figure:first-child ul .respond h3  a{display:block; height:0.62rem; float:right;font-size:0.26rem;margin-right:0.2rem;}
+
+
+
+section .bar{width:6.65rem; height:0.69rem; font-size:0.3rem; color:#fff; line-height:0.69rem;background:#ff9344; margin:0rem auto;text-indent:0.2rem;}
+
+section .bar a{display:block; height:0.69rem; float:right; color:#fff; font-size:0.40rem;}
+
+section figure{width:6.65rem; margin:0rem auto; font-size:0.26rem;margin-top:0.1rem; }
+section figure>a{display:block; float:left; margin-right:0.27rem;width:1.76rem; height:1.76rem; position:relative; z-index:99;}
+section figure>a img{width:1.76rem; height:1.76rem;}
+section figure>a p{width:1.76rem; height:0.37rem;position:absolute; top:0.95rem;text-align:center; line-height:0.37rem;background:rgba(255,255,255,0.6); }
+section figure dl{position:relative;  z-index:0;}
+section figure dl dt h4{font-size:0.3rem; color:#000; }
+section figure dl dd{margin-top:0.1rem;}
+section figure dl .star{height:0.34rem; }
+section figure dl .star img{width:0.34rem; height:0.34rem; float:left;}
+section figure dl .star span{display:inline-block; height:0.34rem; line-height:0.34rem;  float:left;}
+
+section figure dl a:first-of-type{display:block; margin-top:0.15rem;}
+section figure dl a:last-of-type{display:block; width:1.09rem; height:0.56rem; background:#ff9344;color:#fff;font-size:0.3rem; border-radius:0.2rem;text-align:center; line-height:0.56rem;position:absolute;left:5.54rem; top:0.71rem;}
+
+
+
+
+
+
+
+
+
+
+
+footer{
+	width: 7.5rem;
+	height: 1.35rem;
+	position: fixed;
+	
+	bottom: 0rem;
+	background: #fff;
+    z-index:9999;
+	
+}
+
+
+
+
+footer dl{
+	
+	width: 0.74rem;
+	height: 1.35rem;
+	float: left;
+	margin: 0 0.46rem;
+	
+}
+
+footer dl.one{
+	
+	padding-left: 0.3rem;
+}
+
+footer dl dt a{
+	width: 0.74rem;
+	height: 0.76rem;
+	display: block;
+	background: url(../images/index_em_16.gif) no-repeat left center;
+	background-size: 0.74rem 0.76rem;
+	
+}
+footer dl dt .category{background: url(../images/index_pic_23.gif) no-repeat left center;background-size: 0.74rem 0.76rem;}
+footer dl dt .find{background: url(../images/index_pic_18.gif) no-repeat 76% 50%;background-size: 0.74rem 0.76rem;}
+footer dl dt .mine{background: url(../images/index_pic_20.gif) no-repeat left center;background-size: 0.74rem 0.76rem;}
+
+footer dl dd a{
+	width: 0.74rem;
+	display: block;
+	color: #000000;
+	font-size: 0.26rem;
+	font-family: "微软雅黑";
+	margin-top: 0.07rem;
+	text-align: center;
+	
+	
+}

@@ -1,0 +1,143 @@
+.aside{
+	position:static;
+	width:100%;
+	background:#29343a;
+	color:#fff;
+	padding:10px 0;
+	border:2px solid #fff;
+	border-radius:6px;
+	box-shadow: 1px 1px 5px #555;
+}
+.img-mid{
+	width:30%;
+	margin:0 auto;
+}
+.aside h4{color:#fff;font-size:5vw;font-family:"微软雅黑";}
+.hideword{display:none;}
+
+
+.content{width:100%;}
+/*education*/
+.education{
+	width:100%;
+	border-radius:6px;
+	padding:10px 5px;
+	border:2px solid #29343a;
+	box-shadow: 1px 1px 5px #555;
+	margin-top:20px;
+}
+.education h5{
+	font-weight:bold;
+	color:#29343a;
+	font-size:5vw;
+	padding:5px 0px;
+}
+.education p{
+	font-size:3vw;
+	padding:5px 0px;
+}
+
+footer{
+	width:100%;
+	border-radius:6px;
+	padding:10px 5px;
+	border:10px solid #29343a;
+	box-shadow: 1px 1px 5px #555;
+	margin-top:10px;
+}
+.love{display:none;}
+
+/*作品区*/
+section.mywork{width:100%;background:#29343a;	border:10px solid #fff;
+	border-radius:6px;
+	box-shadow: 1px 1px 5px #555;
+	margin-top:20px;}
+section.mywork h4{
+		font-weight:bold;
+	color:#fff;
+	font-size:5vw;
+	padding:20px 0px;
+}
+	
+
+section.mywork figure{width:60%;margin:0px auto!important;padding:20px 0px!important;}
+
+section.mywork figure img{width:100%;border:5px solid #fff;box-shadow: 1px 1px 5px #aaa;}
+section.mywork figure a{display:block;}
+
+
+
+/* 小屏幕（手机，小于等于768px） */
+@media (max-width:767px) {
+ 
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+.aside{position: fixed;
+	height:100%;
+	width:20%;		
+	}
+.img-mid{
+	width:60%;	
+}	
+.aside h4{font-size:2vw;padding:8px 0px;}
+.aside p{width:80%;margin:0px auto;margin-top:15px;}
+
+
+.hideword{display:block;}
+	
+.content{width:80%;float:right;}
+.education{
+
+	margin-top:0px;
+}
+.education h5{
+
+	font-size:3vw;
+
+}
+.education p{
+	font-size:1.5vw;
+	
+}
+section.mywork{background:#fff;	border:2px solid #29343a;
+}
+section.mywork h4{
+		
+	color:#29343a;
+	font-size:3vw;
+	
+}
+	
+
+
+
+section.mywork figure img{border:2px solid #29343a;border-radius:7px;}
+
+	
+  footer{
+   	width:80%;
+   	float:right;
+   	border:2px solid #fff;
+   	background:#29343a;
+   	color:#fff;
+   }
+.adr{display:none;}
+.love{display:block;}
+}
+ 
+
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:992px) {
+
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

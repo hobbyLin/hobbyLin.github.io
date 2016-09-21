@@ -1,0 +1,25 @@
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,select,textarea,button,th,td,figure,figcaption{margin:0;padding:0;}
+ul,dl,ol{list-style:none;}
+img,input[type="submit"]{border:0 none;}
+em{font-style:normal;}
+strong{font-weight:normal;}
+table{border-collapse:collapse;border-spacing:0;}
+button,input[type="button"]{cursor:pointer;border:0 none;}
+a,button,input,img{-webkit-touch-callout:none;}
+img{pointer-events:none;/*禁止图片的点击事件，例如长按保存图片*/}
+input,select,textarea{outline:none;}
+a{text-decoration:none;}
+.fl{ float: left}  /*左浮动*/
+.fr{ float: right} /* 右浮动*/
+.clear{clear:both;} 
+.clearfix:after {content: ""; display: block; height:0; clear:both; visibility: hidden;}  /*清除浮动*/
+html,body{
+/*禁止用户选择元素*/
+-moz-user-select:none;
+ -webkit-user-select: none;
+-ms-user-select: none;
+ -khtml-user-select:none; /*禁止元素点击出现半透明黑色背景*/
+ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+html {height: 100%;width: 100%;outline: 0;-webkit-text-size-adjust:none;}
+body {height: 100%;margin: 0;position: relative;/*overflow: hidden;*/font-family: 'Arial', 'Microsoft YaHei'!important;}
+

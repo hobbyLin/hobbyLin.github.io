@@ -1,0 +1,67 @@
+
+/*头部*/
+
+header ul li:first-of-type>a{background:#dedede;height:71px;}
+
+/*导航部分*/
+
+nav{background:url(../images/banner_01.gif) no-repeat; }
+nav .video{position:absolute; left:310px; top:336px;}
+nav .video a+a img{ border-radius:5px;}
+nav .video a:first-child img{display:block; border:3px solid #fff;box-shadow:6px 5px 12px 2px rgba(255,255,255,.7);margin-bottom:20px;}
+nav .video a:last-child img{margin-left:6px;}
+nav>a.vote{display:none;width:150px; height:43px; background:url(../images/index_nav_bg_bg_03.gif) repeat-x;font-size:16px;color:#fff; line-height:43px; text-align: center;border-radius:7px;position:absolute;left:301px; top:293px;} 
+
+
+
+/*主体*/
+
+
+section{width:1500px; height:891px; margin:0 auto; }
+section .new{width:1500px; height:34px; margin:0 auto;text-align:center;line-height:34px;color:#c3c3c3;position:relative; }
+section .new .blue{width:1040px;height:34px;background:#003b66;transform:skewx(30deg);position:absolute;left:222px;top:0px;z-index:0;}
+section .new .recover{width:70px;height:34px;background:#003b66;transform:skewx(-30deg);position:absolute;left:1215px;top:0px;z-index:0;}
+
+section .new .arrow{display:block;width:68px; height:24px;background:url(../images/new_arrow_03.png) no-repeat 50% 50%; position:absolute;left:271px;top:5px;text-align:center;color:#c3c3c3;line-height:23px;font-size:12px;z-index:2;}
+section .new p{position:absolute;left:365px;top:0px; z-index:2;font-size:12px;}
+section .pic{width:1500px; height:387px; margin:0 auto;}
+section .pic::before{display:table;height:62px; content:""; visibility:hidden;}
+section .pic .pic_main{margin:0 auto;width:1000px;}
+section .pic .pic_main::after{display:block; clear:both;height:0px; content:""; visibility:hidden;}
+section .pic .pic_main a{width:299px; height:272px;display:block;border:1px solid #909598;border-top:1px solid #d4d4d4;
+                          background:url(../images/pic_03.gif) no-repeat 50% 0%;text-align:center;float:left;border-radius:4px;
+                          color:#6c6c6c; margin-left:48px; box-shadow:0px 22px 17px -12px rgba(0,0,0,0.6) ;}
+section .pic .pic_main a:first-child{position:relative; }   
+section .pic .pic_main a:first-child figure{width:209px; height:118px;background:url(../images/pic_wechat_08.gif) no-repeat;
+											position:absolute;left:56px; top:14px;}
+section .pic .pic_main a+a{ background:url(../images/pic_05.gif) no-repeat;}
+section .pic .pic_main a+a+a{ background:url(../images/pic_07.gif) no-repeat;}
+section .pic .pic_main a:first-child{margin-left:0px;}
+section .pic .pic_main a article{margin-top:161px; width:264px;margin-left:22px;}
+section .pic .pic_main a article h3{font-size:16px; color:black;margin-top:7px;}
+section .pic .pic_main a article p{font-size:11px;margin-top:8px;}
+section .map{width:1500px; height:473px; margin:0 auto; background: url(../images/map_top_03.png) no-repeat 50% 0%; position:relative;}
+section .map::before{display:block; height:53px; content:""; visibility:hidden;}
+section .map h3{font-size:26px;font-weight:lighter;text-align:center;}
+section .map figure{position:absolute; left:246px; top:106px;}
+section .map article{position:absolute; left:841px; top:178px;}
+section .map article h4{font-size:17px; font-weight:bold;margin-bottom:19px;}
+section .map article p{ color:#636363; font-size:14px;margin-top:10px;}
+
+
+section .map a{color:#fff; line-height:46px;font-size:14px; position:absolute;}
+section .map .more{display:block; width:135px; height:46px; background:url(../images/map_09.png) no-repeat; border-radius:4px;text-align:center;left:841px;top:355px; }
+section .map .share{display:block; width:135px; height:46px; background:url(../images/map_06.png) no-repeat; border-radius:4px;text-indent:20px;left:1002px;top:355px;  }
+/*关注*/
+.focus{width:1500px; height:451px; margin:0 auto; background:#ebebeb url(../images/focus_00_03.gif) repeat-x;position:relative;}
+.focus h2{font-size:30px;font-weight:lighter;position:absolute; left:696px; top:60px;}
+.focus .arrow{position:absolute;left:736px; top:-17px; display:block; width:32px; height:32px;background:url(../images/focus_03.gif) no-repeat 50% 50%;border-radius:50%;}
+.focus .logo{position:relative;position:absolute;  width:190px; height:90px;}
+.focus .logo p{font-size:14px; color:#616161;margin-left:106px;margin-top:18px;}
+.focus .logo a:first-of-type img{box-shadow:1px 1px 4px 2px rgba(181,181,181,0.6); float:left;}
+.focus .logo a:last-of-type img{box-shadow:1px 1px 1px 1px rgba(181,181,181,0.6); position:absolute;left:107px; top:62px;border-radius:3px;}
+.focus .logo1{left:342px;  top:142px;}
+.focus .logo2{left:650px;  top:142px;}
+.focus .logo3{left:967px;  top:142px;}
+.focus .logo4{left:481px;  top:276px;}
+.focus .logo5{left:829px;  top:276px;}

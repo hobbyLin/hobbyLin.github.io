@@ -1,0 +1,70 @@
+/*页面about*/
+
+/*介绍*/
+
+#about{
+              width:1440px;
+              height:55px;
+              margin:0 auto;
+              /*background:red;*/
+}
+        #about ul{   width:1150px;
+                     height:42px;
+                     list-style:none;
+                     display:block;
+                     margin:0 auto;
+                    /* background:blue;*/}
+               #about ul .about_li{
+                                     width:285px;
+                                     height:42px;
+                                     display:block;
+                                     background:#cbcbcb;
+                                     text-align:center;
+                                     color:white;
+                                     font:normal 14px/42px '微软雅黑';
+                                       float:left;
+                                       margin-left:2px;
+
+                                            }
+              #about ul .about_li:hover{ background:#ffa72b;}
+              .hover{background:#ffa72b!important;}
+
+  #about_baner{   
+                   width:1150px;
+                   height:181px;
+                   margin:0px auto;
+                   background: url(../images/about.gif) no-repeat;
+                       }
+  .about_content{
+                    width:1150px;
+                    height:1256px;
+                    margin:0px auto;
+                   /* background:green;*/
+                    position:relative;
+                    display:none;
+  }
+   .about_content .about_text {
+                                  width:1077px;
+                                  height:503px;
+                                  font:bold 12px/26px '微软雅黑';
+                                 /* background:red;*/
+                                  position:absolute;
+                                  left:25px;
+                                  top:106px;
+   }
+
+   .about_content .about_text p{   
+                                 text-indent:3em;  
+                                     }
+
+   .about_content .about_h4{
+                                   /*width:255px;*/
+                                   height:31px;
+                                   display:block;
+                                   position:absolute;
+                                   left:25px;
+                                   top:42px;
+                                                }
+      .about_content .about_h4 span{ color:#999999}
+
+ /* 页面about结束*/

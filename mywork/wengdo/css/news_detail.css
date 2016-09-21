@@ -1,0 +1,41 @@
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+              /* background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background: url(../images/case.gif) no-repeat;     
+                          }
+
+
+#content{
+             width:1150px;
+             height:1310px;
+             margin:0px auto;
+             /*background:yellow;*/
+             background:url(../images/news_01_03.gif) no-repeat 50% 60%;
+
+
+                                      }
+      #content .content_bar{
+                                 width:1150px;
+                                 height:42px;
+                                 font:normal 14px/42px '微软雅黑'; 
+                                 text-indent:21px;
+                                color:#999999;
+                                margin:0px auto;
+
+                                                            }
+         #content .content_bar a{ text-decoration:none; color:#999999;}
+
+
+#content .main{ font:normal 14px/30px '微软雅黑'; padding:40px; color:#333333; } 
+#content .main h2,h5{text-align:center;}
+
+#content .main p{ text-indent:34px; }
+

@@ -1,0 +1,94 @@
+/* case页面开始*/
+
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+               /*background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background:url(../images/case.gif) no-repeat;     
+                          }
+#content{  
+                width:1440px;
+                height:1311px;
+                margin:0px auto; 
+               /* background:yellow;    */          }
+
+              #content .content_top{
+                                      width:1150px;
+                                      height:251px;
+                                      margin:0px auto;
+                                      background:white;
+              }    
+        #content .content_top .content_top_bar{
+                                        width:1150px;
+                                        height:38px;
+                                        border-bottom-width:1px;
+                                        border-bottom-style:solid;
+                                        border-bottom-color:#cccccc;
+                                        font:normal 14px/38px '微软雅黑';
+                                        color:#666666;
+                                        text-indent:10px;
+
+        }
+        #content .content_top .content_top_bar span a{text-decoration:none; color:#666666;}
+
+
+        #content .content_top .content_top_main {
+                                                    width:1150px;
+                                                    height:212px;
+                                                    margin:0px auto;
+                                                    background: url(../images/case_01_03.gif) no-repeat 3% 24%;
+                                                    position:relative;
+                                                    border:1px solid #cccccc;
+                                                                     }
+     #content .content_top .content_top_main table{width:808px;
+                                                   height:153px;
+                                                   color:#333333;
+                                                   font:normal 14px '微软雅黑';
+                                                   position:absolute;
+                                                   left:319px;
+                                                   top:25px;
+
+                                                                }                                                                 
+     #content .content_top .content_top_main table tr .td_left{width:72px;
+                                                                text-align:right;
+                                                                font:bold 14px '微软雅黑';
+                                                                              }
+       #content .content_top .content_top_main table tr td a{text-decoration:none; color:#333333;}
+       #content .content_top .content_top_main table tr td{border-bottom:1px dashed #d5d5d5;}
+
+
+      #content .content_main{width:1150px;
+                             height:1046px;
+                             margin:0px auto;
+                             margin-top:5px;
+                             background: url(../images/case_01_070.gif) no-repeat 50% 51%;
+                             border:1px solid #cccccc;
+                             position:relative;   }
+
+
+      #content .content_main .content_main_a{text-decoration:none;
+                                              color:#666666;
+                                              width:69px;
+                                              height:24px;
+                                              font:normal 12px/24px '微软雅黑';
+                                              text-align:center;
+                                              border:1px solid #cccccc;
+                                              border-radius:5px;
+                                               padding:1px;
+
+                                                                   }
+             
+
+         #content .content_main #content_a01{background:url(../images/yellowarrow_03.gif) no-repeat left 50% ;position:absolute;left:928px;top:28px;}
+         #content .content_main #content_a02{background:url(../images/yellowarrow_05.gif) no-repeat right 50% ;position:absolute;left:1010px;top:28px;}
+         #content .content_main #content_a03{background:url(../images/yellowarrow_03.gif) no-repeat left 50% ;position:absolute;left:67px;top:994px;}
+         #content .content_main #content_a04{background:url(../images/yellowarrow_05.gif) no-repeat right 50% ;position:absolute;left:1010px;top:994px;}
+
+/*case页面结束*/

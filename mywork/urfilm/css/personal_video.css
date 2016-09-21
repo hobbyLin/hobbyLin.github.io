@@ -1,0 +1,32 @@
+/*@charset "utf-8";
+*{margin: 0;padding: 0;font-family: "微软雅黑";}
+/*ul{list-style-type: none;}*/
+/*ul{list-style-type: none;}
+a{text-decoration:none;}*/
+
+.subject{background:url(../images/video1_02.jpg);width: 1590px;padding-top: 26px;position: relative;margin: auto;padding-top: 75px;padding-bottom:75px;margin: auto;}
+.principal{width: 1070px;margin: 0 auto;color: #fff;}
+.principal h3{clear: both;width: 1070px;font-size: 65px;border-bottom: 2px solid #000000;padding-bottom: 30px;margin-bottom: 50px;font-weight:normal;}
+.principal h3 span{font-size: 60px;}
+.principal .VIDEO{width: 517px;height: 370px;background: #281a10;float:left;margin-bottom: 50px;}
+.principal .VIDEO video{width:517px; height:300px;}
+.principal .VIDEO1{margin-right: 35px;}
+.principal .zsi{font-size: 18px;margin: 8px 0px;margin-left: 20px;}
+.principal .qk{font-size: 14px;line-height: 18px;margin-left: 345px;}
+.principal .qk img{vertical-align: top;margin-right:5px;}
+
+.principal .qk span{margin-right: 20px;}
+.principal .VIDE{margin-bottom: 50px;}
+.principal .lieb{clear: both;text-align: center;margin-top:10px;}
+.principal .lieb ul li{color: #2b0d0d;font-size: 18px;height: 22px;padding-left: 5px;padding-right:5px;background:#ffc600;margin-right:3px;display: inline-block;}
+.principal .lieb .di4{margin-right: 8px;}
+.gywm{background:#101010;width: 1590px;}
+.gywm .gyu{width: 1070px;height: 250px;margin:0 auto;padding-bottom:70px;padding-top: 40px;}
+.gywm .gyu .gyu_left{width: 380px;float: left;}
+.gywm .gyu .gyu_left h3{color: #fff;font-size: 40px;margin-bottom: 5px;}
+.gywm .gyu .gyu_left p{font-size: 14px;color: #999999;}
+.gywm .gyu .gyu_left .zhus{font-size: 18px;margin-bottom:20px;}
+.gywm .gyu .gyu_right{width: 400px;float: left;}
+.gywm .gyu .gyu_right h3{color: #fff;font-size: 40px;margin-bottom: 5px;}
+.gywm .gyu .gyu_right .zhus{font-size: 18px;margin-bottom:20px;color:#999999;}
+.gywm .gyu .gyu_right p{height: 30px;padding: 0px 20px;color: #FFFFFF;font-size: 18px;line-height: 30px;display: inline-block;background: #ffc600;margin: 5px;}

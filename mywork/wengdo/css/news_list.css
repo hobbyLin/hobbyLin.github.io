@@ -1,0 +1,130 @@
+/*news_list页面开始
+*/
+
+#case{
+               width:1440px;
+               height:181px;
+               margin:0px auto;
+              /* background:red;*/
+               margin-top:3px;
+}
+#case .case_baner{  
+                    width:1150px;
+                    height:181px;
+                    margin:0px auto;
+                    background:blue url(../images/case.gif) no-repeat;     
+                          }
+#content{
+            width:1440px;
+            height:1310px;
+            margin:0px auto;
+            /*background:yellow;*/
+
+}
+#content .content_bar {
+                        width:1150px;
+                        height:38px;
+                        margin:0px auto;
+                        /*background:red;*/
+                        font:normal 14px/38px '微软雅黑';
+                        color:#666666;
+                        text-indent:10px;
+                       /* border-bottom-width:1px;
+                        border-bottom-style:solid;
+                        border-bottom-color:#666666;*/
+
+}
+#content .content_bar a{text-decoration:none ; color:#666666;}
+
+#content .content_main{  
+                         width:1150px;
+                         height:1270px;
+                         margin:0px auto;
+                        /* background:blue;*/
+                         position:relative;
+                    }
+
+#content .content_main .content_main0{
+                                          width:1150px;
+                                          height:156px;
+                                          margin:0px auto;
+                                          margin-top:25px;
+                                         border:1px solid #666666;
+                                            background:#ffffff;
+                                            position:relative;             }
+#content .content_main #content_main0_01{margin-top:0px;}
+#content .content_main .content_main0 .content_main0_bar{
+                                                          width:1150px;
+                                                          height:45px;
+                                                          margin:0px auto;
+                                                        /*  border-bottom-width:1px ;
+                                                          border-bottom-style:dashed;
+                                                          border-bottom-color:#cccccc;*/
+                                                          font:normal 24px/45px '微软雅黑';
+                                                          position:relative; 
+                                                          text-indent:14px; 
+                                                          color:#333333;                        }
+
+#content .content_main .content_main0 .content_main0_bar span{ font:normal 14px '微软雅黑';
+                                                                width:151px;
+                                                                height:21px;
+                                                                display:block; 
+                                                                position:absolute;
+                                                                right:27px;
+                                                                top:21px; 
+                                                                text-indent:0px;
+                                                                      }
+#content .content_main .content_main0 .content_main0_p{
+                                                             width:1119px;
+                                                             height:92px;
+                                                             margin:0px auto;
+                                                             border-top-width:1px;
+                                                             border-top-style:dashed;
+                                                             border-top-color:#cccccc;
+                                                             font:normal 12px '微软雅黑';
+                                                             color:#666666;
+                                                             text-indent:30px;
+                                                             position:relative;
+
+                                                                            }
+#content .content_main .content_main0 .content_main0_p a{width:87px;
+                                                       height:21px;
+                                                        display:block;
+                                                        position:absolute;
+                                                        left:-35px;
+                                                        top:74px;}
+                        
+               #content .content_main .content_main_ul{ 
+                                                                list-style:none;
+                                                                width:515px;
+                                                                height:34px;
+                                                                /*background:red;*/
+                                                                display:block;
+                                                                 font:normal 12px '微软雅黑';
+                                                                 color:#666666;
+                                                                 position:absolute;
+                                                                 left:327px;
+                                                                 top:1110px;
+                                                                                     }
+ #content .content_main .content_main_ul .content_main_li{
+                                                                width:32px;
+                                                                height:32px;
+                                                                display:block;
+                                                                float:left;
+                                                                background:#ffffff;
+                                                                border:1px solid #cccccc;
+                                                                line-height:32px;
+                                                                text-align:center;
+                                                                margin-left:5px;
+
+                                                                                                          }
+#content .content_main .content_main_ul #content_main_li01{width:40px;}
+#content .content_main .content_main_ul #content_main_li02{width:96px;}
+
+#content .content_main .content_main_ul .content_main_li a{text-decoration:none;
+                                                             color:#666666;}
+#content .content_main .content_main_ul .content_main_li a:hover{ color:white;}
+
+#content .content_main .content_main_ul .content_main_li:hover{background:#ffab3b; color:white;}
+
+

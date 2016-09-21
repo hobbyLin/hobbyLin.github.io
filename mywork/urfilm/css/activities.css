@@ -1,0 +1,60 @@
+
+.activities_container{width: 1590px;height: 2070px;background-color: #f4f4f4; }
+.activities_main{width: 1070px;height:2043px; margin:0 auto; margin-top: 0px;background-color: #fff;position: relative;}
+/* header */
+.main_header{clear: both;}
+.activities_main .main_header_left{float: left; width: 534px;height: 350px;position: relative;}
+.activities_main .main_header_left p{position: absolute;left: 0;top: 102px;z-index: 100;
+	width: 75px;height: 32px;background-color: rgb(255,144,0);
+	text-align: center;line-height: 32px;color: #fff;font-size: 16px; font-family: '微软雅黑';}
+.activities_main .main_header_right{float: left; width: 536px;height: 350px;}
+.activities_main .main_header_right div:nth-child(2n-1){width: 266px;height: 175px;float: left;position: relative;}
+.activities_main .main_header_right div:nth-child(2n){width: 266px;height: 175px;float: right;position: relative;}
+.activities_main .main_header_right div img{width: 270px;height: 175px;margin:0;padding: 0;}
+.activities_main .main_header_right div p{position: absolute;z-index: 100;left: 0px; top: 14px;
+	width: 74px;height: 32px;background-color: rgb(255,144,0);
+	text-align: center;line-height: 32px;color: #fff;font-size: 16px; font-family: '微软雅黑';
+}
+.activities_main .main_header_right div:nth-child(3) p{background-color: rgb(104,192,11); }
+.activities_main .main_header_right div:nth-child(4) p{background-color: rgb(212,34,9); }
+
+
+/* hover事件 */
+.main_header_left p:hover{ width: 105px;height: 42px;line-height: 42px; border-radius:0 5px 5px 0; background-color: rgb(255,144,0);cursor: pointer; transition:width 0.5s ease-in,background-color 0.5s ease-in,height 0.5s ease-in,line-height 0.5s ease-in,border-radius 0.5s ease-in; }
+.main_header .main_header_right p:hover{width: 105px;line-height: 42px; height: 42px;border-radius:0 5px 5px 0;background-color: rgb(255,144,0);cursor: pointer;transition:width 0.5s ease-in,background-color 0.5s ease-in,height 0.5s ease-in,line-height 0.5s ease-in,border-radius 0.5s ease-in;}
+.main_header .main_header_left:hover img{ transition:all 1s ease-in; -moz-transform:rotate(360deg);-webkit-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}
+.main_header .main_header_right div:nth-child(1):hover img{ transition:all 1.5s ease-in; -moz-transform:rotateY(-360deg);-webkit-transform:rotateY(-360deg);-o-transform:rotateY(-360deg);-ms-transform:rotateY(-360deg);transform:rotateY(-360deg);}
+.main_header .main_header_right div:nth-child(2):hover img{ transition:all 1.5s ease-in; -moz-transform:rotateY(360deg);-webkit-transform:rotateY(360deg);-o-transform:rotateY(360deg);-ms-transform:rotateY(360deg);transform:rotateY(360deg);}
+.main_header .main_header_right div:nth-child(3):hover img{ transition:all 1.5s ease-in; -moz-transform:rotateY(-360deg);-webkit-transform:rotateY(-360deg);-o-transform:rotateY(-360deg);-ms-transform:rotateY(-360deg);transform:rotateY(-360deg);}
+.main_header .main_header_right div:nth-child(4):hover img{ transition:all 1.5s ease-in; -moz-transform:rotateY(360deg);-webkit-transform:rotateY(360deg);-o-transform:rotateY(360deg);-ms-transform:rotateY(360deg);transform:rotateY(360deg);}
+
+/* link */
+.activities_link{height: 60px;width: 100%; float: left;position: relative;}
+.activities_link p{float: left;width: 154px;height: 60px;background-color: rgb(4,155,110);color: #fff;font-weight: bold;font-size: 22px;line-height: 60px; text-align: center;font-family: '微软雅黑';}
+.activities_link p:nth-child(2){width: 42.43px; height: 42.43px;position: absolute;background-color: rgb(4,155,110);top: 8.8px;left: 132.8px;
+	transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-moz-transform:rotate(45deg);
+}
+.activities_link ul{height: 60px;width: 800px;float: left;list-style: none;}
+.activities_link ul li{height: 60px;float: left; width: 120px;line-height: 60px;text-align: center;margin-left: 75px;font-size: 22px;color: rgb(102,102,102);font-family: '微软雅黑';}
+.activities_main .activities_readMore{width: 975px;height: 205px;float: left;margin: 30px 0 30px 32px;position: relative;}
+.activities_main .activities_readMore .readMore_left{width: 300px;height: 200px;float: left;}
+.activities_main .activities_readMore .readMore_left img{width: 300px;height: 200px;}
+.activities_main .activities_readMore .readMore_left p{position: absolute;z-index: 100;left: 0px; top: 15px;
+	width: 74px;height: 32px;background-color: rgb(255,144,0);
+	text-align: center;line-height: 32px;color: #fff;font-size: 16px; font-family: '微软雅黑';
+}
+
+.activities_main .activities_readMore .readMore_right{width: 630px;height: 203px; float: left;margin-left: 40px;}
+.activities_main .activities_readMore .readMore_right p:nth-child(1){font-size: 22px;font-family: '微软雅黑';color: rgb(102,102,102);}
+.activities_main .activities_readMore .readMore_right p:nth-child(2){margin-top: 28px;font-size: 14px;font-family: '微软雅黑';color: rgb(102,102,102);line-height: 22px;}
+.activities_main .activities_readMore .readMore_right button{width: 65px;height: 25px; border: 1px solid rgb(230,230,230); background-color: #fff;font-size: 12px;
+	font-family: '微软雅黑';color: rgb(0,0,0);border-radius: 5px; text-align: center;position: absolute;bottom: 0;right: 0;}
+
+.activities_main .activities_main_footer{width: 70px;height: 20px;margin:10px 0 0 500px;float: left;}
+.activities_main .activities_main_footer img{width: 70px; height: 20px;float: left;}
+
+/* carousel区域 */
+.play{width:1070px;height:auto;}
+.banner{height: auto;}
+.midCarousel{ width:1070px;height:310px;margin:0 auto;overflow:hidden;}
+#imgCarousel{ height: 310px;width: 1070px;margin: 0; padding: 0}
