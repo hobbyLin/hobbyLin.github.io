@@ -1,0 +1,231 @@
+@charset "utf-8";
+/*头部*/
+.navbar-brand{
+	display:-moz-box;
+    display:-webkit-box;
+    display:box;
+	padding:0px;
+}
+/*横幅*/
+.navbar{
+z-index:999;
+}
+#banner,.navbar{
+	box-shadow:0px 3px 22px 0px rgba(0,0,0,.5);
+}
+
+#banner .item img,.products-show img{
+	margin : 0px auto;
+}
+.products-show img{
+	
+}
+#container{
+	padding-bottom: 51px;
+	background:#e7e7e7;
+}
+/*产品列表*/
+
+.panel-group{
+	padding:15px;
+}
+.panel{
+	margin-bottom:10px!important;
+	box-shadow:0px 3px 27px -5px rgba(0,0,0,.5);
+}
+.panel .carousel{
+	box-shadow:0px 3px 27px -5px rgba(0,0,0,.5);
+} 
+.panel-body{
+	background:#eee;
+}
+.panel-heading{
+    padding: 20px 15px;
+}
+footer{
+	background:#e7e7e7;
+	width:100%;
+	padding:2px;
+	border-radius:2px;
+	position:fixed;
+	bottom:-72px;
+	z-index:777;
+	opacity:0;
+box-shadow:0px 3px 22px 4px rgba(0,0,0,.5);
+}
+
+footer .contact{
+	display:none;
+}
+footer span{
+	color :#a1a3ab;
+}
+footer a{
+	padding:10px;
+}
+
+
+
+/* 小屏幕（手机，小于768px） */
+@media (max-width:767px) {
+ .main-title{
+ 	font-size:20px;
+ color:#777;
+}
+#banner .carousel-caption{
+	display:none;
+}
+ 
+		
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width:768px){
+footer{
+
+}
+
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width:992px) {
+footer{
+		position:relative;
+	bottom:0;
+	z-index:0;
+	opacity:1;
+	
+}
+	
+}
+
+
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+
+}
+.contact-form{
+	margin-top:10px;
+	
+	border-radius:5px;
+	background:#eee;
+	padding:10px 20px;
+	
+}
+.main-title{
+ color:#777;
+}
+.blog-masonry{
+	margin-top:20px;
+}
+.main-posts {
+	
+    position: relative;
+    z-index: 6;
+}
+
+.post-masonry {
+    margin-bottom: 30px;
+}
+
+.post-masonry .post-thumb {
+	padding:40px;
+    border: 1px solid #ddd;
+    border-radius:4px;
+    overflow: hidden;
+    position: relative;
+    background:#fff;
+    box-shadow:0px 3px 22px 0px rgba(0,0,0,.5);
+    border-radius:3px;
+}
+
+.post-masonry .post-thumb img {
+    width: 100%;
+    display: block;
+}
+
+.post-masonry .post-thumb .title-over {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    padding: 15px 20px;
+    border-radius:4px;
+}
+
+.post-masonry .post-thumb .title-over h4 {
+    font-size: 16px;
+  /* font-family: 'robotoregular';*/
+}
+
+.post-masonry .post-thumb .title-over a {
+    color: #fff;
+}
+
+.post-masonry .post-thumb .post-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 70px;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.1);
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.post-masonry .post-thumb .post-hover .inside {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.post-masonry .post-thumb .post-hover h4 {
+    font-size: 16px;
+  /*  font-family: 'robotoregular';*/
+    margin-bottom: 10px;
+}
+
+.post-masonry .post-thumb .post-hover a {
+    color: #fff !important;
+}
+
+.post-masonry .post-thumb .post-hover i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.post-masonry .post-thumb .post-hover p {
+    font-size: 12px;
+}
+
+.post-masonry .post-thumb .post-hover span {
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.post-masonry .post-thumb:hover .title-over {
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    bottom: -50px;
+}
+
+.post-masonry .post-thumb:hover .post-hover {
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+}

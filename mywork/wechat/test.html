@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<title></title>
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+
+		</style>
+	</head>
+	<body>
+  $(".myappTXTUploadBtn").click(function(){  
+  
+        var filepath = $(".uploadFace").val().trim();  
+        if(filepath == ""){  
+            showBlackPage("请您选择要上传的txt文件","请您选择要上传的txt文件");  
+            return;  
+        }  
+        var last = filepath.substr(filepath.lastIndexOf(".")+1);  
+        if(last == "txt"){  
+            <span style="color:#ff0000;BACKGROUND-COLOR: #33cc00">var file = $(".uploadFace")[0].files[0];  
+            var reader = new FileReader();  
+            reader.readAsText(file, "GB2312");  
+            var urlData;  
+            reader.onload = function (e) {  
+</span>                urlData = this.result;  
+                var dataarray = urlData.split("\n");  
+                var objs = "[";  
+                var index = 1;  
+                for(var i=0;i<dataarray.length;i++){  
+                    var data = dataarray[i].trim();  
+                    if(data == ""){  
+                        continue;  
+                    }else{  
+                        var namestart = data.indexOf("【");  
+                        var nameend = data.lastIndexOf("】");  
+                        var str = "";  
+                        if(namestart != -1 && nameend != -1){  
+                            var obj = {};  
+                            obj.replytxt = data.substr(namestart+1,nameend-1);  
+                            str += data.substr(namestart+1,nameend-1);  
+                            var imgstart = data.indexOf("〖");  
+                            var imgend = data.lastIndexOf("〗");  
+                            if(imgstart != -1 && imgend != -1){  
+                                obj.receiveimg = data.substr(imgstart+1,imgend-nameend-2);  
+                                str += "\n"+data.substr(imgstart+1,imgend-nameend-2);  
+                                obj.receivetxt = data.substr(imgend+1);  
+                                str += "\n"+data.substr(imgend+1);  
+                            }else{  
+                                obj.receivetxt = data.substr(nameend+1);  
+                                str += "\n"+data.substr(nameend+1);  
+                            }  
+                            obj.myappid = index;  
+                            index++;  
+                            objs += JSON.stringify(obj)+",";  
+                        }else{  
+                            continue;  
+                        }  
+                    }  
+                }  
+                objs = objs.substr(0,objs.lastIndexOf(","));  
+                objs += "]"  
+                if(weixinid != ""){  
+                    $.ajax({  
+                        type:"POST",  
+                        url:"/api2/app/myappadd?",  
+                        data:{  
+                            weixinid:weixinid,  
+                            "myapp":objs  
+                        },  
+                        success:function(serverData){  
+                            showBlackPage(serverData["提示信息"],serverData["提示信息"]);  
+                        }  
+                    });  
+                }else{  
+                    alert("您还没有绑定微信公众账号");  
+                }  
+            }  
+        }else{  
+            alert("您上传的不是txt文件");  
+        }  
+    });  
+	</body>
+</html>
