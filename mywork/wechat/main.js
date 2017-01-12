@@ -13,7 +13,7 @@
             underscore: 'js/lib/underscore',
             backbone: 'js/lib/backbone',
             text: 'js/lib/text',//用于requirejs导入html类型的依赖
-            bootstrap:'http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min',
+            bootstrap:'js/bootstrap.min',
             iscroll:'js/iscroll'
             
  
