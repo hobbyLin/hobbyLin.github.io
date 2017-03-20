@@ -61,6 +61,7 @@ require.config({
             deps:['backbone'],
             exports:'logger'
         },
+        'plugins/loading/loading':['jQuery'],
         'common/config':['jQuery','logger'],
         'common/load':['common/config'],
         'appCenter/appCenter':['common/load']
@@ -89,11 +90,11 @@ require.config({
         commonUI:'../../init/assets/UI',
         cordova:'../../init/assets/ios/cordova',
         appCenter:'../../init/appCenter'
-
     }
 });
 
-define(['MainCoreAll','MainCoreLoggerAdapter','common/config','common/load','appCenter/appCenter'],function(MainCore){
+define(['plugins/loading/loading','MainCoreAll','MainCoreLoggerAdapter','common/config','common/load','appCenter/appCenter'],function(loading,MainCore){
         console.log('加载完所有模块后');
+        loading.hide();
 
 })

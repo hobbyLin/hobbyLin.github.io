@@ -12,7 +12,6 @@ define(['text!template/test/Page1.html'],function(template){console.log(template
         //初始化
         init:function(option){
             var self = this;
-            console.log(self.$el)
             self.render();
         },
         render:function(){

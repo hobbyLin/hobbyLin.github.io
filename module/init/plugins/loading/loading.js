@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/3/20.
  */
-define(['jquery'],function($){
+define(['jQuery'],function($){
     // 模板
     var template =[
         '<div class="loading-dialog">',
@@ -51,7 +51,7 @@ define(['jquery'],function($){
                 }else{
                     ctx.rotate(angle);
                 }
-                ctx.arc(0,-24,i*0.4+1,0,2*Math.PI,true);
+                ctx.arc(0,-24,i*0.3+1,0,2*Math.PI,true);
                 ctx.closePath();
                 ctx.fill();
             }
@@ -85,7 +85,8 @@ define(['jquery'],function($){
             return this._instance;
         }
     }
-
-    return Loading;
+    window.loading = new Loading();
+    loading.show();
+    return loading;
 
 })
