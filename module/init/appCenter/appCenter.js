@@ -122,7 +122,7 @@ var gotoCorresponding = function(e){
 var toggleAppType = function(e){
     var appListDom = document.querySelectorAll("[data-app-list]"),
         appTypeButtonList = document.querySelectorAll('[data-app-type');
-     alert(appListDom.length);
+     alert(appListDom);
     if(e.target.dataset.appType){
         for(var i = 0 ; i < appListDom.length; i++){
             appListDom[i].classList.add("dsn");
