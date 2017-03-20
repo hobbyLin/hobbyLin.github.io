@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script data-main = 'main' src="../assets/require/require.min-2.1.11.js"></script>
+    <title>appcenter</title>
+</head>
+<body>
+    <div id="content"></div>
+    <script type="text/template" id ='tp03'>
+        <header style="background:#ddd;height:40px; ">
+            <a href="javascript:void(0)" class="fl" style="display:block;height:40px;width:40px; background:#eee; ">
+                log
+            </a>
+            <div class="fl">
+                <p class="userName">
+                    当前进来的小朋友 : <%=localStorage.getItem("littleFriend")%>
+                </p>
+            </div>
+            <div></div>
+        </header>
+        <section>
+            <nav id = "apptype">
+                <%for(var key in obj){%>
+                <a data-app-type="<%=key%>" class="<%if(key == 'backbone'){%>curron<%}%>"><%=key%> </a>
+               <% } %>
+
+            </nav>
+            <% for(var key in obj){%>
+            <ul data-app-list="<%=key%>" class="<%if(key != 'backbone'){%>dsn<%}%>">
+                <h2><%=key%></h2>
+                <%_.each(obj[key],function(v,k){%>
+                    <li class="fl">
+                        <dl>
+                            <dt class="por">
+                                <div class="appMark" data-mark ="<%=v.name%>" style="display:<%=v.display%>">
+                                 <img src="img/ock.jpg" alt="" width="50" height="50" onerror="this.src='img/lock.jpg';">
+                                </div>
+                                <div class="appbtn">
+                                    <span class="<%='app_icon_'+v.name%>" data-link="<%=v.name%>" data-appid="<%=v.appId%>">
+
+                                    </span>
+                                </div>
+                            </dt>
+                            <dd><%=v.appName%></dd>
+                        </dl>
+                    </li>
+                <%})%>
+
+                <div class="clear"></div>
+            </ul>
+            <%}%>
+        </section>
+    </script>
+    <div style = "position:fixed; right:0px; width:120px; height:100px;">
+        <a href="data.html" style="display:block; width:120px; height:120px;" id="showlog"></a>
+    </div>
+</body>
+</html>
