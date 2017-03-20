@@ -102,7 +102,7 @@ function gotoApp(){
 /*
 * 点击应用图标的事件处理
 */
-var gotoCorresponding = function(e){alert('这是点击图标');
+var gotoCorresponding = function(e){
 
     if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
         e.target.classList.remove('app_icon_hover');
@@ -119,10 +119,10 @@ var gotoCorresponding = function(e){alert('这是点击图标');
 /*
 * 切换应用大类的标签
 */
-var toggleAppType = function(e){alert('这是点击标签切换');
+var toggleAppType = function(e){
     var appListDom = document.querySelectorAll("[data-app-list]"),
         appTypeButtonList = document.querySelectorAll('[data-app-type');
-    console.log(e.target.dataset.appType)
+     alert(appListDom.length);
     if(e.target.dataset.appType){
         for(var i = 0 ; i < appListDom.length; i++){
             appListDom[i].classList.add("dsn");
