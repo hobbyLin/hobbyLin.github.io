@@ -120,8 +120,19 @@ var gotoCorresponding = function(e){
 * 切换应用大类的标签
 */
 var toggleAppType = function(e){
+    // 测试能否获取事件对象相关属性
+    alert('事件对象'+e);
+    alert('事件相关属性'+e.target.dataset.appType);
+    //测试dom获取方法的问题
+    var test1 = document.getElementById("test");
+    var test2 = document.querySelector('#test');
+    alert(test1);
+    alert(test2);
+
+
+
     var appListDom = document.querySelectorAll("[data-app-list]"),
-        appTypeButtonList = document.querySelectorAll('[data-app-type');
+        appTypeButtonList = document.querySelectorAll('[data-app-type]');
      alert(appListDom);
     if(e.target.dataset.appType){
         for(var i = 0 ; i < appListDom.length; i++){
