@@ -42,6 +42,8 @@ input{
 .clear{
     clear:both;
 }
+.clearfix:after {content: ""; display: block; height:0; clear:both; visibility: hidden;}  /*清除浮动*/
+
 /*padding*/
 .p_t10{
     padding-top:10px;
@@ -62,7 +64,15 @@ header{
     border: 2px solid #29343a;
     box-shadow: 1px 1px 5px #555;
 }
-
+header>a{
+    position:relative;
+    display:block;height:50px;width:50px; overflow:hidden;
+}
+header>a canvas{
+    position: absolute;
+    top:-50px;
+    left:-50px;
+}
 /*选项卡*/
 nav{
     background:yellow;
