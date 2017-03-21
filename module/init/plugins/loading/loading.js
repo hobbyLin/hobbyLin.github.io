@@ -1,5 +1,10 @@
 /**
  * Created by Administrator on 2017/3/20.
+ * 直接实例成window下的属性 window.loading （也可根据情况改变）
+ * 方法有
+ * show(tip) Param：{String} 显示加载 tip:加载提示 ，默认为 加载中...
+ * hide() 隐藏
+ * setLoadingTip(tip) Param :{String} 动态改变加载提示
  */
 define(['jQuery'],function($){
     // 模板
