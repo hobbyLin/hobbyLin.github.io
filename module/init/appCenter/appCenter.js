@@ -59,14 +59,12 @@ userInfoProgress("backbone");
  * @param {function} 渲染后执行的事件
  * @param {Object} data 渲染页面的数据
 */
-
 var render = function(elPose , tplName ,bindE,data){
     var content = $(elPose),tpl=$(tplName).html();
     var html = _.template(tpl)(data)
     content.html(html);
     bindE();
 }
-
 /*
 * [gtoApp 根据linkName跳转到相应App]
 */
@@ -165,7 +163,7 @@ var localStorageLog = function(){
     log = '[localStorage]:' + JSON.stringify(json);
     console.log(log);
 };
-// 做一个钟
+// 做一个canvas钟
 function clock(){
     var now = new Date();
     var ctx = document.querySelector(".logo").getContext('2d');
@@ -262,9 +260,58 @@ function clock(){
 
     window.requestAnimationFrame(clock);
 }
+// 获取当前地理位置
+function getPosition(){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            alert(lat + '---' + lon);
+        },function(error){
+            alert('获取失败')
+            switch (error.code) {
+                case 1:
+                    alert("位置服务被拒绝。");
+                    break;
+                case 2:
+                    alert("暂时获取不到位置信息。");
+                    break;
+                case 3:
+                    alert("获取位置信息超时。");
+                    break;
+                default:
+                    alert("未知错误。");
+                    break;
+            }
+        }, { timeout: 20000, enableHighAccuracy: true })
+    }else{
+        alert('本浏览器不支持')
+    }
+}
 
+
+
+// 百度地图初始化
+function initialize() {
+    console.log('返回')
+    var mp = new BMap.Map('map');
+    mp.setMapStyle({style:'hardedge'});
+    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+
+}
+// 跨域加载
+function loadScript() {console.log('加载');
+    var script = document.createElement("script");
+    script.src = "http://api.map.baidu.com/api?v=2.0&ak=AEsLIVDinYqlzP69208oPLk5cygwaoLi&callback=initialize";//此为v2.0版本的引用方式
+    // http://api.map.baidu.com/api?v=1.4&ak=您的密钥&callback=initialize"; //此为v1.4版本及以前版本的引用方式
+    document.body.appendChild(script);
+}
 // 渲染页面
 console.log("appjs");
 render("#content","#tp03",bindEvents,userInfo);
+// 插入动画
 window.requestAnimationFrame(clock);
-localStorageLog();
+// 插入百度地图
+loadScript();
+// 查看本地储存
+//localStorageLog();
