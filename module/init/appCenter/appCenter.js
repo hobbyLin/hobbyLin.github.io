@@ -21,8 +21,16 @@ userInfo ={
         appId:'10005',
         name:'secondApp',
         appName:'第二个app'
+    },{
+        appId:'10002',
+        name:'thirdApp',
+        appName:'第三个app'
     }],
     angular:[{
+        appId:'10009',
+        name:'firstApp',
+        appName:'第一个app'
+    },{
         appId:'10003',
         name:'firstApp',
         appName:'第一个app'
@@ -43,8 +51,11 @@ userInfo ={
         appName:'第一个app'
     }],
     guestId : UserRole.guestId
-}
-// 处理角色信息 渲染
+};
+/*
+* app上线控制
+*/
+// 处理角色信息 渲染 设置该app是否上锁
 var userInfoProgress = function(key){
     for(var i = 0 ; i < userInfo[key].length; i++){
         PermissionArr.indexOf(userInfo[key][i].appId) === -1 ?userInfo[key][i].display= 'inline-block' : userInfo[key][i].display='none';
@@ -52,6 +63,7 @@ var userInfoProgress = function(key){
 
 };
 userInfoProgress("backbone");
+userInfoProgress("angular");
 /*
 * renderView
  * @param {string} elpos 要填充模板element元素jq选择表达方式
@@ -163,6 +175,9 @@ var localStorageLog = function(){
     log = '[localStorage]:' + JSON.stringify(json);
     console.log(log);
 };
+/*
+* 做一个时钟装逼
+*/
 // 做一个canvas钟
 function clock(){
     var now = new Date();
@@ -260,6 +275,10 @@ function clock(){
 
     window.requestAnimationFrame(clock);
 }
+
+/*
+* 载入百度地图 获取城市相关信息
+*/
 // 获取当前地理位置
 function getPosition(fun){
     var lat , lon ;
@@ -271,9 +290,9 @@ function getPosition(fun){
 
 
         },function(error){
-            alert('获取失败,默认北京咯');
-             lat = 121.491;
-             lon = 31.233;
+            alert('获取失败,默认上海咯');
+             lon = 121.491;
+             lat = 31.233;
             switch (error.code) {
                 case 1:
                     alert("位置服务被拒绝。");
@@ -287,24 +306,33 @@ function getPosition(fun){
                 default:
                     alert("未知错误。");
                     break;
-            }
+            };
+            return fun(lon,lat);
         }, { timeout: 20000, enableHighAccuracy: true })
     }else{
-        alert('本浏览器不支持,只能默认北京咯');
-        lat = 121.491;
-        lon = 31.233;
+        alert('本浏览器不支持,只能默认上海咯');
+        lon = 121.491;
+        lat = 31.233;
+        return fun(lon,lat);
     };
 }
-
-
 
 // 百度地图初始化
 function initialize() {
     var pos = getPosition(function(lon,lat){
         var point = new BMap.Point(lon,lat);
         var mp = new BMap.Map('map');
+        var gc = new BMap.Geocoder();
+        gc.getLocation(point,function(rs){
+            var loInfo = rs.addressComponents;
+            console.log(loInfo);
+            for(var key in loInfo){
+                localStorage.setItem(key,loInfo[key])
+            }
+        })
         mp.setMapStyle({style:'hardedge'});
-        mp.centerAndZoom(point, 11);
+        mp.centerAndZoom(point, 15);
+
         return mp;
     });
 
@@ -316,6 +344,9 @@ function loadScript() {console.log('加载');
     // http://api.map.baidu.com/api?v=1.4&ak=您的密钥&callback=initialize"; //此为v1.4版本及以前版本的引用方式
     document.body.appendChild(script);
 }
+
+
+
 // 渲染页面
 console.log("appjs");
 render("#content","#tp03",bindEvents,userInfo);

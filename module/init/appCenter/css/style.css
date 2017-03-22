@@ -119,3 +119,13 @@ position: absolute;
     background: url(../img/vue.png) no-repeat;
     background-size:50px 50px;
 }
+/*百度地图样式*/
+#map{
+    width:calc(100% - (20px) * 2);
+    height:320px;
+    border-radius: 6px;
+    padding: 10px 5px;
+    border: 2px solid #29343a;
+    box-shadow: 1px 1px 5px #555;
+    margin:15px 20px;
+}

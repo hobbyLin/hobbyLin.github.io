@@ -10,7 +10,11 @@
 </head>
 <body>
     <div id="content"></div>
-    <div id="map" style="width:500px;height:320px"></div>
+    <div class="baidumap">
+        <input type="text" name="lon" value="经度"/>
+        <input type="text" name="lat" value="纬度"/>
+    </div>
+    <div id="map"></div>
     <script type="text/template" id ='tp03'>
         <header class="clearfix">
             <a href="appCenter.html" class="fl">
@@ -18,7 +22,7 @@
             </a>
             <div class="fl">
                 <p class="userName">
-                    当前进来的小朋友 : <%=localStorage.getItem("littleFriend")%>
+                    天气展示模块
                 </p>
             </div>
             <div></div>
