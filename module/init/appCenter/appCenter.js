@@ -261,13 +261,17 @@ function clock(){
     window.requestAnimationFrame(clock);
 }
 // 获取当前地理位置
-function getPosition(){
+function getPosition(fun){
     var lat , lon ;
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
              lat = position.coords.latitude;
              lon = position.coords.longitude;
             alert(lat + '---' + lon);
+
+            return  fun(lon,lat);
+
+
         },function(error){
             alert('获取失败,默认北京咯');
              lat = 121.491;
@@ -292,23 +296,19 @@ function getPosition(){
         lat = 121.491;
         lon = 31.233;
     };
-    return {
-        lat :lat,
-        lon : lon
-    }
 }
 
 
 
 // 百度地图初始化
 function initialize() {
-    var pos = getPosition();
-  alert(pos.lat);
-  alert(pos.lon);
-    var point = new BMap.Point('114.0907903','22.5639377');
-    var mp = new BMap.Map('map');
-    mp.setMapStyle({style:'hardedge'});
-    mp.centerAndZoom(point, 11);
+    var pos = getPosition(function(lon,lat){
+        var point = new BMap.Point(lon,lat);
+        var mp = new BMap.Map('map');
+        mp.setMapStyle({style:'hardedge'});
+        mp.centerAndZoom(point, 11);
+        return mp;
+    });
 
 }
 // 跨域加载
