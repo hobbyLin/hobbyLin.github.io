@@ -303,7 +303,7 @@ function getPosition(){
 // 百度地图初始化
 function initialize() {
     var pos = getPosition();
-    var point = new BMap.Point(pos.lon, pos.lat);
+    var point = new BMap.Point(pos.lat,pos.lon);
     var mp = new BMap.Map('map');
     mp.setMapStyle({style:'hardedge'});
     mp.centerAndZoom(point, 11);
