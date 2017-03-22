@@ -262,13 +262,16 @@ function clock(){
 }
 // 获取当前地理位置
 function getPosition(){
+    var lat , lon ;
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
+             lat = position.coords.latitude;
+             lon = position.coords.longitude;
             alert(lat + '---' + lon);
         },function(error){
-            alert('获取失败')
+            alert('获取失败,默认北京咯');
+             lat = 121.491;
+             lon = 31.233;
             switch (error.code) {
                 case 1:
                     alert("位置服务被拒绝。");
@@ -285,7 +288,13 @@ function getPosition(){
             }
         }, { timeout: 20000, enableHighAccuracy: true })
     }else{
-        alert('本浏览器不支持')
+        alert('本浏览器不支持,只能默认北京咯');
+        lat = 121.491;
+        lon = 31.233;
+    };
+    return {
+        lat :lat,
+        lon : lon
     }
 }
 
@@ -293,10 +302,11 @@ function getPosition(){
 
 // 百度地图初始化
 function initialize() {
-    console.log('返回')
+    var pos = getPosition();
+    var point = new BMap.Point(pos.lon, pos.lat);
     var mp = new BMap.Map('map');
     mp.setMapStyle({style:'hardedge'});
-    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+    mp.centerAndZoom(point, 11);
 
 }
 // 跨域加载
@@ -313,6 +323,6 @@ render("#content","#tp03",bindEvents,userInfo);
 window.requestAnimationFrame(clock);
 // 插入百度地图
 loadScript();
-getPosition();
+
 // 查看本地储存
 //localStorageLog();
