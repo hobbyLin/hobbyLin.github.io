@@ -313,5 +313,6 @@ render("#content","#tp03",bindEvents,userInfo);
 window.requestAnimationFrame(clock);
 // 插入百度地图
 loadScript();
+getPosition();
 // 查看本地储存
 //localStorageLog();
