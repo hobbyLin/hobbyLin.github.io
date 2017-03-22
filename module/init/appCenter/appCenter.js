@@ -267,8 +267,6 @@ function getPosition(fun){
         navigator.geolocation.getCurrentPosition(function(position){
              lat = position.coords.latitude;
              lon = position.coords.longitude;
-            alert(lat + '---' + lon);
-
             return  fun(lon,lat);
 
 
