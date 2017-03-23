@@ -119,8 +119,12 @@ position: absolute;
     background: url(../img/vue.png) no-repeat;
     background-size:50px 50px;
 }
+.plugin span{
+    background: url(../img/plugin.png) no-repeat;
+    background-size:50px 50px;
+}
 /*百度地图样式*/
-#map{
+#map,#mapIp{
     width:calc(100% - (20px) * 2);
     height:320px;
     border-radius: 6px;

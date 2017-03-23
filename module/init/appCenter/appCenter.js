@@ -278,14 +278,18 @@ function clock(){
 
 /*
 * 载入百度地图 获取城市相关信息
+*  1、利用h5方法获取地理位置
+*  2、利用百度api获取地理位置
 */
-// 获取当前地理位置
+
+// h5获取当前地理位置
 function getPosition(fun){
     var lat , lon ;
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
              lat = position.coords.latitude;
              lon = position.coords.longitude;
+            console.log(lon + '--'+ lat);
             return  fun(lon,lat);
 
 
@@ -317,38 +321,73 @@ function getPosition(fun){
     };
 }
 
+// ip 获取地理位置
+function ipGetInfo(data){
+    console.log('利用百度ip获取地理位置'+JSON.stringify(data));
+    var data = data || {},
+        content = data.content || {},
+        address = content.address || '',
+        addressDetail = content.address_detail || {},
+        ipPoint = content.point || {},
+        lon = ipPoint.x || '',
+        lat = ipPoint.y || '';
+    console.log(lon + '--'+ lat);
+    var point = new BMap.Point(lon,lat);
+    var mp = new BMap.Map('mapIp');
+    mp.setMapStyle({style:'hardedge'});
+    mp.centerAndZoom(point, 15);
+}
+
 // 百度地图初始化
 function initialize() {
+    // h5获取地理位置
     var pos = getPosition(function(lon,lat){
         var point = new BMap.Point(lon,lat);
         var mp = new BMap.Map('map');
         var gc = new BMap.Geocoder();
         gc.getLocation(point,function(rs){
             var loInfo = rs.addressComponents;
-            console.log(loInfo);
-            for(var key in loInfo){
-                localStorage.setItem(key,loInfo[key])
-            }
+            console.log('利用h5获取的地理位置：'+JSON.stringify(loInfo));
+            // for(var key in loInfo){
+            //     localStorage.setItem(key,loInfo[key])
+            // }
         })
         mp.setMapStyle({style:'hardedge'});
         mp.centerAndZoom(point, 15);
-
         return mp;
     });
+    // 利用ip获取地理位置
+    $.ajax({
+        type:'get',
+        url:'https://api.map.baidu.com/location/ip?ak=AEsLIVDinYqlzP69208oPLk5cygwaoLi&coor=bd09ll',
+        dataType:'jsonp',
+        success:function(data,textStatus,jqXHR){
+            console.log('dd');
+            ipGetInfo(data);
+        },
+        error:function(jqXHR){
+            console.log(JSON.stringify(jqXHR));
+
+        }
+    })
 
 }
-// 跨域加载
-function loadScript() {console.log('加载');
-    var script = document.createElement("script");
-    script.src = "https://api.map.baidu.com/api?v=2.0&ak=AEsLIVDinYqlzP69208oPLk5cygwaoLi&s=1&callback=initialize";//此为v2.0版本的引用方式
-    // http://api.map.baidu.com/api?v=1.4&ak=您的密钥&callback=initialize"; //此为v1.4版本及以前版本的引用方式
-    document.body.appendChild(script);
+//跨域加载
+function loadScript() {
+    var scriptMap = document.createElement("script");
+    scriptMap.src = "https://api.map.baidu.com/api?v=2.0&ak=AEsLIVDinYqlzP69208oPLk5cygwaoLi&s=1&callback=initialize";//此为v2.0版本的引用方式
+    document.body.appendChild(scriptMap);
 }
 
 
 
-// 渲染页面
-console.log("appjs");
+
+
+
+
+/*
+* 渲染页面
+*/
 render("#content","#tp03",bindEvents,userInfo);
 // 插入动画
 window.requestAnimationFrame(clock);
