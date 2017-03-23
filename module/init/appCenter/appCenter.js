@@ -1,12 +1,12 @@
 /**
  * Created by Administrator on 2017/2/28.
  */
-console.log("处理业务逻辑");
-// 给标记 设置不同的打开区块
+
+/*
+*  划定区域 什么样的模块可以访问
+*/
  App.debug && ( localStorage.setItem("login-guest",'{"10001":{"100011":{},"100012":{}},"10002":{},"10003":{}}'))
  localStorage.setItem('littleFriend',"徐信阳")
-// 针对电脑和手机的两种事件类型
-
 
 var UserRole = JSON.parse(localStorage.getItem('login-guest')),
     //获取能够进入权限的appid
@@ -75,7 +75,7 @@ var render = function(elPose , tplName ,bindE,data){
     var content = $(elPose),tpl=$(tplName).html();
     var html = _.template(tpl)(data)
     content.html(html);
-    bindE();
+    bindE && bindE();
 }
 /*
 * [gtoApp 根据linkName跳转到相应App]
@@ -328,6 +328,7 @@ function ipGetInfo(data){
         content = data.content || {},
         address = content.address || '',
         addressDetail = content.address_detail || {},
+        city = addressDetail.city || '',
         ipPoint = content.point || {},
         lon = ipPoint.x || '',
         lat = ipPoint.y || '';
@@ -336,6 +337,27 @@ function ipGetInfo(data){
     var mp = new BMap.Map('mapIp');
     mp.setMapStyle({style:'hardedge'});
     mp.centerAndZoom(point, 15);
+    // 需要一个判断
+    var weatherData = JSON.parse(localStorage.getItem('weather')),
+        _dayList,
+        _dayStr;
+    if(!_.isEmpty(weatherData) &&
+        !_.isEmpty(weatherData.today) &&
+        !_.isEmpty(city) &&
+        typeof city == "string" &&
+        city.indexOf(weatherData.today.city) > -1){
+        _dayList =  /^(\d{4})\D+(\d{1,2})\D+(\d{1,2})\D+$/.exec(weatherData.today.date_y);
+        if(!_.isEmpty(_dayList)){
+            _dayStr = _dayList[1]+'-'+ _dayList[2]+'-'+ _dayList[3];
+            if((new Date()).toDateString() === Date.get(_dayStr).toDateString()){
+                render('.weather','#tp04',null,weatherData);
+            }else{
+                ajaxWeather(city)
+            }
+        }
+    }else{
+        ajaxWeather(city)
+    }
 }
 
 // 百度地图初始化
@@ -372,17 +394,32 @@ function initialize() {
     })
 
 }
-//跨域加载
+//获取天气数据
+function ajaxWeather(city){
+    var city = encodeURI(city);
+    $.ajax({
+        type:'get',
+        url:'https://v.juhe.cn/weather/index?format=2&cityname='+city+'&key=aa540a01d200f64f33f55a48a7b14f3f',
+        dataType:'jsonp',
+        success : function(data){
+            // 将天气数据存起来
+            localStorage.setItem('weather',JSON.stringify(data.result))
+            var renderData = data.result;
+            render('.weather','#tp04',null,renderData)
+        },
+        error:function(){
+            console.log('失败');
+        }
+    })
+}
+
+
+//跨域加载百度地图模板
 function loadScript() {
     var scriptMap = document.createElement("script");
     scriptMap.src = "https://api.map.baidu.com/api?v=2.0&ak=AEsLIVDinYqlzP69208oPLk5cygwaoLi&s=1&callback=initialize";//此为v2.0版本的引用方式
     document.body.appendChild(scriptMap);
 }
-
-
-
-
-
 
 
 /*
@@ -393,6 +430,5 @@ render("#content","#tp03",bindEvents,userInfo);
 window.requestAnimationFrame(clock);
 // 插入百度地图
 loadScript();
-
 // 查看本地储存
 //localStorageLog();

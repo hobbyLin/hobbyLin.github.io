@@ -10,21 +10,80 @@
 </head>
 <body>
     <div id="content"></div>
-    <div class="baidumap">
-        <input type="text" name="lon" value="经度"/>
-        <input type="text" name="lat" value="纬度"/>
+    <div class="h5GetPo">
+        <h3>h5获取的地理位置</h3>
+        <div>
+            <label>经度</label> <input type="text" name="h5-lon" value="" placeholder="经度"/>
+        </div>
+
+        <div>
+            <label>纬度</label><input type="text" name="h5-lat" value="" placeholder="纬度"/>
+        </div>
+
     </div>
     <div id="map"></div>
+    <div class="ipGetPo">
+        <h3>ip获取的地理位置</h3>
+        <div>
+            <label>经度</label><input type="text" name="ip-lon" value="" placeholder="经度"/>
+        </div>
+       <div>
+           <label>纬度</label> <input type="text" name="ip-lat" value="" placeholder="纬度"/>
+       </div>
+
+    </div>
     <div id="mapIp"></div>
+    <script type="text/template" id="tp04">
+        <div class = 'sk'>
+           <ul>
+               <li><span>当前温度： </span><%=obj.sk?obj.sk.temp:''%>℃</li>
+               <li><span>当前风向： </span><%=obj.sk?obj.sk.wind_direction:''%></li>
+               <li><span>当前风力： </span><%=obj.sk?obj.sk.wind_strength:''%></li>
+               <li><span>当前湿度： </span><%=obj.sk?obj.sk.humidity:''%></li>
+               <li><span>更新时间： </span><%=obj.sk?obj.sk.time:''%></li>
+
+           </ul>
+        </div>
+        <div class="today">
+            <li><span>城市:</span><%=obj.today?obj.today.city:''%></li>
+            <li><span>日期：</span><%=obj.today?obj.today.date_y:''%></li>
+            <li><span>星期：</span><%=obj.today?obj.today.week:''%></li>
+            <li><span>今日温度：</span><%=obj.today?obj.today.temperature:''%></li>
+            <li><span>今日天气：</span><%=obj.today?obj.today.weather:''%></li>
+            <li><span>天气识标：</span><%=obj.today?obj.today.weather_id:''%></li>
+            <li><span>风向：</span><%=obj.today?obj.today.wind:''%></li>
+            <li><span>穿衣指数：</span><%=obj.today?obj.today.dressing_index:''%></li>
+            <li><span>穿衣建议：</span><%=obj.today?obj.today.dressing_advice:''%></li>
+            <li><span>紫外线强度：</span><%=obj.today?obj.today.uv_index:''%></li>
+            <li><span>舒适度指数：</span><%=obj.today?obj.today.comfort_index:''%></li>
+            <li><span>洗车指数：</span><%=obj.today?obj.today.wash_index:''%></li>
+            <li><span>旅游指数:</span><%=obj.today?obj.today.travel_index:''%></li>
+            <li><span>晨练指数:</span><%=obj.today?obj.today.exercise_index:''%></li>
+            <li><span>干燥指数:</span><%=obj.today?obj.today.drying_index:''%></li>
+        </div>
+        <div class="future">
+            <ul>
+                <%_.each(obj.future,function(v,k){%>
+                <li>
+                    <dl>
+                        <dt><span><%=v.week%></span></dt>
+                        <dd><%=v.temperature%></dd>
+                        <dd><%=v.weather%></dd>
+                        <dd><%=v.weather_id%></dd>
+                        <dd><%=v.wind%></dd>
+                        <dd><%=v.date%></dd>
+                    </dl>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+    </script>
     <script type="text/template" id ='tp03'>
         <header class="clearfix">
             <a href="appCenter.html" class="fl">
                 <canvas class="logo" width="150" height="150"></canvas>
             </a>
-            <div class="fl">
-                <p class="userName">
-                    天气展示模块
-                </p>
+            <div class="fl weather">
             </div>
             <div></div>
         </header>
