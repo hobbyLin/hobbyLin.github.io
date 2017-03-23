@@ -49,8 +49,8 @@ userInfo ={
         appId:'10001',
         name:'firstApp',
         appName:'第一个app'
-    }],
-    guestId : UserRole.guestId
+    }]
+
 };
 /*
 * app上线控制
@@ -290,6 +290,10 @@ function getPosition(fun){
              lat = position.coords.latitude;
              lon = position.coords.longitude;
             console.log(lon + '--'+ lat);
+            document.querySelector('[name = "h5-lon"]').value = lon;
+            document.querySelector('[name = "h5-lat"]').value = lat;
+
+
             return  fun(lon,lat);
 
 
@@ -332,6 +336,10 @@ function ipGetInfo(data){
         ipPoint = content.point || {},
         lon = ipPoint.x || '',
         lat = ipPoint.y || '';
+    document.querySelector('[name = "ip-lon"]').value = lon;
+    document.querySelector('[name = "ip-lat"]').value = lat;
+
+
     console.log(lon + '--'+ lat);
     var point = new BMap.Point(lon,lat);
     var mp = new BMap.Map('mapIp');

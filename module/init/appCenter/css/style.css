@@ -1,4 +1,4 @@
-html{color:#000;background:#FFF;font-family: 'Arial', 'Microsoft YaHei'!important;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,header,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;    -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
+html{color:#000;background:#FFF;font-family: 'Arial', 'Microsoft YaHei'!important;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,header,nav,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;    -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
 
 /*个人设置*/
 .por {
@@ -57,7 +57,7 @@ input{
 }
 /*页面*/
 /*头部*/
-header{
+header , nav,section ul{
     width: 100%;
     border-radius: 6px;
     padding: 10px 5px;
@@ -65,29 +65,71 @@ header{
     box-shadow: 1px 1px 5px #555;
 }
 header>a{
-    position:relative;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background: white;
     display:block;height:50px;width:50px; overflow:hidden;
+    border-radius:25px;
 }
 header>a canvas{
     position: absolute;
     top:-50px;
     left:-50px;
 }
+.sk ,.today ,.future{
+    background:#29343a;
+    border:2px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px #555;
+    padding: 10px 0;
+    color:#fff;
+    margin:10px;
+}
+header ul{
+    padding :10px;
+}
+
+header ul > li{
+    margin:0 auto;
+    text-align: center;
+    margin:5px;
+    padding:5px;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:4px;
+    box-shadow: 1px 1px 6px #ddd;
+}
+
 /*选项卡*/
 nav{
-    background:yellow;
+margin :10px 0;
 }
 nav a{
-    display:inline-block;height:40px;padding:4px 10px;line-height:40px;
+    display:inline-block;height:40px;width:calc((100% - (5px + 4px) * 2) / 5 );   padding:2vw 0;line-height:40px;
+    text-align: center;
+    font-size:4vw;
+    color: #29343a;
 }
 .curron{
-    background:#ccc;
+    background:#29343a;
+    border-radius:4px;
+    color:#fff;
 }
 /*按钮样式*/
-section ul{
-    margin:0 auto;
-    border:2px solid orangered;
+section:before ,section:after{
+    content: ""; display: block; height:1px; background:#29343a;margin:30px; box-shadow: 1px 1px 5px #29343a;
 }
+section:before{
+  text-align: center; line-height:50px; font-size: 5vw;  content: "App Center"; display: block; height:50px; color:#fff; background:#29343a;margin:30px; box-shadow: 1px 1px 5px #29343a;padding:2vw 0; border-radius: 6px;
+}
+section ul{
+    font-size:2.5vw;
+
+}
+section ul li{
+    width:calc((100% - (5px + 4px) * 2) / 5 );
+}
+
 .appbtn{
     width:50px;
     height:50px;
@@ -98,7 +140,7 @@ section ul{
     height:100%;
 }
 .app_icon_hover{
-    background:rebeccapurple;
+    background-size:55px 55px !important;
 }
 .appMark{
 position: absolute;

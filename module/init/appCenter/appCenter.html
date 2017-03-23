@@ -36,42 +36,47 @@
     <script type="text/template" id="tp04">
         <div class = 'sk'>
            <ul>
-               <li><span>当前温度： </span><%=obj.sk?obj.sk.temp:''%>℃</li>
-               <li><span>当前风向： </span><%=obj.sk?obj.sk.wind_direction:''%></li>
-               <li><span>当前风力： </span><%=obj.sk?obj.sk.wind_strength:''%></li>
-               <li><span>当前湿度： </span><%=obj.sk?obj.sk.humidity:''%></li>
-               <li><span>更新时间： </span><%=obj.sk?obj.sk.time:''%></li>
+               <h3>当前天气数据</h3>
+               <li><span></span><%=obj.sk?obj.sk.temp:''%>℃</li>
+               <li><span></span><%=obj.sk?obj.sk.wind_direction:''%></li>
+               <li><span></span><%=obj.sk?obj.sk.wind_strength:''%></li>
+               <li><span>湿度</span><%=obj.sk?obj.sk.humidity:''%></li>
+               <li><span>更时:</span><%=obj.sk?obj.sk.time:''%></li>
 
            </ul>
         </div>
         <div class="today">
-            <li><span>城市:</span><%=obj.today?obj.today.city:''%></li>
-            <li><span>日期：</span><%=obj.today?obj.today.date_y:''%></li>
-            <li><span>星期：</span><%=obj.today?obj.today.week:''%></li>
-            <li><span>今日温度：</span><%=obj.today?obj.today.temperature:''%></li>
-            <li><span>今日天气：</span><%=obj.today?obj.today.weather:''%></li>
-            <li><span>天气识标：</span><%=obj.today?obj.today.weather_id:''%></li>
-            <li><span>风向：</span><%=obj.today?obj.today.wind:''%></li>
-            <li><span>穿衣指数：</span><%=obj.today?obj.today.dressing_index:''%></li>
-            <li><span>穿衣建议：</span><%=obj.today?obj.today.dressing_advice:''%></li>
-            <li><span>紫外线强度：</span><%=obj.today?obj.today.uv_index:''%></li>
-            <li><span>舒适度指数：</span><%=obj.today?obj.today.comfort_index:''%></li>
-            <li><span>洗车指数：</span><%=obj.today?obj.today.wash_index:''%></li>
-            <li><span>旅游指数:</span><%=obj.today?obj.today.travel_index:''%></li>
-            <li><span>晨练指数:</span><%=obj.today?obj.today.exercise_index:''%></li>
-            <li><span>干燥指数:</span><%=obj.today?obj.today.drying_index:''%></li>
+            <ul>
+                <h3>当日总体数据</h3>
+            <li><span></span><%=obj.today?obj.today.city:''%></li>
+            <li><span></span><%=obj.today?obj.today.date_y:''%></li>
+            <li><span></span><%=obj.today?obj.today.week:''%></li>
+            <li><span></span><%=obj.today?obj.today.temperature:''%></li>
+            <li><span></span><%=obj.today?obj.today.weather:''%></li>
+            <li><span></span><%=obj.today?(obj.today.weather_id.fa =! obj.today.weather_id.fb ? '组合天气':(obj.today.weather_id.fa > 52 ? '霾' :'晴' )):''%></li>
+            <li><span></span><%=obj.today?obj.today.wind:''%></li>
+            <li><span>穿衣：</span><%=obj.today?obj.today.dressing_index:''%></li>
+            <li><span></span><%=obj.today?obj.today.dressing_advice:''%></li>
+            <li><span>紫外线：</span><%=obj.today?obj.today.uv_index:''%></li>
+            <li><span>舒适度：</span><%=obj.today?obj.today.comfort_index:''%></li>
+            <li><span>洗车：</span><%=obj.today?obj.today.wash_index:''%></li>
+            <li><span>旅游:</span><%=obj.today?obj.today.travel_index:''%></li>
+            <li><span>晨练:</span><%=obj.today?obj.today.exercise_index:''%></li>
+            <li><span>干燥:</span><%=obj.today?obj.today.drying_index:''%></li>
+            </ul>
         </div>
         <div class="future">
             <ul>
+                <h3>未来天气数据</h3>
                 <%_.each(obj.future,function(v,k){%>
                 <li>
                     <dl>
                         <dt><span><%=v.week%></span></dt>
                         <dd><%=v.temperature%></dd>
                         <dd><%=v.weather%></dd>
-                        <dd><%=v.weather_id%></dd>
+                        <dd><%=v.weather_id ?(v.weather_id.fa != v.weather_id.fb ? '组合天气' : (v.weather_id.fb > 52 ? '霾' :'晴')):'' %></dd>
                         <dd><%=v.wind%></dd>
-                        <dd><%=v.date%></dd>
+                        <dd><%=v.date?(v.date.substr(0,4)+'年'+(v.date.substr(4,2) < 10 ?v.date.substr(5,1):v.date.substr(4,2))+'月'+(v.date.substr(6,2) < 10 ?v.date.substr(7,1):v.date.substr(6,2))+'日'):'' %></dd>
                     </dl>
                 </li>
                 <%})%>
@@ -83,7 +88,7 @@
             <a href="appCenter.html" class="fl">
                 <canvas class="logo" width="150" height="150"></canvas>
             </a>
-            <div class="fl weather">
+            <div class="weather">
             </div>
             <div></div>
         </header>
@@ -95,8 +100,8 @@
 
             </nav>
             <% for(var key in obj){%>
+
             <ul data-app-list="<%=key%>" class="<%if(key != 'backbone'){%>dsn<%}%>">
-                <h2><%=key%></h2>
                 <%_.each(obj[key],function(v,k){%>
                     <li class="fl">
                         <dl>
