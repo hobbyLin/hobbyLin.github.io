@@ -89,11 +89,10 @@ function checkSccIsNineNumber(scc){
 }
 function gotoApp(){
     // 如果没有权限 阻止程序调到应用内
-    console.log(window.appId)
-    console.log(UserRole[window.appId])
-    loading.hide();
+    // console.log(window.appId)
+    // console.log(UserRole[window.appId])
     if(window.appId !== 'allUser' && window.appId !== '10008' && Object.keys(UserRole[window.appId]).length === 0){
-        alert("sorry guys, u don't have the permission access my blog");
+       Prompt.show("sorry guys, u don't have the permission access my blog",'alert',function(){});
         return;
     }
     switch(window.linkName){
@@ -114,7 +113,6 @@ function gotoApp(){
 * 点击应用图标的事件处理
 */
 var gotoCorresponding = function(e){
-
     if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
         e.target.classList.remove('app_icon_hover');
         window.linkName = e.target.dataset.link;
@@ -124,6 +122,7 @@ var gotoCorresponding = function(e){
         console.log("这是图标事件额")
         return;
     }
+
     window.updateApp(window.linkName,gotoApp);
 
 }
@@ -156,7 +155,6 @@ var bindEvents = function(){
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
-            loading.show();
             e.target.classList.add("app_icon_hover");
         }
     },false);

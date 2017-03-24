@@ -64,7 +64,7 @@ require.config({
         'plugins/loading/loading':['jQuery'],
         'common/config':['jQuery','logger'],
         'common/load':['common/config'],
-        'appCenter/appCenter':['common/load']
+        'appCenter/appCenter':['common/load','plugins/promptBox/prompt']
     },
     paths : {
         text : '../../init/assets/require/text',

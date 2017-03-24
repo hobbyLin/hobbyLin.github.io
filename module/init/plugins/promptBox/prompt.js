@@ -1,39 +1,101 @@
 /**
  * Created by Administrator on 2017/3/24.
  */
-;(function(window,$,undefined){
-    var html = '<div class="showBox"> <div class="promptBox"><p>' +
-        '<input type="text" name = "message" value = "[tips]"> </p>' +
-        '<button>确定</button><button>取消</button></div></div>'
+;(function(){
+    function MyModule() {
 
+        var Prompt,
+            // 插入的html代码  [tips]用于标记
+            html = '<div class ="promptInner">' +
+                '<div class="promptBox">' +
+                '<p>' +
+                '[tips]<br><input type="text" name = "message" value = ""> ' +
+                '</p>' +
+                '<span class="btncf">确定</span><span class="btncs" >取消</span>' +
+                '</div>' +
+                '</div>',
+            // 弹出框默认信息
+            settings ={
+                tip : '这是一个测试'
+            };
 
-    var promptTask={
-        render: function(str){
-            this.hide();
-            var tip = str || this.settings.tip;
-            html = this.html.replace(/\[tips\]/,tip);
-            this.el = document.createDocumentFragment().innerHTML = html;
-            document.body.appendChild(this.el);
+        function buttonEvent(e){
+            var ele = e.target,
+                output;
+            if(ele.tagName.toUpperCase() === "SPAN"){
+                Prompt.hide();
+                switch(Prompt._type){
+                    case 'alert':
+                        output = null;
+                        break;
+                    case 'confirm':
+                        if(ele.className === 'btncf'){
+                            output = true;
+                        }else{
+                            output = false;
+                        }
+                        break;
+                    case 'prompt':
+                        output={};
+                        if(ele.className === 'btncf'){
+                            output.text =ele.parentNode.querySelector('input').value;
+                            output.value = true;
+                        }else{
+                            output.text='';
+                            output.value = false;
+                        }
+                        break;
+                }
 
-        },
-        hide:function(){
+                Prompt._callback.call(null,output);
 
-        },
-        alert:function(str){
-
-            this.render();
-        },
-        confirm: function(str){
-
-            this.render();
-        },
-        prompt:function(str){
-
-            this.render();
+            }
         }
+
+        function bindAllEvent(){
+            document.querySelector('.promptInner').addEventListener('click',buttonEvent,false );
+        }
+        // 弹出原型
+        var promptTask={
+            render: function(mesg,type,fun){
+                var tip = mesg || this.settings.tip;
+                html = this.html.replace(/\[tips\]/,tip);
+                this.el = document.createElement('div');
+                this.el.innerHTML = html;
+                this.el.className =type;
+                document.body.appendChild(this.el);
+                fun();
+            },
+            hide:function(){
+                this.el && document.body.removeChild(this.el);
+                this.el = null;
+            },
+            show:function(mesg,type,fun){
+                this.hide();
+                this._callback = fun;
+                this._type = type;
+                this.render(mesg,type,bindAllEvent);
+            },
+        };
+        Prompt = Object.create(promptTask);
+
+        // 私有属性设置
+        Prompt.settings = settings;
+        Prompt.html = html;
+        Prompt.el = null;
+        Prompt._callback=null;
+        Prompt._type = '';
+        window.Prompt = Prompt;
+        return Prompt;
     }
-
-
-
-
-})(window,jQuery);
+    var Prompt = MyModule;
+    if (typeof module !== 'undefined' && typeof exports === 'object' && define.cmd) {
+        module.exports = Prompt();
+    } else if (typeof define === 'function' && define.amd) {
+        define(function() { return Prompt(); });
+    } else {
+        this.Prompt = Prompt();
+    }
+}).call(function() {
+    return this || (typeof window !== 'undefined' ? window : global);
+});

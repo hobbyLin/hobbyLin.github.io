@@ -1,0 +1,43 @@
+.alert,.confirm,.prompt{
+    position :  fixed;
+    display: -webkit-box;
+    -webkit-box-align : center;
+    background-color: rgba(0,0,0,.2);
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+}
+.alert input, .confirm input{
+    display: none;
+}
+.alert .btncs{
+    display: none;
+}
+.promptInner{
+    width : 100%;
+    text-align: center;
+}
+.promptBox{
+    width:50%;
+    display: inline-block;
+    border:4px solid #29343a;
+    border-radius:10px;
+    background:#fff;
+    box-shadow: 1px 1px 25px #000;
+}
+.promptInner span{
+    display: inline-block;
+    margin:10px 20px;
+    padding:5px 10px;
+    background:#29343a;
+    color:#fff;
+    border:2px solid #fff;
+    border-radius:10px;
+    font-size:3vw;
+}
+.promptInner input{
+    outline: hidden;
+    margin:10px;
+}
