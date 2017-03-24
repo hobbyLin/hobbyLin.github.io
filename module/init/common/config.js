@@ -73,8 +73,6 @@ define(['plugins/helper/areaCode'],function(areaCode){
         return  parseID.apply(this,arguments);
     }
 
-    //阻止某些浏览器会触发两次tap事件
-    App.onlyOneClick = true;
 
 
 })
