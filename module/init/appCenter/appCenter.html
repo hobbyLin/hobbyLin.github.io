@@ -13,11 +13,11 @@
     <div class="h5GetPo">
         <h3>h5获取的地理位置</h3>
         <div>
-            <label>经度</label> <input type="text" name="h5-lon" value="" placeholder="经度"/>
+            <span>经度</span><input type="text" name="h5-lon" value="" placeholder="经度"/>
         </div>
 
         <div>
-            <label>纬度</label><input type="text" name="h5-lat" value="" placeholder="纬度"/>
+            <span>纬度</span><input type="text" name="h5-lat" value="" placeholder="纬度"/>
         </div>
 
     </div>
@@ -25,10 +25,10 @@
     <div class="ipGetPo">
         <h3>ip获取的地理位置</h3>
         <div>
-            <label>经度</label><input type="text" name="ip-lon" value="" placeholder="经度"/>
+            <span>经度</span><input type="text" name="ip-lon" value="" placeholder="经度"/>
         </div>
        <div>
-           <label>纬度</label> <input type="text" name="ip-lat" value="" placeholder="纬度"/>
+           <span>纬度</span><input type="text" name="ip-lat" value="" placeholder="纬度"/>
        </div>
 
     </div>
@@ -107,7 +107,7 @@
                         <dl>
                             <dt class="por">
                                 <div class="appMark" data-mark ="<%=v.name%>" style="display:<%=v.display%>">
-                                 <img src="img/ock.jpg" alt="" width="50" height="50" onerror="this.src='img/lock.png';">
+                                 <img src="img/ock.jpg" alt="" width="100%" height="100%" onerror="this.src='img/lock.png';">
                                 </div>
                                 <div class="appbtn <%=key%>">
                                     <span class="<%='app_icon_'+v.name%>" data-link="<%=v.name%>" data-appid="<%=v.appId%>">

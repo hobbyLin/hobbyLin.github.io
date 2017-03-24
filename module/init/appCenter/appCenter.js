@@ -293,9 +293,7 @@ function getPosition(fun){
             document.querySelector('[name = "h5-lon"]').value = lon;
             document.querySelector('[name = "h5-lat"]').value = lat;
 
-
-            return  fun(lon,lat);
-
+            return fun.call(this,lon,lat);
 
         },function(error){
             alert('获取失败,默认上海咯');
@@ -315,14 +313,16 @@ function getPosition(fun){
                     alert("未知错误。");
                     break;
             };
-            return fun(lon,lat);
+            return fun.call(this,lon,lat);
         }, { timeout: 20000, enableHighAccuracy: true })
     }else{
         alert('本浏览器不支持,只能默认上海咯');
         lon = 121.491;
         lat = 31.233;
-        return fun(lon,lat);
+        return fun.call(this,lon,lat);
     };
+
+
 }
 
 // ip 获取地理位置
@@ -336,6 +336,7 @@ function ipGetInfo(data){
         ipPoint = content.point || {},
         lon = ipPoint.x || '',
         lat = ipPoint.y || '';
+    //将地理位置显示
     document.querySelector('[name = "ip-lon"]').value = lon;
     document.querySelector('[name = "ip-lat"]').value = lat;
 
@@ -377,10 +378,8 @@ function initialize() {
         var gc = new BMap.Geocoder();
         gc.getLocation(point,function(rs){
             var loInfo = rs.addressComponents;
-            console.log('利用h5获取的地理位置：'+JSON.stringify(loInfo));
-            // for(var key in loInfo){
-            //     localStorage.setItem(key,loInfo[key])
-            // }
+            //console.log('利用h5获取的地理位置：'+JSON.stringify(loInfo));
+            localStorage.setItem('h5Position',JSON.stringify(loInfo))
         })
         mp.setMapStyle({style:'hardedge'});
         mp.centerAndZoom(point, 15);

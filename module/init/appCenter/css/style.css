@@ -57,7 +57,7 @@ input{
 }
 /*页面*/
 /*头部*/
-header , nav,section ul{
+header , nav,section ul,.h5GetPo,.ipGetPo{
     width: 100%;
     border-radius: 6px;
     padding: 10px 5px;
@@ -129,10 +129,12 @@ section ul{
 section ul li{
     width:calc((100% - (5px + 4px) * 2) / 5 );
 }
-
+section ul li dd{
+    text-align: center;
+}
 .appbtn{
-    width:50px;
-    height:50px;
+    width:100%;
+    height: 60px;
 }
 .appbtn span{
     display: block;
@@ -140,32 +142,61 @@ section ul li{
     height:100%;
 }
 .app_icon_hover{
-    background-size:55px 55px !important;
+    -webkit-filter: blur(1px); /* Chrome, Opera */
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+
 }
 .appMark{
 position: absolute;
+    width:100%;
+    height:60px;
 }
+.appMark img{
+    opacity: 0.9;
+}
+
 .backbone span{
     background: url(../img/backbone.png) no-repeat;
-    background-size:50px 50px;
+    background-size:100% 100%;
 }
 .angular span{
     background: url(../img/angular.png) no-repeat;
-    background-size:50px 50px;
+    background-size:100% 100%;
 }
 .react span{
     background: url(../img/react.png) no-repeat;
-    background-size:50px 50px;
+    background-size:100% 100%;
 }
 .vue span{
     background: url(../img/vue.png) no-repeat;
-    background-size:50px 50px;
+    background-size:100% 100%;
 }
 .plugin span{
     background: url(../img/plugin.png) no-repeat;
-    background-size:50px 50px;
+    background-size:100% 100%;
 }
 /*百度地图样式*/
+.h5GetPo div,.ipGetPo div{
+    background: #29343a;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px #555;
+    padding: 10px 0;
+    color: #fff;
+    margin: 10px;
+}
+.h5GetPo div span,.ipGetPo div span{
+    display: inline-block;
+    width:30%;
+    text-align: center;
+}
+.h5GetPo div input,.ipGetPo div input{
+    width:60%;
+    border-radius:4px;
+}
+
 #map,#mapIp{
     width:calc(100% - (20px) * 2);
     height:320px;
