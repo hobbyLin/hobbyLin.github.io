@@ -72,7 +72,8 @@ define(['plugins/helper/areaCode'],function(areaCode){
     App.getIdInfo= function(){
         return  parseID.apply(this,arguments);
     }
-
+   // 测试
+    App.counter = 0 ;
 
 
 })
