@@ -156,8 +156,6 @@ var bindEvents = function(){
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
-            App.counter ++ ;
-            alert( App.counter);
             loading.show();
             e.target.classList.add("app_icon_hover");
         }
