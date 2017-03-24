@@ -91,6 +91,7 @@ function gotoApp(){
     // 如果没有权限 阻止程序调到应用内
     console.log(window.appId)
     console.log(UserRole[window.appId])
+    loading.hide();
     if(window.appId !== 'allUser' && window.appId !== '10008' && Object.keys(UserRole[window.appId]).length === 0){
         alert("sorry guys, u don't have the permission access my blog");
         return;
@@ -154,6 +155,7 @@ var bindEvents = function(){
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
+            loading.show();
             e.target.classList.add("app_icon_hover");
         }
     },false);
