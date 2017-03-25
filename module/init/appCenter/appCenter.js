@@ -92,7 +92,9 @@ function gotoApp(){
     // console.log(window.appId)
     // console.log(UserRole[window.appId])
     if(window.appId !== 'allUser' && window.appId !== '10008' && Object.keys(UserRole[window.appId]).length === 0){
-       Prompt.show("sorry guys, u don't have the permission access my blog",'alert',function(){});
+        setInterval(function(){
+            Prompt.show("sorry guys, u don't have the permission access my blog",'alert',function(){});
+        },200)
         return;
     }
     switch(window.linkName){
@@ -160,12 +162,6 @@ var bindEvents = function(){
     },false);
     // 标签加事件响应
     document.querySelector("#apptype").addEventListener(App.clickDown,toggleAppType,false );
-    // document.querySelector(".logout").addEventListener("touchstart",function(){
-    //     if(confirm('是否离开')){
-    //         location.href = "../binding/binding.html";
-    //         return;
-    //     }
-    // })
 };
 // 打印localStorage到日志
 var localStorageLog = function(){

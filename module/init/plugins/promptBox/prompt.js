@@ -5,7 +5,7 @@
     function MyModule() {
 
         var Prompt,
-            // 插入的html代码  [tips]用于标记
+            // 插入的html代码  [tips]用于转换添加内容
             html = '<div class ="promptInner">' +
                 '<div class="promptBox">' +
                 '<p>' +
@@ -23,7 +23,7 @@
             var ele = e.target,
                 output;
             if(ele.tagName.toUpperCase() === "SPAN"){
-                Prompt.hide();
+
                 switch(Prompt._type){
                     case 'alert':
                         output = null;
@@ -48,10 +48,11 @@
                 }
 
                 Prompt._callback.call(null,output);
+                Prompt.hide();
+
 
             }
         }
-
         function bindAllEvent(){
             document.querySelector('.promptInner').addEventListener('click',buttonEvent,false );
         }
@@ -69,6 +70,8 @@
             hide:function(){
                 this.el && document.body.removeChild(this.el);
                 this.el = null;
+                this._callback=null;
+                this._type = '';
             },
             show:function(mesg,type,fun){
                 this.hide();
