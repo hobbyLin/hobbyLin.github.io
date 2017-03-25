@@ -91,7 +91,8 @@ require.config({
         commonUI:'../../init/assets/UI',
         cordova:'../../init/assets/ios/cordova',
         appCenter:'../../init/appCenter'
-    }
+    },
+    waitSeconds: 0
 });
 
 define(['plugins/loading/loading','MainCoreAll','MainCoreLoggerAdapter','common/config','common/load','appCenter/appCenter'],function(loading,MainCore){
