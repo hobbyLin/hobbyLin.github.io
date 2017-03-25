@@ -6,27 +6,36 @@
  * hide() 隐藏
  * setLoadingTip(tip) Param :{String} 动态改变加载提示
  */
-define(['jQuery'],function($){
+;(function(){
+function myloading(){
     // 模板
+
     var template =[
-        '<div class="loading-dialog [bg]">',
-           '<div class="loading-inner">',
-             '<div class="loading-content ">',
-                '<div class="loading"></div>',
-                '<div class="loading-tip">[tip]</div>',
-             '</div>',
+            '<div class="loading-dialog [bg]">',
+            '<div class="loading-inner">',
+            '<div class="loading-content ">',
+            '<div class="loading"></div>',
+            '<div class="loading-tip">[tip]</div>',
+            '</div>',
             '</div>',
             '<div class="loading-bg"></div>',
-        '</div>'
-    ],
-    // 默认参数
-    defaults = {
-        tip : '加载中...'
-    };
+            '</div>'
+        ],
+        // 默认参数
+        defaults = {
+            tip : '加载中...'
+        },
+        //这个方法不够好
+        isCellPhone = /ANDROID|IPAD|IPHONE/g.test(navigator.userAgent.toUpperCase());
     // loading 构造器
-    var Loading = function(opt){
-        this.settings = $.extend(defaults,opt);
+    var Loading = function(){
+        // this.settings = $.extend(defaults,opt);
+        this.settings = defaults;
+        this.el = null;
     };
+    function noMove (e){
+        e.preventDefault();
+    }
     function animation(){
         var canvas = document.createElement("canvas"),
             ctx = canvas.getContext('2d');
@@ -65,9 +74,9 @@ define(['jQuery'],function($){
         return canvas;
     };
     // Loading 原型
-    $.extend(Loading.prototype,{
+    Loading.prototype = Object.create({
         // 显示加载
-        show:function(wall,tip){console.log(wall);
+        show:function(wall,tip){
             this.hide();
             var _tip = tip || this.settings.tip,
                 wall = wall || false,
@@ -75,18 +84,26 @@ define(['jQuery'],function($){
             if(wall){
                 html = html.replace(/\[bg\]/ , 'loading-bg-block');
             }
-            this.$el = $(html);
-            this.$el.find(".loading").append(animation());
-            $(document.body).append(this.$el);
+            // this.$el = $(html);
+            // this.$el.find(".loading").append(animation());
+            // $(document.body).append(this.$el);
+            document.body.innerHTML += html;
+            document.querySelector('.loading').appendChild(animation());
+            this.el= document.querySelector('.loading-dialog');
+            isCellPhone && document.addEventListener('touchmove',noMove,{passive : false })
         },
         setLoadingTip: function(tip){
-            this.$el.find('.loading-tip').html(tip);
+            //this.$el.find('.loading-tip').html(tip);
+            this.el.querySelector('.loading-tip').innerHTML = tip;
         },
         //隐藏
         hide : function(){
-            this.$el && this.$el.remove();
+            this.el && document.body.removeChild(this.el);
+            this.el = null;
+            document.removeEventListener('touchmove',noMove);
         }
     });
+
     // loading单例
     Loading.getInstance = function(opt){
         if(!this._instance){
@@ -95,7 +112,20 @@ define(['jQuery'],function($){
         }
     }
     window.loading = new Loading();
-    loading.show(true);
-    return loading;
+    window.loading.show(true);
+    return window.loading;
+}
+var loading = myloading();
+if (typeof module !== 'undefined' && typeof exports === 'object' && define.cmd) {
+    module.exports = myloading();
+} else if (typeof define === 'function' && define.amd) {
 
-})
+} else {
+
+}
+}).call(function() {console.log(this);
+    return this || (typeof window !== 'undefined' ? window : global);
+});
+
+
+

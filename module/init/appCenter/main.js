@@ -95,7 +95,7 @@ require.config({
     waitSeconds: 0
 });
 
-define(['plugins/loading/loading','MainCoreAll','MainCoreLoggerAdapter','common/config','common/load','appCenter/appCenter'],function(loading,MainCore){
+define(['MainCoreAll','MainCoreLoggerAdapter','common/config','common/load','appCenter/appCenter'],function(MainCore){
         console.log('加载完所有模块后');
         loading.hide();
 

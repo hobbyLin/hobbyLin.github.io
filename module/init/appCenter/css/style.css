@@ -206,3 +206,46 @@ position: absolute;
     box-shadow: 1px 1px 5px #555;
     margin:15px 20px;
 }
+/*加载器的css代码*/
+.loading-dialog{
+    position :  fixed;
+    display: -webkit-box;
+    -webkit-box-align : center;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+}
+.loading-dialog .loading-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,.5);
+    width:100%;
+    height:100%;
+    z-index: 9999;
+}
+.loading-bg-block{
+    background-color: #aaa;
+}
+.loading-bg-block .loading-bg{
+    background-color:transparent;
+}
+.loading-dialog .loading-inner{
+    width : 100%;
+    text-align: center;
+}
+.loading-dialog .loading-content{
+    padding: 30px 40px;
+    background-color: #000;
+    opacity: 0.7;
+    border-radius:7px;
+    display: inline-block;
+    box-shadow: 1px 1px 48px #000;
+}
+.loading-dialog .loading-tip{
+    margin : 10px 0 0 0;
+    color:#fff;
+}
+
