@@ -92,7 +92,7 @@ function gotoApp(){
     // console.log(window.appId)
     // console.log(UserRole[window.appId])
     if(window.appId !== 'allUser' && window.appId !== '10008' && Object.keys(UserRole[window.appId]).length === 0){
-        setInterval(function(){
+        setTimeout(function(){
             Prompt.show("sorry guys, u don't have the permission access my blog",'alert',function(){});
         },200)
         return;
