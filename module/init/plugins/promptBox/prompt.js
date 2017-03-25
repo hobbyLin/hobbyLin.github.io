@@ -64,7 +64,7 @@
         }
         // 绑定事件
         function bindAllEvent(){
-            document.querySelector('.promptInner').addEventListener('click',buttonEvent,false );
+            document.querySelector('.promptBox').addEventListener('click',buttonEvent,false );
         }
         // 委托原型
         var promptTask={
@@ -88,7 +88,7 @@
                 this._callback = fun;
                 this._type = type;
                 this.render(mesg,type,bindAllEvent);
-            },
+            }
         };
         // 委托创建Prompt对象
         Prompt = Object.create(promptTask);
