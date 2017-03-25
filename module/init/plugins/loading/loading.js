@@ -9,9 +9,9 @@
 define(['jQuery'],function($){
     // 模板
     var template =[
-        '<div class="loading-dialog">',
+        '<div class="loading-dialog [bg]">',
            '<div class="loading-inner">',
-             '<div class="loading-content">',
+             '<div class="loading-content ">',
                 '<div class="loading"></div>',
                 '<div class="loading-tip">[tip]</div>',
              '</div>',
@@ -67,10 +67,14 @@ define(['jQuery'],function($){
     // Loading 原型
     $.extend(Loading.prototype,{
         // 显示加载
-        show:function(tip){
+        show:function(wall,tip){console.log(wall);
             this.hide();
             var _tip = tip || this.settings.tip,
+                wall = wall || false,
                 html = template.join('').replace(/\[tip\]/,_tip);
+            if(wall){
+                html = html.replace(/\[bg\]/ , 'loading-bg-block');
+            }
             this.$el = $(html);
             this.$el.find(".loading").append(animation());
             $(document.body).append(this.$el);
@@ -91,7 +95,7 @@ define(['jQuery'],function($){
         }
     }
     window.loading = new Loading();
-    loading.show();
+    loading.show(true);
     return loading;
 
 })

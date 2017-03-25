@@ -1,9 +1,21 @@
 /**
  * Created by Administrator on 2017/3/24.
+ *
+ * 本插件用Object.create方法。若是没有这个方法请参考
+ * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill
+ *
+ * 一般情况下返回Prompt，作为window下的属性
+ * Prompt对外API：show()和hide()
+ * show(mes,type,callback)
+ * Prama : mes {string} 字符串，显示出来的提示信息
+ * Prama : type {string} 字符串，显示类型分别有三种 alert confirm prompt
+ * Prama : Callback {function} 函数，执行完毕回调函数
+ *
+ *
  */
 ;(function(){
     function MyModule() {
-
+        // 声明变量 初始化数据
         var Prompt,
             // 插入的html代码  [tips]用于转换添加内容
             html = '<div class ="promptInner">' +
@@ -18,12 +30,12 @@
             settings ={
                 tip : '这是一个测试'
             };
-
+        // 按钮事件
         function buttonEvent(e){
             var ele = e.target,
                 output;
             if(ele.tagName.toUpperCase() === "SPAN"){
-
+                // 不同类项返回不同数据
                 switch(Prompt._type){
                     case 'alert':
                         output = null;
@@ -46,17 +58,15 @@
                         }
                         break;
                 }
-
-                Prompt._callback.call(null,output);
+                Prompt._callback && Prompt._callback.call(null,output);
                 Prompt.hide();
-
-
             }
         }
+        // 绑定事件
         function bindAllEvent(){
             document.querySelector('.promptInner').addEventListener('click',buttonEvent,false );
         }
-        // 弹出原型
+        // 委托原型
         var promptTask={
             render: function(mesg,type,fun){
                 var tip = mesg || this.settings.tip;
@@ -80,14 +90,15 @@
                 this.render(mesg,type,bindAllEvent);
             },
         };
+        // 委托创建Prompt对象
         Prompt = Object.create(promptTask);
-
         // 私有属性设置
         Prompt.settings = settings;
         Prompt.html = html;
         Prompt.el = null;
         Prompt._callback=null;
         Prompt._type = '';
+        // 返回
         window.Prompt = Prompt;
         return Prompt;
     }

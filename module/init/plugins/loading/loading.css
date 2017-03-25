@@ -17,6 +17,12 @@
     height:100%;
     z-index: 9999;
 }
+.loading-bg-block{
+    background-color: #aaa;
+}
+.loading-bg-block .loading-bg{
+    background-color:transparent;
+}
 .loading-dialog .loading-inner{
     width : 100%;
     text-align: center;
@@ -27,6 +33,7 @@
     opacity: 0.7;
     border-radius:7px;
     display: inline-block;
+    box-shadow: 1px 1px 48px #000;
 }
 .loading-dialog .loading-tip{
     margin : 10px 0 0 0;
