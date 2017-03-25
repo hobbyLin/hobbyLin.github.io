@@ -66,6 +66,12 @@
         function bindAllEvent(){
             document.querySelector('.promptBox').addEventListener('click',buttonEvent,false );
         }
+        //取消touchmove事件
+        function noMove(e){
+            e.preventDefault();
+        }
+
+
         // 委托原型
         var promptTask={
             render: function(mesg,type,fun){
@@ -78,6 +84,7 @@
                 fun();
             },
             hide:function(){
+                this.isCellPhone && document.removeEventListener('touchmove',noMove);
                 this.el && document.body.removeChild(this.el);
                 this.el = null;
                 this._callback=null;
@@ -88,6 +95,8 @@
                 this._callback = fun;
                 this._type = type;
                 this.render(mesg,type,bindAllEvent);
+                // 适应谷歌新版本 百度（Making touch scrolling fast by default）
+                this.isCellPhone  &&  document.addEventListener('touchmove',noMove ,{ passive : false });
             }
         };
         // 委托创建Prompt对象
@@ -98,6 +107,7 @@
         Prompt.el = null;
         Prompt._callback=null;
         Prompt._type = '';
+        Prompt.isCellPhone =App.touchMove;
         // 返回
         window.Prompt = Prompt;
         return Prompt;
