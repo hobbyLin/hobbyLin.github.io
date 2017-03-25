@@ -16,7 +16,7 @@ define(['plugins/helper/areaCode'],function(areaCode){
     App.IS_IPHONE = ua.indexOf("IPHONE") != -1;
     App.clickDown = (App.IS_ANDROID ||  App.IS_IPAD || App.IS_IPHONE) ? "touchstart" : "mousedown";
     App.clickUp = (App.IS_ANDROID ||  App.IS_IPAD || App.IS_IPHONE) ? "touchend" : "mouseup";
-
+    App.touchMove = (App.IS_ANDROID ||  App.IS_IPAD || App.IS_IPHONE)
 
     // 根据身份证获取相关信息
     var rid = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})(\d{1}|X|x)$/,
