@@ -115,6 +115,7 @@ function gotoApp(){
 * 点击应用图标的事件处理
 */
 var gotoCorresponding = function(e){
+    testDiv.innerHTML += ' <br/> touchend 触发 ！';
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             e.target.classList.remove('app_icon_hover');
             window.linkName = e.target.dataset.link;
@@ -160,7 +161,7 @@ var toggleAppType = function(e){
 var bindEvents = function(){
     document.body.addEventListener(App.clickUp,gotoCorresponding,false);
     document.body.addEventListener(App.clickDown,function(e){
-
+        testDiv.innerHTML += ' <br/> touchstart 触发 ！';
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
