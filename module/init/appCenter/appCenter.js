@@ -123,10 +123,6 @@ var gotoCorresponding = function(e){
         }else{
             //其他
             console.log("这是图标事件额");
-            if(e.target.parentNode.parentNode.querySelector('.appMark').length > 0 ){
-                testDiv.innerHTML+='<br/><span style="color:red;">this is touchend : and nothing change;</span>';
-                Prompt.show("嘿，我发现一个bug",'alert',function(){});
-            }
             return;
         }
 
