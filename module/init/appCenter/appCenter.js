@@ -119,12 +119,12 @@ var gotoCorresponding = function(e){
         e.target.classList.remove('app_icon_hover');
         window.linkName = e.target.dataset.link;
         window.appId = e.target.dataset.appid;
-        testDiv.innerHTML+='<br/> this is touchend : style (blur) go, and get appid & linkName;'
+        testDiv.innerHTML+='<br/> <span style="color:green;">this is touchend </span> : style (blur) go, and get appid & linkName;'
     }else{
         //其他
         console.log("这是图标事件额");
         if(e.target.parentNode.parentNode.querySelector('.appMark').length > 0 ){
-            testDiv.innerHTML+='<br/> this is touchend : and nothing change;'
+            testDiv.innerHTML+='<br/><span style="color:red;">this is touchend : and nothing change;</span>'
         }
         return;
     }
@@ -161,7 +161,7 @@ var bindEvents = function(){
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
-            testDiv.innerHTML += '<br/> this is a touchstart : style (blur) come! '
+            testDiv.innerHTML += '<br/> <span style="color:green;">this is touchstart </span> : style (blur) come! '
             e.target.classList.add("app_icon_hover");
         }
     },false);
