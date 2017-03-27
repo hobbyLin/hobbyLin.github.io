@@ -119,9 +119,11 @@ var gotoCorresponding = function(e){
         e.target.classList.remove('app_icon_hover');
         window.linkName = e.target.dataset.link;
         window.appId = e.target.dataset.appid;
+        testDiv.innerHTML+='<br/> this is touchend : style (blur) go, and get appid & linkName;'
     }else{
         //其他
-        console.log("这是图标事件额")
+        console.log("这是图标事件额");
+        testDiv.innerHTML+='<br/> this is touchend : and nothing change;'
         return;
     }
 
@@ -157,6 +159,7 @@ var bindEvents = function(){
         if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
+            testDiv.innerHTML += '<br/> this is a touchstart : style (blur) come! '
             e.target.classList.add("app_icon_hover");
         }
     },false);
@@ -278,6 +281,18 @@ function clock(){
 *  1、利用h5方法获取地理位置
 *  2、利用百度api获取地理位置
 */
+// 根据lat lon 实现百度地图
+// param point {Object} 百度返回的 BMap.Point(lon,lat) 的实例
+// param elem  {String}  对应的dom 元素
+function getMap(point,elem){
+    var mp,
+        point = point || null,
+        elem = elem || '';
+     mp = new BMap.Map(elem);
+     //设置地图样式
+    mp.setMapStyle({style:'hardedge'});
+    mp.centerAndZoom(point, 15);
+}
 
 // h5获取当前地理位置
 function getPosition(fun){
@@ -336,13 +351,22 @@ function ipGetInfo(data){
     //将地理位置显示
     document.querySelector('[name = "ip-lon"]').value = lon;
     document.querySelector('[name = "ip-lat"]').value = lat;
-
-
+    // 这里直接获取由ip得到的地址 ipPosition
+    localStorage.setItem('ipPosition',JSON.stringify(data));
     console.log(lon + '--'+ lat);
     var point = new BMap.Point(lon,lat);
-    var mp = new BMap.Map('mapIp');
-    mp.setMapStyle({style:'hardedge'});
-    mp.centerAndZoom(point, 15);
+    var gc = new BMap.Geocoder();
+    gc.getLocation(point,function(rs){
+        var loInfo = rs.addressComponents;
+        console.log('利用ip获取的经度纬度地理位置：'+JSON.stringify(loInfo));
+        localStorage.setItem('iplatlonPosition',JSON.stringify(loInfo));
+    });
+
+    getMap(point,'mapIp');
+    // var mp = new BMap.Map('mapIp');
+    // mp.setMapStyle({style:'hardedge'});
+    // mp.centerAndZoom(point, 15);
+    //
     // 需要一个判断
     var weatherData = JSON.parse(localStorage.getItem('weather')),
         _dayList,
@@ -371,16 +395,13 @@ function initialize() {
     // h5获取地理位置
     var pos = getPosition(function(lon,lat){
         var point = new BMap.Point(lon,lat);
-        var mp = new BMap.Map('map');
         var gc = new BMap.Geocoder();
         gc.getLocation(point,function(rs){
             var loInfo = rs.addressComponents;
-            //console.log('利用h5获取的地理位置：'+JSON.stringify(loInfo));
-            localStorage.setItem('h5Position',JSON.stringify(loInfo))
-        })
-        mp.setMapStyle({style:'hardedge'});
-        mp.centerAndZoom(point, 15);
-        return mp;
+            console.log('利用h5获取的地理位置：'+JSON.stringify(loInfo));
+            localStorage.setItem('h5Position',JSON.stringify(loInfo));
+        });
+        getMap(point,'map');
     });
     // 利用ip获取地理位置
     $.ajax({
@@ -429,7 +450,10 @@ function loadScript() {
 /*
 * 渲染页面
 */
+
+
 render("#content","#tp03",bindEvents,userInfo);
+var testDiv = document.querySelector('.testInfo');
 // 插入动画
 window.requestAnimationFrame(clock);
 // 插入百度地图

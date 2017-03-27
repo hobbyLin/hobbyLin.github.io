@@ -12,7 +12,7 @@
 <body>
     <div id="content"></div>
     <div class="h5GetPo">
-        <h3>h5获取的地理位置</h3>
+        <h3>h5获取您当前的地理位置</h3>
         <div>
             <span>经度</span><input type="text" name="h5-lon" value="" placeholder="经度" disabled/>
         </div>
@@ -24,7 +24,7 @@
     </div>
     <div id="map"></div>
     <div class="ipGetPo">
-        <h3>ip获取的地理位置</h3>
+        <h3>根据您当前ip获取的地理位置</h3>
         <div>
             <span>经度</span><input type="text" name="ip-lon" value="" placeholder="经度" disabled/>
         </div>
@@ -91,9 +91,12 @@
             </a>
             <div class="weather">
             </div>
-            <div></div>
         </header>
         <section>
+            <div class="testInfo" style="overflow: scroll; height:100px; font-size:2.5vw;">
+
+            </div>
+
             <nav id = "apptype">
                 <%for(var key in obj){%>
                 <a data-app-type="<%=key%>" class="<%if(key == 'backbone'){%>curron<%}%>"><%=key%> </a>

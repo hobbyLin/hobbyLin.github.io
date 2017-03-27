@@ -107,6 +107,7 @@
         Prompt.el = null;
         Prompt._callback=null;
         Prompt._type = '';
+        // 这里调用了config文档里的App属性 判断是否为手机端
         Prompt.isCellPhone =App.touchMove;
         // 返回
         window.Prompt = Prompt;
