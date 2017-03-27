@@ -115,20 +115,20 @@ function gotoApp(){
 * 点击应用图标的事件处理
 */
 var gotoCorresponding = function(e){
-    if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
-        e.target.classList.remove('app_icon_hover');
-        window.linkName = e.target.dataset.link;
-        window.appId = e.target.dataset.appid;
-        testDiv.innerHTML+='<br/> <span style="color:green;">this is touchend </span> : style (blur) go, and get appid & linkName;'
-    }else{
-        //其他
-        console.log("这是图标事件额");
-        if(e.target.parentNode.parentNode.querySelector('.appMark').length > 0 ){
-            testDiv.innerHTML+='<br/><span style="color:red;">this is touchend : and nothing change;</span>';
-            Prompt.show("嘿，我发现一个bug",'alert',function(){});
+        if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
+            e.target.classList.remove('app_icon_hover');
+            window.linkName = e.target.dataset.link;
+            window.appId = e.target.dataset.appid;
+            testDiv.innerHTML+='<br/> <span style="color:green;">this is touchend </span> : style (blur) go, and get appid & linkName;'
+        }else{
+            //其他
+            console.log("这是图标事件额");
+            if(e.target.parentNode.parentNode.querySelector('.appMark').length > 0 ){
+                testDiv.innerHTML+='<br/><span style="color:red;">this is touchend : and nothing change;</span>';
+                Prompt.show("嘿，我发现一个bug",'alert',function(){});
+            }
+            return;
         }
-        return;
-    }
 
     window.updateApp(window.linkName,gotoApp);
 
@@ -139,6 +139,8 @@ var gotoCorresponding = function(e){
 var toggleAppType = function(e){
     var appListDom = document.querySelectorAll("[data-app-list]"),
         appTypeButtonList = document.querySelectorAll('[data-app-type]');
+    // 清空点击显示区块的内容
+    testDiv.innerHTML = '';
     if(e.target.dataset.appType){
         for(var i = 0 ; i < appListDom.length; i++){
             appListDom[i].classList.add("dsn");
