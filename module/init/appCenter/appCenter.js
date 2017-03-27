@@ -115,8 +115,7 @@ function gotoApp(){
 * 点击应用图标的事件处理
 */
 var gotoCorresponding = function(e){
-    testDiv.innerHTML += ' <br/> touchend 触发 ！';
-        if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
+        if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display.indexOf('inline-block') == -1){
             e.target.classList.remove('app_icon_hover');
             window.linkName = e.target.dataset.link;
             window.appId = e.target.dataset.appid;
@@ -161,8 +160,7 @@ var toggleAppType = function(e){
 var bindEvents = function(){
     document.body.addEventListener(App.clickUp,gotoCorresponding,false);
     document.body.addEventListener(App.clickDown,function(e){
-        testDiv.innerHTML += ' <br/> touchstart 触发 ！';
-        if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display !== 'inline-block'){
+        if(e.target.dataset.link && e.target.parentNode.parentNode.querySelector('.appMark').style.display.indexOf('inline-block') == -1){
             // 点击瞬间 改变图标颜色
           //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
             testDiv.innerHTML += '<br/> <span style="color:green;">this is touchstart </span> : style (blur) come! '
