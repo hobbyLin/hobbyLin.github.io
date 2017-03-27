@@ -116,20 +116,25 @@ function gotoApp(){
 */
 var gotoCorresponding = function(e){
    // e.target.parentNode.parentNode.querySelector('.appMark').style.display.indexOf('inline-block') == -1
+  try{
+      if(e.target.dataset.link){
+          e.preventDefault();
+          e.target.classList.remove('app_icon_hover');
+          window.linkName = e.target.dataset.link;
+          window.appId = e.target.dataset.appid;
+          testDiv.innerHTML+='<br/> <span style="color:green;">this is touchend </span> : style (blur) go, and get appid & linkName;'
+          window.updateApp(window.linkName,gotoApp);
+      }else{
+          //其他
+          console.log("这是图标事件额");
+          return;
+      }
+  }catch (e){
+      testDiv.innerHTML = JSON.stringify(e);
+  }
 
-        if(e.target.dataset.link){
-            e.preventDefault();
-            e.target.classList.remove('app_icon_hover');
-            window.linkName = e.target.dataset.link;
-            window.appId = e.target.dataset.appid;
-            testDiv.innerHTML+='<br/> <span style="color:green;">this is touchend </span> : style (blur) go, and get appid & linkName;'
-        }else{
-            //其他
-            console.log("这是图标事件额");
-            return;
-        }
 
-    window.updateApp(window.linkName,gotoApp);
+
 
 }
 /*
@@ -159,14 +164,19 @@ var toggleAppType = function(e){
 var bindEvents = function(){
     document.body.addEventListener(App.clickUp,gotoCorresponding,false);
     document.body.addEventListener(App.clickDown,function(e){
+        try{
+            if(e.target.dataset.link){
+                e.preventDefault();
+                // 点击瞬间 改变图标颜色
+                //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
+                testDiv.innerHTML += '<br/> <span style="color:green;">this is touchstart </span> : style (blur) come! '
+                e.target.classList.add("app_icon_hover");
+            }
+        }catch(e){
 
-        if(e.target.dataset.link){
-            e.preventDefault();
-            // 点击瞬间 改变图标颜色
-          //  e.target.classList.add('app_icon_'+e.target.dataset.link + "_hover");
-            testDiv.innerHTML += '<br/> <span style="color:green;">this is touchstart </span> : style (blur) come! '
-            e.target.classList.add("app_icon_hover");
+            testDiv.innerHTML =  JSON.stringify(e);
         }
+
     },false);
     // 标签加事件响应
     document.querySelector("#apptype").addEventListener(App.clickDown,toggleAppType,false );
