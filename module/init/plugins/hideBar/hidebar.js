@@ -6,7 +6,7 @@
  Optic Swerve, opticswerve.com
  Documented at http://menacingcloud.com/?c=iPhoneAddressBar
  */
-
+// 经过测试没有效果
 var bodyTag;
 var executionTime = new Date().getTime(); // JavaScript execution time
 
