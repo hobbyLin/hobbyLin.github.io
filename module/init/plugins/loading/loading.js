@@ -34,7 +34,7 @@ function myloading(){
         this.el = null;
     };
     function noMove (e){
-        e.preventDefault();
+       e.preventDefault();
     }
     function animation(){
         var canvas = document.createElement("canvas"),
@@ -87,9 +87,15 @@ function myloading(){
             // this.$el = $(html);
             // this.$el.find(".loading").append(animation());
             // $(document.body).append(this.$el);
-            document.body.innerHTML += html;
-            document.querySelector('.loading').appendChild(animation());
-            this.el= document.querySelector('.loading-dialog');
+            // 这个方式相当于重新换了整个页面的元素 所以绑定页面的元素的事件就会消失 所以这个方式会将页面原来所有事件都清楚掉 除非用了document的事件代理
+           // document.body.innerHTML += html;
+            //创造一个容器,再将内容放入。
+            var bigWrap = document.createElement('div');
+            bigWrap.className = 'bigWrap';
+            bigWrap.innerHTML = html;
+            bigWrap.querySelector('.loading').appendChild(animation());
+            document.body.appendChild(bigWrap);
+            this.el= bigWrap;
             isCellPhone && document.addEventListener('touchmove',noMove,{passive : false })
         },
         setLoadingTip: function(tip){
@@ -100,7 +106,7 @@ function myloading(){
         hide : function(){
             this.el && document.body.removeChild(this.el);
             this.el = null;
-            document.removeEventListener('touchmove',noMove);
+           document.removeEventListener('touchmove',noMove);
         }
     });
 

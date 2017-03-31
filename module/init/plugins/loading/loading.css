@@ -1,3 +1,6 @@
+.bigWrap{
+    background-color: transparent;
+}
 .loading-dialog{
     position :  fixed;
     display: -webkit-box;
