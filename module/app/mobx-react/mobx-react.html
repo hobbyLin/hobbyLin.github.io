@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src = '../../init/assets/react/react.js'> </script>
+    <script type="text/javascript" src = '../../init/assets/react/react-dom.js'> </script>
+    <script type="text/javascript" src = '../../init/assets/react/babel.min.js'> </script>
+    <script type="text/javascript" src = '../../init/assets/react/mobx/mobx.umd.js'> </script>
+    <script type="text/javascript" src = '../../init/assets/react/mobx/mobx-react.js'> </script>
+    <title>mobx-react</title>
+</head>
+<body>
+<div id="app">
+</div>
+<script type="text/babel">
+    const {observer} = mobxReact;
+    const {observalble,computed}=mobx;
+    const {Component} = React;
+    const {render} = ReactDOM;
+    console.log(observalble)
+    // 数据store
+    class Store{
+        @observalble name = "lin";
+        @computed get result(){
+            return '${this.name} I love you !';
+        }
+    }
+
+    @observer
+    class App extends Component{
+        render(){
+            return(
+                    <div className="index">
+                        <p>{this.props.store.result}</p>
+                        <input
+                                defaultValue={this.props.store.name}
+                                onChange={(e) => this.props.store.name=e.currentTarget.value}
+                        />
+                    </div>
+            );
+        }
+    }
+
+    const store = new Store();
+    const store = {
+        name : 'dwad',
+        result :'dwadawd'
+    }
+    render(
+        <App store = {store} />,
+        document.getElementById('app')
+    );
+</script>
+
+</body>
+</html>
