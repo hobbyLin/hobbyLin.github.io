@@ -1,0 +1,10 @@
+<h1>淘宝 results for <%= search %> </h1>
+<% if (results.length) {%>
+<ul>
+<%for (var i  = 0 ; i < results.length ; i++ ) {%>
+    <li><%= results[i][0] %> - <em><%=results[i][1]%> </em>  </li>
+<%}%>
+</ul>
+<%} else {%>
+    <p>No results</p>
+<%}%>

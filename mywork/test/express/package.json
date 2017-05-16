@@ -1,0 +1,11 @@
+{
+  "name": "express-app-test",
+  "description": "my first node app",
+  "version": "0.0.1",
+  "dependencies": {
+    "ejs": "0.4.2",
+    "express": "2.5.9",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {}
+}

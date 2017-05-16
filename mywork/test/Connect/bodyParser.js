@@ -24,7 +24,8 @@ var server = connect()
             console.log('dd');
             res.writeHead(200,{'Content-Type' : 'text/html' });
             res.end(
-                '你已经登录咯，宝宝！'
+                '你已经登录咯，宝宝！'+ req.session.name+
+                    '<a href = "/logout"> logout</a>'
             )
         }else{
             console.log(req.url)
