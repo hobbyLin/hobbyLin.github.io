@@ -1,0 +1,98 @@
+/*
+ * 常量定义
+*/
+// 图片路径
+$image-path:"../../../images" !default;
+
+//动画时间
+$animation-time: .3s;
+
+//mask
+$mask-light:         rgba(0, 0, 0, .2);
+$mask-base:          rgba(0, 0, 0, .5);
+$mask-dark:          rgba(0, 0, 0, .7);
+
+//背景颜色
+$bg-white:           #fff;
+$bg-orange:          #fc7e3b;
+$bg-orange1:         #f37938;
+$bg-orange-light:    #fffdf6;
+$bg-white-dark:      #fafafa;
+$bg-gray:      		 #f5f5f5;
+
+//边框颜色
+$b-orange:           #fc7e3b;
+$b-orange1:          #f8b18a;
+$b-grey:             #e3e3e3;
+$b-grey1:            #ebebeb;
+$b-grey2:            #e7e7e7;
+$b-grey-light:       #E5E5E5;
+$b-red:              #ff8c8c;
+$b-zong:             #ecf1a8;
+$b-huang:            #ffd391;
+$b-blue:             #2e92ff;
+$b-dark:             #ddd;
+$b-dark1:            #e7e7e7;
+$b-orange:           #f37938;
+
+
+//字体颜色
+$f-white:            #fff;
+$f-orange: 		     #fc7e3b;
+$f-orange1: 		 #f37938;
+$f-orange-light: 	 #ff8000;
+$f-dark:             #b2b2b2;
+$f-dark1:            #737373;
+$f-dark2:            #1e1e1e;
+$f-dark-lighter:     #8a8b8c;
+$f-gray-light:       #666;
+$f-gray:             #555;
+$f-black:            #333;
+$f-blue:             #4481FE;
+$f-blue1:            #2e92ff;
+$f-grey-lighter:     #999;
+$f-red:              #f65617;
+$f-green:            #4175d5;
+
+
+
+/*
+* 设置页面初始化样式-迁移
+*/
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         darken(#428bca, 6.5%); // #337ab7
+
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-normal:          #ba0002;
+
+$global-orange:         #fc7e3b;
+$global-blue:           #9edfff;
+$global-red:            #ff8c8c;
+$global-zong:           #ecf1a8;
+$global-huang:          #ffd391;
+$global-black:          #333;
+$global-pink:           #ff6059;
+
+$border-color-gray:     #dbdbdb;
+
+
+//** body默认背景颜色设置.
+$body-bg:               #fff;
+//** 文本默认颜色设置 `<body>`.
+$text-color:            $gray-dark;
+//** 链接默认样式.
+$link-color:            $brand-primary;
+//** 链接默认hover样式.
+$link-hover-color:      darken($link-color, 15%);
+//** 链接默认hover是否需要下划线.
+$link-hover-decoration: underline;
+

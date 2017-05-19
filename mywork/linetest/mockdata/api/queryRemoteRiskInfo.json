@@ -1,0 +1,22 @@
+{
+  "data": {
+    "buildBankId": "2101",
+    "buildDateTime": "20170331094818",
+    "buildUserId": "NBANK",
+    "firstChannelFlag": "0",
+    "isCountLimit": "0",
+    "oldRiskLevel": "5",
+    "responseCode": "000000",
+    "responseMsg": "success",
+    "riskCount": "1",
+    "riskEndDate": "20180331",
+    "riskLevel": "3",
+    "riskTypeDesc": "对于稳健型投资人，其投资组合较大比例配置债券类资产或债券型基金，同时也有一部分比例配置于股票类资产或股票型基金以及配置型基金。此类投资人注重获得稳定的投资回报，而不追求最大回报，且不喜欢或不适应短期内的大幅波动。在投资期限内，虽然难以准确预测其回报率，但是也不会有大起大落的情况。大多数情况下，相对其它风险较高的投资组合类型而言，依照过去长年期的市场经验，这种投资组合类型的可能回报率较低，五年以上的投资期间尤其如此。",
+    "riskTypeName": "稳健型",
+    "status": "1",
+    "termType": "02",
+    "breakCode": "0"
+  },
+  "responseCode": "000000",
+  "responseMsg": "success"
+}

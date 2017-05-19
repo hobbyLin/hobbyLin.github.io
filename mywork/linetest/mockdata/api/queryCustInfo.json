@@ -1,0 +1,12 @@
+{
+  "data": {
+    "bcName": "张三",
+    "bcNo": "张三",
+    "bcTelNo": "13888888888",
+    "orderId": "14509837364647",
+    "orderName": "风险测评（远程身份认证）预约事项",
+    "setting": "8:30-19:00|9:00-17:00"
+  },
+  "responseCode": "000000",
+  "responseMsg": "成功"
+}

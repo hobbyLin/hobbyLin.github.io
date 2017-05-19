@@ -1,0 +1,651 @@
+@charset "utf-8";
+/* 迁移flexble.less */
+html {
+    width: 100%;
+    height: 100%;
+    touch-action: manipulation;
+    color: #000;
+    background: #fff;
+    overflow-y: scroll;
+    user-select: none;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html * {
+    outline:none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html, body {
+    font-family: sans-serif;
+}
+
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+    border: 0;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+    text-align: left;
+}
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* 鼠标悬停 */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
+
+
+/* 迁移reset.less */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-appearance: none;
+    outline: none;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    touch-action: manipulation;
+}
+body {
+    cursor: pointer;
+    min-height: 100%;
+    color: #333;
+    font-family: Arial, "Microsoft YaHei";
+    background-color: white;
+    font-size: 0.28rem;
+    line-height: 1.4;
+    -webkit-text-size-adjust: none;
+    background-color: #f5f5f5;
+}
+
+body *{
+    max-height: 999999px;
+}
+h1,h2,h3,h4,h5 {
+    font-weight: normal;
+}
+select {
+    background: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="password"],
+textarea {
+    user-select: text;
+}
+input,
+select {
+    user-select: initial;
+    font-family: Arial, "Microsoft YaHei";
+    font-size: 0.24rem;
+    border: none;
+    height: 0.45rem;
+    width: 100%;
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: #f60;
+}
+a:hover{
+    text-decoration: none;
+}
+ul,ol,li {
+    list-style: none;
+}
+img {
+    border: 0;
+}
+input,img {
+    vertical-align: middle;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+label,input,.select{
+    user-select:initial;
+    -webkit-appearance: none; 
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-size: 0.3rem;
+}
+
+/* 迁移common.less */
+// @baseFont : 10;
+.display-none {
+    display: none;
+}
+
+input{
+    background-color: #fff;
+}
+
+input:disabled{
+    color: #000;
+    opacity: 1;
+}
+
+.width-p25 {
+    width: 25%;
+}
+
+.width-p50 {
+    width: 50%;
+}
+
+.width-p33 {
+    width: 33.3%;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.tc {
+    text-align: center;
+}
+
+/**
+ * button begin
+ * <button class="btn btn-block btn-lg btn-plain-primary">向TA咨询</button>
+ */
+.btn {
+    font-family: 'Microsoft Yahei', sans-serif;
+    font-size: 0.24rem;
+    font-weight: 400;
+    line-height: 1.42;
+    display: inline-block;
+    padding: 4px 12px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.btn-gray {
+    background-color: #DBDAD9;
+}
+
+.btn.btn-lg {
+//  font-size: 0.56rem;
+    font-size: 0.533rem;
+    line-height: 1.16rem;
+    padding: 0 16px;
+    border-radius: 6px;
+}
+
+.btn.btn-sm {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.btn.btn-xs {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn.disabled {
+    color: #000;
+    border-color: #eee;
+    background: #eee;
+}
+
+.btn-plain-primary {
+    color: #ff6500;
+    border: 1px solid #ff6500;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #ff5858;
+}
+
+.btn-gray {
+    background-color: #999999;
+}
+
+/*---button end---*/
+.title-style1 {
+    font-size: 0.3rem;
+    color: #333;
+    text-align: center;
+}
+
+.font-style1 {
+    font-size: 0.34rem;
+    color: #666;
+    text-align: justify;
+}
+
+.c-black {
+    color: #333;
+}
+
+.bgc {
+    background-color: #fafafa;
+}
+
+/*myscheme wo-de-pei-zhi-fang-an*/
+.sum {
+    width: 37%;
+}
+
+/*tui-jian-pei-zhi-fang-an  fang-an-zhong-xin*/
+.tips-zi {
+    display: inline-block;
+}
+
+.tips-zi span {
+    color: #fc7e3b;
+    font-size: 0.413rem;
+    font-weight: bold;
+    line-height: 0.42rem;
+    border-bottom: 1px solid #fc7e3b;
+}
+
+.width-48 {
+    width: 48%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.orange-btn {
+    width: 89%;
+    height: .91rem;
+    font-family: 'Microsoft Yahei', sans-serif;
+    font-size: 0.4rem;
+    line-height: .91rem;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #f37938;
+    border: 1px solid #f37938;
+    margin: 0 auto;
+}
+
+.white-btn {
+    width: 89%;
+    height: .91rem;
+    font-family: 'Microsoft Yahei', sans-serif;
+    font-size: 0.4rem;
+    line-height: .91rem;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #f37938;
+    background-color: #fff;
+    border: 1px solid #f37938;
+    margin: 0 auto;
+}
+
+.gray-btn{
+    width: 89%;
+    height: .91rem;
+    font-family: 'Microsoft Yahei', sans-serif;
+    font-size: 0.4rem;
+    line-height: .91rem;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #dadada;
+    border: 1px solid #dadada;
+    margin: 0 auto;
+}
+
+.wrong-box h4{
+    font-size: 0.28rem;
+    color: #333333;
+    margin-top: -0.15rem;
+}
+
+.wrong-box h5{
+    font-size: 0.24rem;
+    color: #333333;
+    text-align: left;
+    margin-top: 0.15rem;
+}
+
+//字体颜色
+.f-c666666{
+    color: #666666;
+}
+
+.f-c1e1e1e{
+    color: #1e1e1e;
+}
+.f-c4175d5{
+    color: #4175d5;
+}
+
+.f-c6c7684{
+    color: #6c7684;
+}
+.f-c323232{
+    color: #323232;
+}
+.f-cf37938{
+    color: #f37938;
+}
+.f-cff8000{
+    color: #ff8000;
+}
+//字体大小
+.f-z34{
+    font-size: .34rem;
+}
+.f-z30{
+    font-size: .30rem;
+}
+
+//头部样式
+.main-header-wrap{
+    display: flex;
+    justify-content: space-around;
+    height: .9rem;
+    background-color: #f37938;
+    padding: 0 .3rem;
+}
+.main-header-left{
+    width: 11%;
+    height: .9rem;
+    text-align: center;
+    background: url('#{$image-path}/common/icon-back.svg') no-repeat 0;
+    background-size: 150% 150%;
+}
+.main-header-right{
+    width: 10%;
+    height: .9rem;
+    text-align: center;
+}
+.main-header-content{
+    width: 79%;
+    height: .9rem;
+    text-align: center;
+    color: #fff;
+    font-size: .36rem;
+    line-height: .9rem;
+}
+
+
+//步骤
+.step-box {
+    display: flex;
+    align-items: flex-start;
+    padding: .3rem .5rem;
+    color: #666;
+    background-color: #f5f5f5;
+    font-size: .24rem;
+    font-weight: 400;
+}
+
+.step-box dl {
+    width: 20%;
+    flex: 2;
+    max-width: 100%;
+    text-align: center
+}
+
+.step-box dl:first-child {
+    width: 20%;
+    flex: 1.2;
+    max-width: 100%;
+    text-align: left
+}
+
+.step-box dl:last-child {
+    width: 20%;
+    flex: 1.2;
+    max-width: 100%;
+    text-align: right
+}
+
+.step-box dl dt {
+    position: relative;
+    z-index: 1;
+    height: .34rem
+}
+
+.step-box dl dt i {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    width: .34rem;
+    height: .34rem;
+    box-sizing: border-box;
+    background: #F5F5F5;
+    border: 1px solid #b2b2b2;
+    border-radius: 50%
+}
+
+.step-box dl dt i:before {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: .18rem;
+    height: .13rem;
+    box-sizing: border-box;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: translate(-50%, -75%) rotate(-45deg);
+}
+
+.step-box dl dt:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 1px;
+    background: #b2b2b2
+}
+
+.step-box dl dt:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 1px;
+    background: #b2b2b2
+}
+
+.step-box dl dd {
+    line-height: .24rem;
+    font-size: .24rem;
+    color: #666;
+    padding: .15rem 0 0;
+    white-space: nowrap;
+}
+
+.step-box.step-one1 dl:first-child dt:before,
+.step-box.step-one1 dl:first-child dt:after {
+    background: #1ab55b
+}
+
+.step-box.step-one1 dl:first-child dt i {
+    background: #1ab55b;
+    border-color: #1ab55b
+}
+
+.step-box.step-one1 dl:first-child dt i:before {
+    display: block
+}
+
+.step-box.step-two1 dl:first-child dt:before,
+.step-box.step-two1 dl:first-child dt:after,
+.step-box.step-two1 dl:nth-of-type(2) dt:before,
+.step-box.step-two1 dl:nth-of-type(2) dt:after {
+    background: #1ab55b
+}
+
+.step-box.step-two1 dl:first-child dt i,
+.step-box.step-two1 dl:nth-of-type(2) dt i {
+    background: #1ab55b;
+    border-color: #1ab55b
+}
+
+.step-box.step-two1 dl:first-child dt i:before,
+.step-box.step-two1 dl:nth-of-type(2) dt i:before {
+    display: block
+}
+
+.step-box.step-three1 dl:first-child dt:before,
+.step-box.step-three1 dl:first-child dt:after,
+.step-box.step-three1 dl:nth-of-type(2) dt:before,
+.step-box.step-three1 dl:nth-of-type(2) dt:after,
+.step-box.step-three1 dl:nth-of-type(3) dt:before,
+.step-box.step-three1 dl:nth-of-type(3) dt:after {
+    background: #1ab55b
+}
+
+.step-box.step-three1 dl:first-child dt i,
+.step-box.step-three1 dl:nth-of-type(2) dt i,
+.step-box.step-three1 dl:nth-of-type(3) dt i {
+    background: #1ab55b;
+    border-color: #1ab55b
+}
+
+.step-box.step-three1 dl:first-child dt i:before,
+.step-box.step-three1 dl:nth-of-type(2) dt i:before,
+.step-box.step-three1 dl:nth-of-type(3) dt i:before {
+    display: block
+}
+
+.step-box.step-end dl dt:before,
+.step-box.step-end dl dt:after {
+    background: #1ab55b
+}
+
+.step-box.step-end dl dt i {
+    background: #1ab55b;
+    border-color: #1ab55b
+}
+
+.step-box.step-end dl dt i:before {
+    display: block
+}
