@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>远程风测-金管家中转页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="false" id="twcClient" name="twcClient">
+    <meta content="本页版权归中国平安所有。all rights reserved" name="copyright" />
+    <style type="text/css">
+    * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-style: normal;
+    }
+    
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+    }
+    
+    #openAccout {
+        font-size: 18px;
+        align-self: center;
+        padding: 50px 50px;
+    }
+    </style>
+    <script>
+    /*! PALifeOpen ,version:1.0.0, Tue Nov 15 2016 21:24:37 GMT+0800 (CST) */
+    ! function(e, t) {
+        "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.PALifeOpen = t() : e.PALifeOpen = t()
+    }(this, function() {
+        return function(e) {
+            function t(r) {
+                if (n[r]) return n[r].exports;
+                var i = n[r] = {
+                    exports: {},
+                    id: r,
+                    loaded: !1
+                };
+                return e[r].call(i.exports, i, i.exports, t), i.loaded = !0, i.exports
+            }
+            var n = {};
+            return t.m = e, t.c = n, t.p = "", t(0)
+        }([function(e, t, n) {
+            "use strict";
+            var r = n(1);
+            e.exports = new r.Open
+        }, function(e, t, n) {
+            "use strict";
+
+            function r(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            }), t.Open = void 0;
+            var i = function() {
+                    function e(e, t) {
+                        for (var n = 0; n < t.length; n++) {
+                            var r = t[n];
+                            r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
+                        }
+                    }
+                    return function(t, n, r) {
+                        return n && e(t.prototype, n), r && e(t, r), t
+                    }
+                }(),
+                o = n(2),
+                c = new o.JSSDK;
+            t.Open = function() {
+                function e() {
+                    r(this, e)
+                }
+                return i(e, [{
+                    key: "config",
+                    value: function(e) {
+                        e = e || {};
+                        var t = e.goBack,
+                            n = e.rightBtn;
+                        c.createJsAction({
+                            service: "webview",
+                            action: "goBack",
+                            handler: function(e, n) {
+                                var r = !0;
+                                "function" == typeof t && (t.call(null), r = !1), n({
+                                    ret: 0,
+                                    msg: "success",
+                                    data: {
+                                        appGoBack: r
+                                    }
+                                })
+                            }
+                        }), this.setRightBtn(n), c.start()
+                    }
+                }, {
+                    key: "debug",
+                    value: function() {
+                        window._PALifeBridge_debug = !0
+                    }
+                }, {
+                    key: "getCV",
+                    value: function() {
+                        var e = window.navigator.userAgent.match(/PARS\/([\d.]+)/);
+                        return e && e.length > 0 ? ~~e[1] : 0
+                    }
+                }, {
+                    key: "setRightBtn",
+                    value: function(e) {
+                        if (e) {
+                            var t = e.title;
+                            if (!t) return void console.error("参数rightBtn，缺少title属性");
+                            c["native"]({
+                                service: "webview",
+                                action: "setNavRightBtn",
+                                param: {
+                                    type: "text",
+                                    title: e.title
+                                }
+                            });
+                            var n = e.onCallFunction;
+                            return n ? "function" != typeof n ? void console.error("参数rightBtn，onCallFunction属性类型错误. 参数类型必须为function") : void c.createJsAction({
+                                service: "webview",
+                                action: "onNavRightBtn",
+                                handler: function(e, t) {
+                                    n.call(null), t({
+                                        ret: 0,
+                                        msg: "success"
+                                    })
+                                }
+                            }) : void console.error("参数rightBtn，缺少onCallFunction属性")
+                        }
+                    }
+                }, {
+                    key: "setTitle",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                            t = (arguments[1], arguments[2], e.title);
+                        return t ? "string" != typeof t ? void console.error("PALifeOpen.setTitle()参数title，类型错误. 参数类型必须为string") : void c["native"]({
+                            service: "webview",
+                            action: "setWebViewTitle",
+                            param: {
+                                title: t
+                            }
+                        }) : void console.error("PALifeOpen.setTitle()参数，缺少title")
+                    }
+                }, {
+                    key: "getDeviceId",
+                    value: function(e, t) {
+                        c["native"]({
+                            service: "device",
+                            action: "getDeviceId",
+                            param: {},
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: e,
+                            error: t
+                        })
+                    }
+                }, {
+                    key: "getOpenId",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                            t = arguments[1],
+                            n = arguments[2],
+                            r = e.appId;
+                        return r ? "string" != typeof r ? void console.error("PALifeOpen.getOpenId()参数appId，类型错误. 参数类型必须为string") : void c["native"]({
+                            service: "papay",
+                            action: "getOpenId",
+                            param: {
+                                appId: r
+                            },
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: t,
+                            error: n
+                        }) : void console.error("PALifeOpen.getOpenId()参数，缺少appId")
+                    }
+                }, {
+                    key: "openWangCaiAccount",
+                    value: function() {
+                        var e = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, arguments[1]),
+                            t = arguments[2];
+                        c["native"]({
+                            service: "wangcai",
+                            action: "openWangCaiAccount",
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: e,
+                            error: t
+                        })
+                    }
+                }, {
+                    key: "wangCaiBindCard",
+                    value: function() {
+                        var e = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, arguments[1]),
+                            t = arguments[2];
+                        c["native"]({
+                            service: "wangcai",
+                            action: "bindCard",
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: e,
+                            error: t
+                        })
+                    }
+                }, {
+                    key: "wcPay",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                            t = arguments[1],
+                            n = arguments[2],
+                            r = e.appId,
+                            i = e.openId;
+                        return r ? "string" != typeof r ? void console.error("PALifeOpen.wcPay()参数appId，类型错误. 参数类型必须为string") : i ? "string" != typeof i ? void console.error("PALifeOpen.wcPay()参数openId，类型错误. 参数类型必须为string") : void c["native"]({
+                            service: "papay",
+                            action: "wcPay",
+                            param: e,
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: t,
+                            error: n
+                        }) : void console.error("PALifeOpen.wcPay()参数，缺少openId") : void console.error("PALifeOpen.wcPay()参数，缺少appId")
+                    }
+                }, {
+                    key: "openStockAccount",
+                    value: function() {
+                        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                            t = arguments[1],
+                            n = arguments[2],
+                            r = e.openId;
+                        return r ? "string" != typeof r ? void console.error("PALifeOpen.openStockAccount()参数openId，类型错误. 参数类型必须为string") : void c["native"]({
+                            service: "stock",
+                            action: "openAccount",
+                            param: e,
+                            options: {
+                                timeout: 864e5
+                            },
+                            success: t,
+                            error: n
+                        }) : void console.error("PALifeOpen.openStockAccount()参数，缺少openId")
+                    }
+                }]), e
+            }()
+        }, function(e, t, n) {
+            "use strict";
+
+            function r(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            }), t.JSSDK = void 0;
+            var i = function() {
+                    function e(e, t) {
+                        for (var n = 0; n < t.length; n++) {
+                            var r = t[n];
+                            r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
+                        }
+                    }
+                    return function(t, n, r) {
+                        return n && e(t.prototype, n), r && e(t, r), t
+                    }
+                }(),
+                o = n(4),
+                c = n(5),
+                a = n(3);
+            t.JSSDK = function() {
+                function e() {
+                    r(this, e), this.status = o.JSSDK_STATUS.NOT_READY, this.callbackList = [], this.preJsServiceContainer = new a.PreJsServiceContainer, this.jsService = {}
+                }
+                return i(e, [{
+                    key: "start",
+                    value: function(e, t) {
+                        var n = this,
+                            r = e || o.nope;
+                        if (t = t || o.nope, "function" != typeof r) throw new Error("start param must be a function!");
+                        r.call(null);
+                        var i = function(e) {
+                                n.bridge = e, e.registerNativeService(o.defaultNativeServices), e.registerJsService(n.preJsServiceContainer.getPlainJsServices());
+                                var r = {
+                                    webServiceList: e.getJsServiceJSON()
+                                };
+                                e.sendMessageToNative("bridge", "configSDK", r, function(e) {
+                                    if (e && "0" === e.ret)
+                                        if (e.data && e.data.nativeServiceList) {
+                                            var r = e.data.nativeServiceList,
+                                                i = n.covertOriginNativeSerivceStructure(r);
+                                            n.bridge.registerNativeService(i), n.invokeCallbackList(), n.status = o.JSSDK_STATUS.READY, t.call(null)
+                                        } else console.error("nativeServiceList is empty!!!", e), n.status = o.JSSDK_STATUS.ERROR;
+                                    else console.error("invoke service[bridge:configSDK] occur an Error", e), n.status = o.JSSDK_STATUS.ERROR
+                                }, function(e) {
+                                    throw console.error("invoke service[bridge:configSDK] occur an Error", e), n.status = o.JSSDK_STATUS.ERROR, e
+                                })
+                            },
+                            c = window[o.BRIDGE_NAME];
+                        c ? i(c) : document.addEventListener(o.BRIDGE_LOAD_FINISH_EVENT, function(e) {
+                            i(e.data)
+                        }, !1)
+                    }
+                }, {
+                    key: "covertOriginNativeSerivceStructure",
+                    value: function(e) {
+                        var t = [];
+                        if ((0, c.isArray)(e)) return e.forEach(function(e) {
+                            var n = Object.create(e),
+                                r = [];
+                            e.actions.forEach(function(e) {
+                                var t = {};
+                                t.name = e, r.push(t)
+                            }), n.actions = r, t.push(n)
+                        }), t;
+                        throw new Error("srcServiceList must be a array")
+                    }
+                }, {
+                    key: "invokeCallbackList",
+                    value: function() {
+                        this.callbackList.forEach(function(e) {
+                            e.call(null)
+                        }), this.callbackList = []
+                    }
+                }, {
+                    key: "createJsAction",
+                    value: function(e) {
+                        var t;
+                        if (this.status !== o.JSSDK_STATUS.NOT_READY) throw new Error('"JSSDK.createJsAction" must be invoked in the "JSSDK.start" callback function or before "JSSDK.start"!!');
+                        (t = this.preJsServiceContainer).addAction.apply(t, arguments)
+                    }
+                }, {
+                    key: "native",
+                    value: function(e) {
+                        var t = this,
+                            n = e || {},
+                            r = {
+                                success: o.nope,
+                                error: o.nope
+                            };
+                        n.success = e.success || r.success, n.error = e.error || r.error;
+                        var i = function() {
+                            t.bridge.sendMessageToNative(n.service, n.action, n.param, n.success, n.error, n.options)
+                        };
+                        if (this.status === o.JSSDK_STATUS.NOT_READY) this.callbackList.push(i);
+                        else {
+                            if (this.status !== o.JSSDK_STATUS.READY) throw new Error("JSSDK occur an Error!!");
+                            i()
+                        }
+                    }
+                }, {
+                    key: "setScope",
+                    value: function(e) {
+                        var t = this,
+                            n = e || {},
+                            r = n.service,
+                            i = n.action,
+                            c = n.self || {},
+                            a = function() {
+                                var e = t.bridge.getActionScope(r, i);
+                                for (var n in c) e[n] = c[n]
+                            };
+                        if (this.status === o.JSSDK_STATUS.NOT_READY) this.callbackList.push(a);
+                        else {
+                            if (this.status !== o.JSSDK_STATUS.READY) throw new Error("JSSDK occur an Error!!");
+                            a()
+                        }
+                    }
+                }, {
+                    key: "debug",
+                    value: function() {
+                        window._PALifeBridge_debug = !0
+                    }
+                }]), e
+            }()
+        }, function(e, t) {
+            "use strict";
+
+            function n(e, t) {
+                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var r = function() {
+                function e(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var r = t[n];
+                        r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
+                    }
+                }
+                return function(t, n, r) {
+                    return n && e(t.prototype, n), r && e(t, r), t
+                }
+            }();
+            t.PreJsServiceContainer = function() {
+                function e() {
+                    n(this, e), this.list = []
+                }
+                return r(e, [{
+                    key: "addAction",
+                    value: function(e) {
+                        var t = e.service,
+                            n = this.getService(t),
+                            r = {
+                                name: e.action,
+                                handler: e.handler,
+                                options: e.options
+                            };
+                        n.actions.push(r)
+                    }
+                }, {
+                    key: "getService",
+                    value: function(e) {
+                        this.list.forEach(function(t) {
+                            if (t.service === e) return t
+                        });
+                        var t = {
+                            service: e,
+                            actions: []
+                        };
+                        return this.list.push(t), t
+                    }
+                }, {
+                    key: "getPlainJsServices",
+                    value: function() {
+                        return this.list
+                    }
+                }]), e
+            }()
+        }, function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            t.defaultNativeServices = [{
+                service: "bridge",
+                actions: [{
+                    name: "configSDK",
+                    options: {
+                        timeout: 5e3
+                    }
+                }]
+            }], t.JSSDK_STATUS = {
+                READY: 1,
+                NOT_READY: 0,
+                ERROR: 1
+            }, t.BRIDGE_NAME = "PALifeJSBridge", t.nope = function() {}, t.BRIDGE_LOAD_FINISH_EVENT = "_bridgeLoadFinishEvent"
+        }, function(e, t) {
+            "use strict";
+
+            function n(e) {
+                return "[object Array]" === Object.prototype.toString.call(e)
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            }), t.isArray = n
+        }])
+    });
+    </script>
+</head>
+
+<body>
+    <section id="openAccout">
+        您正在离开金管家进入银行远程风测页面
+    </section>
+    <script>
+    /**
+     * 初始化金管家nativeAPI
+     */
+    PALifeOpen.config({});
+    /**
+     * 设置导航栏标题
+     */
+    PALifeOpen.setTitle({
+        title: "银行-远程风测-测试"
+    });
+    var openId, openToken;
+    /**
+     * 获取openId
+     * param：appId（需金管家分配）
+     */
+    PALifeOpen.getOpenId({
+        appId: "2016112500000041"
+    }, function(n) {
+        openId = n.data.openId;
+        openToken = n.data.openToken;
+        //alert('openId:' + openId + 'openToken:' + openToken);
+    }, function(e) {
+        //alert('failed');
+    }),
+
+    alert(JSON.stringify(PALifeOpen));
+    document.querySelector('#openAccout').addEventListener('click', function(e) {
+        alert("准备打开开户接口" + openId);
+        /**
+         * 打开开户sdk，后期远程风测sdk需要金管家集成，提供类似的方案打开sdk
+         * param：openId（前一步获取，需要确保此参数不能为空）
+         */
+        PALifeOpen.openStockAccount({
+                openId: openId || 'test'
+            },
+            function(rsp) {
+                // 调用接口成功后的回调函数
+                console.debug('success ', rsp);
+                alert('success' + JSON.stringify(rsp));
+            },
+            function(e) {
+                // 调用接口异常的回调函数
+                alert('failed' + e);
+                console.debug('failed ', e);
+            });
+    }, false);
+    </script>
+</body>
+
+</html>

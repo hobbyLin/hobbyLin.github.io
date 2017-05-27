@@ -1,0 +1,105 @@
+{
+  "code": "000000",
+  "data": {
+    "dataList": [
+      {
+        "updateBy": "gaoqc",
+        "remark": "调用ccf选择公安验证还是人行验证配置项",
+        "settingName": "调用ccf选择公安验证还是人行验证配置项",
+        "settingKey": "chkIdKey",
+        "state": "1",
+        "settingId": "fb84ec7c57b6429b947d07b72b962bb7",
+        "createDate": 1495422671000,
+        "createBy": "gaqoc",
+        "settingValue": "{\"sys\":2}",
+        "updateDate": 1495422671000
+      },
+      {
+        "updateBy": "hao",
+        "remark": "测试值",
+        "settingName": "aa",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "c17e4d8f885d4fc581a60cb0232d633b",
+        "createDate": 1495416560000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495416560000
+      },
+      {
+        "updateBy": "hao1",
+        "remark": "system1",
+        "settingName": "aa1",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "3fa39548c75845fcb0d199df15136b0e",
+        "createDate": 1495182132000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495182132000
+      },
+      {
+        "updateBy": "hao",
+        "remark": "system",
+        "settingName": "aa",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "802eb9af254540abb3eb5f65bccbc872",
+        "createDate": 1495179371000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495179371000
+      },
+      {
+        "updateBy": "hao",
+        "remark": "system",
+        "settingName": "aa",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "f723818fa2814981be0dcdb2225671a5",
+        "createDate": 1495179366000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495179366000
+      },
+      {
+        "updateBy": "hao1",
+        "remark": "system1",
+        "settingName": "用于测试修改是否成功",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "44fe93702c6b4c46ad18707867b3cc2d",
+        "createDate": 1495177888000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495177888000
+      },
+      {
+        "updateBy": "hao",
+        "remark": "system",
+        "settingName": "aa",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "8e07f309307d47bbb429e92c0eb17106",
+        "createDate": 1495177477000,
+        "createBy": "ni",
+        "settingValue": "1",
+        "updateDate": 1495177477000
+      },
+      {
+        "updateBy": "system",
+        "remark": "坐席上班时间",
+        "settingName": "坐席视频工作时间",
+        "settingKey": "workTime",
+        "state": "0",
+        "settingId": "849bb68ad8cd4e7499ab44d404479241",
+        "createDate": 1494833025000,
+        "createBy": "system",
+        "settingValue": "{\"dwStart\":\"9:00\",\"dwEnd\":\"18:00\",\"weStart\":\"10:00\",\"weEnd\":\"17:00\"}",
+        "updateDate": 1494833025000
+      }
+    ],
+    "totalRows": 8
+  },
+  "msg": "成功"
+}
