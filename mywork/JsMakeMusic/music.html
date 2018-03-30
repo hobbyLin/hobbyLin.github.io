@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="false" id="twcClient" name="twcClient">
+    <meta content="本页归某某人所有。all rights reserved" name="copyright" />
+    <title>致爱丽丝</title>
+</head>
+<body style="text-align: center;padding-top: 40px;">
+
+这是用js撸出来的代码<br>
+
+
+嘘，打开控制台，边听边看代码就可以啦 <br>
+
+
+</body>
+<script>
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    (function () {
+        if (!window.AudioContext) {
+            alert('当前浏览器不支持Web Audio API');
+            return;
+        }
+
+
+
+
+        // 创建新的音频上下文 接口
+        var audioCtx = new AudioContext();
+
+        var DoReMi = [261.63/*1*/,277.18/*1.5*/,293.66/*2*/,311.13/*2.5*/,329.63/*3*/,349.23/*4*/,369.99/*4.5*/,392.00/*5*/,415.30/*5.5*/,440/*6*/,466.16/*6.5*/,493.88/*7*/,
+            523.25/*1*/,554.37/*1.5*/,587.33/*2*/,622.25/*2.5*/,659.25/*3*/,698.46/*4*/,739.99/*4.5*/,783.99/*5*/,830.60/*5.5*/,880/*6*/,932.32/*6.5*/,987.77/*7*/,
+            1046.50/*1*/,1108.73/*1.5*/,1174.66/*2*/,1244.50/*2.5*/,1318.51/*3*/,1396.91/*4*/,1479.97/*4.5*/,1567.98/*5*/,1661.21/*5.5*/,1760/*6*/,1864.66/*6.5*/,1975.53/*7*/]
+        //console.log(allHz.length)
+        var arrFrequency = [
+            659.25,622.25,659.25,622.25,659.25,493.88, 587.33 ,523.25,440,
+            1,
+            261.63,329.63,440,493.88,
+            1,
+            329.63, 415.30,493.88,523.25,
+            1,
+            329.63, 659.25,622.25,659.25,622.25,659.25,493.88, 587.33 ,523.25,440,
+            1,
+            261.63,329.63,440,493.88,
+            1,
+            329.63, 523.25,493.88,440,
+            1,
+            493.88,523.25,587.33,659.25,
+            392.00,698.46,659.25,587.33,
+            1,
+            392.00,659.25,587.33,523.25,
+            1,
+            329.63,587.33,523.25,493.88,
+            1,1
+//            659.25,622.25,493.88,
+//            329.63,523.25,493.88,440
+
+
+        ]
+
+        // 音调依次递增或者递减处理需要的参数
+        var start = 0, direction = 1;
+        var T ;
+        var button = document.createElement('button');
+        button.innerText = '要是听不到，请按一下哦';
+        button.onclick=function(e){
+            clearTimeout(T);
+            T = setInterval(sound,250)
+        }
+        document.body.appendChild(button)
+
+        T =setInterval(sound,250)
+        function sound(){
+            // 当前频率
+            var frequency = arrFrequency[start];
+            // 如果到头，改变音调的变化规则（增减切换）
+            if (!frequency) {
+                start = 0;
+                frequency = arrFrequency[start]
+
+            }
+            // 改变索引，下一次hover时候使用
+            start = start + direction;
+
+            if(frequency !== 1){
+                createSound(frequency)
+            }
+
+
+
+
+        }
+
+
+        function createSound(hz){
+
+            // 创建一个OscillatorNode, 它表示一个周期性波形（振荡），基本上来说创造了一个音调
+            var oscillator = audioCtx.createOscillator();
+            // 创建一个GainNode,它可以控制音频的总音量
+            var gainNode = audioCtx.createGain();
+            // 把音量，音调和终节点进行关联
+            oscillator.connect(gainNode);
+            // audioCtx.destination返回AudioDestinationNode对象，表示当前audio context中所有节点的最终节点，一般表示音频渲染设备
+            gainNode.connect(audioCtx.destination);
+            // 指定音调的类型，其他还有square|triangle|sawtooth|sine
+            oscillator.type = 'sine';
+            // 设置当前播放声音的频率，也就是最终播放声音的调调
+            // oscillator.frequency.value = hz;
+
+            oscillator.frequency.setValueAtTime(hz,audioCtx.currentTime)
+            // 当前时间设置音量为0
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            // 0.01秒后音量为1
+            gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);
+            // 音调从当前时间开始播放
+            oscillator.start(audioCtx.currentTime);
+            // 1秒内声音慢慢降低，是个不错的停止声音的方法
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.5);
+            // 1秒后完全停止声音
+            oscillator.stop(audioCtx.currentTime + 2);
+
+
+        }
+
+    })();
+
+
+
+</script>
+</html>
