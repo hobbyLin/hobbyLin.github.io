@@ -48,23 +48,72 @@ footer{
 .love{display:none;}
 
 /*作品区*/
-section.mywork{width:100%;background:#29343a;	border:10px solid #fff;
+section.mywork{
+	width:100%;background:#29343a;
+	border:10px solid #fff;
 	border-radius:6px;
 	box-shadow: 1px 1px 5px #555;
 	margin-top:20px;}
 section.mywork h4{
-		font-weight:bold;
+	font-weight:bold;
 	color:#fff;
 	font-size:5vw;
 	padding:20px 0px;
 }
 	
 
-section.mywork figure{width:60%;margin:0px auto!important;padding:20px 0px!important;}
+section.mywork figure{
+	/*width:30%;*/
+	/*margin:0px auto!important;*/
+	/*float:left;*/
+	/*padding:20px 0px!important;*/
+	padding:20px 0;
+}
 
-section.mywork figure img{width:100%;border:5px solid #fff;box-shadow: 1px 1px 5px #aaa;}
-section.mywork figure a{display:block;}
+section.mywork figure img{
+	width:100%;
 
+
+}
+section.mywork figure a{
+	position: relative;
+	width: 95%;
+	margin: 0 auto;
+	display:block;
+	overflow: hidden;
+	/*border:5px solid #fff;*/
+	box-shadow: 1px 1px 5px #aaa;
+	border:2px solid #29343a;
+	border-radius:7px;
+}
+section.mywork figure .imgSkin{
+	padding-bottom: 100%;
+	height: 0;
+	width:100%;
+	overflow: visible;
+}
+section.mywork figure figcaption{
+	position: absolute;
+	top:0;
+	width: 100%;
+	height: 100%;
+
+}
+figcaption .workTips{
+	/*display: table-cell;*/
+	/*vertical-align: middle;*/
+	width: 100%;
+	height: 100%;
+	display: table;
+	background: rgba(41,52,58,.4 );
+
+}
+.workTips .tips{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color:#fff;
+}
 
 
 /* 小屏幕（手机，小于等于768px） */
@@ -113,7 +162,7 @@ section.mywork h4{
 
 
 
-section.mywork figure img{border:2px solid #29343a;border-radius:7px;}
+section.mywork figure img{}
 
 	
   footer{
